@@ -157,19 +157,39 @@ def main():
     
     experiments = [
         {
-            'name': 'SensorNetGuard',
+            'name': 'SensorNetGuard Decision Tree',
             'script': base_path / "experiments" / "sensornetguard" / "scripts" / "decision_tree_experiment.py",
             'description': 'SensorNetGuard Decision Tree Experiment'
         },
         {
-            'name': 'Farm-Flow',
+            'name': 'Farm-Flow Decision Tree',
             'script': base_path / "experiments" / "farmflow" / "scripts" / "decision_tree_experiment.py",
             'description': 'Farm-Flow Decision Tree Experiment'
         },
         {
-            'name': 'CIC IDS 2017',
+            'name': 'CIC IDS 2017 Decision Tree',
             'script': base_path / "experiments" / "cicids2017" / "scripts" / "decision_tree_experiment.py",
             'description': 'CIC IDS 2017 Decision Tree Experiment'
+        },
+        {
+            'name': 'SensorNetGuard Decision Stump',
+            'script': base_path / "experiments" / "sensornetguard" / "scripts" / "decision_stump_experiment.py",
+            'description': 'SensorNetGuard Decision Stump Experiment'
+        },
+        {
+            'name': 'Farm-Flow Decision Stump',
+            'script': base_path / "experiments" / "farmflow" / "scripts" / "decision_stump_experiment.py",
+            'description': 'Farm-Flow Decision Stump Experiment'
+        },
+        {
+            'name': 'CIC IDS 2017 max_depth=10',
+            'script': base_path / "experiments" / "cicids2017" / "scripts" / "decision_tree_maxdepth10_experiment.py",
+            'description': 'CIC IDS 2017 Decision Tree (max_depth=10) Experiment'
+        },
+        {
+            'name': 'Feature Ablation',
+            'script': base_path / "experiments" / "shared" / "feature_ablation_experiment.py",
+            'description': 'Feature Ablation Experiment (All Datasets)'
         }
     ]
     
@@ -219,6 +239,26 @@ def main():
     with open(results_file, 'w') as f:
         json.dump(results, f, indent=2)
     print_success(f"Results summary saved to: {results_file}")
+    
+    # Generate comprehensive summary report
+    print_header("Generating Summary Report")
+    summary_script = base_path / "generate_summary_report.py"
+    if summary_script.exists():
+        try:
+            result = subprocess.run(
+                [sys.executable, str(summary_script)],
+                capture_output=True,
+                text=True,
+                check=False
+            )
+            if result.returncode == 0:
+                print_success("Summary report generated successfully")
+            else:
+                print_warning(f"Summary report generation had issues (exit code {result.returncode})")
+        except Exception as e:
+            print_warning(f"Could not generate summary report: {e}")
+    else:
+        print_warning("Summary report script not found")
     
     # Final status
     print_header("All Experiments Complete")
