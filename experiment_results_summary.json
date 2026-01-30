@@ -1,0 +1,20 @@
+{
+  "start_time": "2026-01-30T19:39:56.954227",
+  "preprocessing": {
+    "farmflow": true,
+    "cicids2017": true
+  },
+  "experiments": {
+    "SensorNetGuard": false,
+    "Farm-Flow": false,
+    "CIC IDS 2017": false
+  },
+  "summary": {
+    "total_experiments": 3,
+    "successful": 0,
+    "failed": 3,
+    "duration_seconds": 1.26225,
+    "duration_formatted": "0:00:01.262250",
+    "end_time": "2026-01-30T19:39:58.216477"
+  }
+}

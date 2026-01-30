@@ -154,6 +154,61 @@ log(f"  Test set: {len(X_test):,} samples")
 log(f"  Training class distribution: {y_train.value_counts().to_dict()}")
 log(f"  Test class distribution: {y_test.value_counts().to_dict()}")
 
+# Feature sanity checks
+log(f"\n{'='*80}")
+log("Feature Sanity Checks")
+log(f"{'='*80}")
+
+def check_and_drop_features(X_train, X_test, feature_cols, log_func):
+    """Check features and drop problematic ones"""
+    original_count = len(feature_cols)
+    features_to_drop = []
+    
+    # Check for constant features (zero variance)
+    log_func("Checking for constant features (zero variance)...")
+    for col in feature_cols:
+        if X_train[col].nunique() <= 1:
+            features_to_drop.append(col)
+            log_func(f"  Dropping constant feature: {col} (only {X_train[col].nunique()} unique value)")
+    
+    # Check for features with very low variance (near-constant)
+    log_func("Checking for near-constant features (low variance)...")
+    for col in feature_cols:
+        if col in features_to_drop:
+            continue
+        variance = X_train[col].var()
+        if variance < 1e-10:  # Very small variance threshold
+            features_to_drop.append(col)
+            log_func(f"  Dropping near-constant feature: {col} (variance: {variance:.2e})")
+    
+    # Check for features with too many missing values (>50%)
+    log_func("Checking for features with excessive missing values...")
+    for col in feature_cols:
+        if col in features_to_drop:
+            continue
+        missing_pct = X_train[col].isnull().sum() / len(X_train) * 100
+        if missing_pct > 50:
+            features_to_drop.append(col)
+            log_func(f"  Dropping feature with {missing_pct:.1f}% missing: {col}")
+    
+    # Remove dropped features
+    if features_to_drop:
+        log_func(f"\nDropping {len(features_to_drop)} problematic features:")
+        for feat in features_to_drop:
+            log_func(f"  - {feat}")
+        
+        feature_cols = [f for f in feature_cols if f not in features_to_drop]
+        X_train = X_train.drop(columns=features_to_drop)
+        X_test = X_test.drop(columns=features_to_drop)
+        
+        log_func(f"\nFeature count: {original_count} → {len(feature_cols)} (dropped {len(features_to_drop)})")
+    else:
+        log_func("  No problematic features found. All features retained.")
+    
+    return X_train, X_test, feature_cols
+
+X_train, X_test, feature_cols = check_and_drop_features(X_train, X_test, feature_cols, log)
+
 # Train Decision Tree with detailed logging
 log(f"\n{'='*80}")
 log("Training Decision Tree Classifier...")

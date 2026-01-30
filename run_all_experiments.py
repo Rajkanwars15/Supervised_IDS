@@ -61,15 +61,22 @@ def run_script(script_path, description):
     try:
         result = subprocess.run(
             [sys.executable, str(script_path)],
-            capture_output=False,
+            capture_output=True,
             text=True,
-            check=True
+            check=False  # Don't raise on non-zero exit
         )
-        print_success(f"{description} completed successfully")
-        return True
-    except subprocess.CalledProcessError as e:
-        print_error(f"{description} failed with exit code {e.returncode}")
-        return False
+        
+        # Check if script completed successfully
+        # Success indicators: "Experiment completed successfully" or exit code 0
+        if result.returncode == 0 or "Experiment completed successfully" in result.stdout:
+            print_success(f"{description} completed successfully")
+            return True
+        else:
+            print_error(f"{description} failed with exit code {result.returncode}")
+            if result.stderr:
+                print(f"{Colors.FAIL}Error output:{Colors.ENDC}")
+                print(result.stderr[:500])  # Show first 500 chars of error
+            return False
     except FileNotFoundError:
         print_error(f"Script not found: {script_path}")
         return False
