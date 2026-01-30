@@ -37,6 +37,14 @@ The Farm-Flow binary classification dataset is located in `data/farm-flow/Datase
 
 The subfolder CSVs (08_2022, 09_2022, 10_2022) contain raw data with 101 features but are not needed for the binary classification experiment - the train/test binary files are sufficient.
 
+### CIC IDS 2017 Dataset
+The CIC IDS 2017 dataset is located in `data/CIC IDS2017/MachineLearningCVE/`:
+- Multiple CSV files (one per day/attack type) with ~2.8M total samples
+- 78 feature columns (network flow features)
+- Target column: `Label` (BENIGN, DoS slowloris, PortScan, etc.)
+- Binary classification: BENIGN=0, all attacks=1
+- Files need to be combined and preprocessed before use
+
 ## Scripts
 
 ### Distribution Plots
@@ -125,6 +133,40 @@ This script will:
 - Save experiment logs to `experiments/farmflow/decision_tree_experiment/logs/`
 - Save results (JSON format) to `experiments/farmflow/decision_tree_experiment/results/`
 
+### CIC IDS 2017 Experiments
+
+#### Preprocessing
+
+Preprocess and combine the CIC IDS 2017 dataset files:
+
+```bash
+python experiments/cicids2017/scripts/preprocess_cicids2017.py
+```
+
+This script will:
+- Combine all CSV files from MachineLearningCVE folder
+- Clean column names (remove leading spaces)
+- Convert labels to binary (BENIGN=0, attacks=1)
+- Split into train/test sets (80/20, stratified)
+- Handle missing and infinite values
+- Save cleaned data to `data/cic-ids2017-silver/`
+
+#### Decision Tree Experiment
+
+Train a decision tree classifier on the CIC IDS 2017 dataset:
+
+```bash
+python experiments/cicids2017/scripts/decision_tree_experiment.py
+```
+
+This script will:
+- Load preprocessed data from `data/cic-ids2017-silver/`
+- Train a decision tree with no depth limit (allows full convergence)
+- Log all splits, thresholds, and feature selections
+- Calculate comprehensive ML metrics
+- Save experiment logs to `experiments/cicids2017/decision_tree_experiment/logs/`
+- Save results (JSON format) to `experiments/cicids2017/decision_tree_experiment/results/`
+
 ## Project Structure
 
 ```
@@ -136,9 +178,12 @@ Supervised_IDS/
 │   │       ├── Farm-Flow_Train_Binary.csv
 │   │       ├── Farm-Flow_Test_Binary.csv
 │   │       └── [subfolders with monthly data]
-│   └── farm-flow-silver/            # Preprocessed Farm-Flow data
-│       ├── Farm-Flow_Train_Binary.csv
-│       └── Farm-Flow_Test_Binary.csv
+│   ├── farm-flow-silver/            # Preprocessed Farm-Flow data
+│   │   ├── Farm-Flow_Train_Binary.csv
+│   │   └── Farm-Flow_Test_Binary.csv
+│   └── cic-ids2017-silver/          # Preprocessed CIC IDS 2017 data
+│       ├── CIC-IDS2017_Train_Binary.csv
+│       └── CIC-IDS2017_Test_Binary.csv
 ├── experiments/
 │   ├── sensornetguard/
 │   │   ├── overlay_plots/          # Overlay distribution plots
@@ -158,6 +203,13 @@ Supervised_IDS/
 │       │   └── results/            # Results (JSON)
 │       └── scripts/                 # Farm-Flow scripts
 │           ├── preprocess_farmflow.py
+│           └── decision_tree_experiment.py
+│   └── cicids2017/
+│       ├── decision_tree_experiment/  # CIC IDS 2017 decision tree experiment
+│       │   ├── logs/               # Experiment logs
+│       │   └── results/            # Results (JSON)
+│       └── scripts/                 # CIC IDS 2017 scripts
+│           ├── preprocess_cicids2017.py
 │           └── decision_tree_experiment.py
 ├── .venv/                          # Virtual environment
 ├── requirements.txt                 # Python dependencies
