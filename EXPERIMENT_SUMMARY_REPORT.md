@@ -1,6 +1,6 @@
 # Decision Tree Experiments - Comprehensive Summary Report
 
-Generated: 2026-01-31 04:36:32
+Generated: 2026-01-31 04:52:56
 
 ================================================================================
 
@@ -40,6 +40,14 @@ Generated: 2026-01-31 04:36:32
 - **Training class distribution**: {'1': 119341, '0': 56000}
 - **Test class distribution**: {'1': 45332, '0': 37000}
 
+#### NSL-KDD Binary Classification
+
+- **Training samples**: 125,973
+- **Test samples**: 22,544
+- **Features**: 37
+- **Training class distribution**: {'0': 67343, '1': 58630}
+- **Test class distribution**: {'1': 12833, '0': 9711}
+
 ### Tree Properties
 
 | Dataset | Max Depth | Nodes | Leaves |
@@ -48,6 +56,7 @@ Generated: 2026-01-31 04:36:32
 | Farm-Flow | 9 | 41 | 21 |
 | CIC IDS 2017 | 43 | 6,371 | 3,186 |
 | UNSW-NB15 | 45 | 11,367 | 5,684 |
+| NSL-KDD | 26 | 723 | 362 |
 
 ### Test Set Performance Metrics
 
@@ -57,27 +66,33 @@ Generated: 2026-01-31 04:36:32
 | Farm-Flow | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
 | CIC IDS 2017 | 0.9988 | 0.9969 | 0.9970 | 0.9969 | 0.9985 | 0.9951 |
 | UNSW-NB15 | 0.8626 | 0.8230 | 0.9561 | 0.8846 | 0.8546 | 0.8139 |
+| NSL-KDD | 0.7790 | 0.9686 | 0.6322 | 0.7651 | 0.8027 | 0.8219 |
 
 ### Decision Tree Visualizations
 
 #### SensorNetGuard
 
-![SensorNetGuard Decision Tree](experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_043200.png)
+![SensorNetGuard Decision Tree](experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_044816.png)
 
 
 #### Farm-Flow
 
-![Farm-Flow Decision Tree](experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_043202.png)
+![Farm-Flow Decision Tree](experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_044818.png)
 
 
 #### CIC IDS 2017
 
-![CIC IDS 2017 Decision Tree](experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_043207.png)
+![CIC IDS 2017 Decision Tree](experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_044823.png)
 
 
 #### UNSW-NB15
 
-![UNSW-NB15 Decision Tree](experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_043412.png)
+![UNSW-NB15 Decision Tree](experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_045029.png)
+
+
+#### NSL-KDD
+
+![NSL-KDD Decision Tree](experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_045034.png)
 
 
 ## 2. Decision Stump Experiments (1-Rule Models)
@@ -101,7 +116,7 @@ These experiments test model robustness by using only the top feature.
 
 **Noise Impact Analysis (Perturbation Study):**
 
-![SensorNetGuard Noise Impact](experiments/sensornetguard/decision_stump_experiment/figs/noise_impact_20260131_043417.png)
+![SensorNetGuard Noise Impact](experiments/sensornetguard/decision_stump_experiment/figs/noise_impact_20260131_045038.png)
 
 
 **Performance vs Noise Level:**
@@ -139,7 +154,7 @@ These experiments test model robustness by using only the top feature.
 
 **Noise Impact Analysis (Perturbation Study):**
 
-![Farm-Flow Noise Impact](experiments/farmflow/decision_stump_experiment/figs/noise_impact_20260131_043419.png)
+![Farm-Flow Noise Impact](experiments/farmflow/decision_stump_experiment/figs/noise_impact_20260131_045040.png)
 
 
 **Performance vs Noise Level:**
@@ -376,6 +391,19 @@ These experiments show how performance changes as features are removed, starting
 9. **sinpkt**: 0.010228
 10. **ct_dst_src_ltm**: 0.010166
 
+### NSL-KDD
+
+1. **4**: 0.753417
+2. **32**: 0.052207
+3. **22**: 0.048184
+4. **5**: 0.033619
+5. **40**: 0.025502
+6. **9**: 0.020302
+7. **35**: 0.014645
+8. **11**: 0.010112
+9. **23**: 0.009484
+10. **33**: 0.008925
+
 ## 6. Confusion Matrices (Test Set)
 
 ### SensorNetGuard
@@ -412,4 +440,13 @@ Actual Benign   454271     349
               Benign  Attack
 Actual Benign   27680    9320
        Attack    1990   43342
+```
+
+### NSL-KDD
+
+```
+                Predicted
+              Benign  Attack
+Actual Benign    9448     263
+       Attack    4720    8113
 ```

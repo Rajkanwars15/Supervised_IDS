@@ -264,6 +264,13 @@ if __name__ == "__main__":
             'train': base_path / "data" / "unsw-nb15-silver" / "UNSW-NB15_Train_Binary.csv",
             'test': base_path / "data" / "unsw-nb15-silver" / "UNSW-NB15_Test_Binary.csv",
             'target_col': 'is_attack'
+        },
+        {
+            'name': 'NSL-KDD',
+            'model_dir': base_path / "experiments" / "nsl-kdd" / "decision_tree_experiment" / "models",
+            'train': base_path / "data" / "nsl-kdd-silver" / "NSL-KDD_Train_Binary.csv",
+            'test': base_path / "data" / "nsl-kdd-silver" / "NSL-KDD_Test_Binary.csv",
+            'target_col': 'is_attack'
         }
     ]
     

@@ -100,7 +100,11 @@ def check_preprocessing_needed():
     unsw_silver = base_path / "data" / "unsw-nb15-silver" / "UNSW-NB15_Train_Binary.csv"
     unsw_needs_preprocessing = not unsw_silver.exists()
     
-    return farmflow_needs_preprocessing, cicids_needs_preprocessing, unsw_needs_preprocessing
+    # Check NSL-KDD
+    nslkdd_silver = base_path / "data" / "nsl-kdd-silver" / "NSL-KDD_Train_Binary.csv"
+    nslkdd_needs_preprocessing = not nslkdd_silver.exists()
+    
+    return farmflow_needs_preprocessing, cicids_needs_preprocessing, unsw_needs_preprocessing, nslkdd_needs_preprocessing
 
 def main():
     """Main function to run all experiments"""
@@ -122,7 +126,7 @@ def main():
     
     # Check preprocessing needs
     print_header("Checking Preprocessing Requirements")
-    farmflow_needs, cicids_needs, unsw_needs = check_preprocessing_needed()
+    farmflow_needs, cicids_needs, unsw_needs, nslkdd_needs = check_preprocessing_needed()
     
     if farmflow_needs:
         print_warning("Farm-Flow preprocessing needed")
@@ -139,8 +143,13 @@ def main():
     else:
         print_success("UNSW-NB15 data already preprocessed")
     
+    if nslkdd_needs:
+        print_warning("NSL-KDD preprocessing needed")
+    else:
+        print_success("NSL-KDD data already preprocessed")
+    
     # Run preprocessing if needed
-    if farmflow_needs or cicids_needs or unsw_needs:
+    if farmflow_needs or cicids_needs or unsw_needs or nslkdd_needs:
         print_header("Preprocessing Datasets")
         
         if farmflow_needs:
@@ -163,11 +172,19 @@ def main():
             results['preprocessing']['unsw-nb15'] = success
             if not success:
                 print_warning("UNSW-NB15 preprocessing failed. Experiment may fail.")
+        
+        if nslkdd_needs:
+            preprocess_nslkdd = base_path / "experiments" / "nsl-kdd" / "scripts" / "preprocess_nsl_kdd.py"
+            success = run_script(preprocess_nslkdd, "NSL-KDD Preprocessing")
+            results['preprocessing']['nsl-kdd'] = success
+            if not success:
+                print_warning("NSL-KDD preprocessing failed. Experiment may fail.")
     else:
         print_info("All datasets already preprocessed. Skipping preprocessing step.")
         results['preprocessing']['farmflow'] = True
         results['preprocessing']['cicids2017'] = True
         results['preprocessing']['unsw-nb15'] = True
+        results['preprocessing']['nsl-kdd'] = True
     
     # Run experiments
     print_header("Running Decision Tree Experiments")
@@ -194,6 +211,11 @@ def main():
             'description': 'UNSW-NB15 Decision Tree Experiment'
         },
         {
+            'name': 'NSL-KDD Decision Tree',
+            'script': base_path / "experiments" / "nsl-kdd" / "scripts" / "decision_tree_experiment.py",
+            'description': 'NSL-KDD Decision Tree Experiment'
+        },
+        {
             'name': 'SensorNetGuard Decision Stump',
             'script': base_path / "experiments" / "sensornetguard" / "scripts" / "decision_stump_experiment.py",
             'description': 'SensorNetGuard Decision Stump Experiment'
@@ -207,6 +229,11 @@ def main():
             'name': 'UNSW-NB15 Decision Stump',
             'script': base_path / "experiments" / "unsw-nb15" / "scripts" / "decision_stump_experiment.py",
             'description': 'UNSW-NB15 Decision Stump Experiment'
+        },
+        {
+            'name': 'NSL-KDD Decision Stump',
+            'script': base_path / "experiments" / "nsl-kdd" / "scripts" / "decision_stump_experiment.py",
+            'description': 'NSL-KDD Decision Stump Experiment'
         },
         {
             'name': 'CIC IDS 2017 max_depth=10',

@@ -1,25 +1,27 @@
 {
-  "start_time": "2026-01-31T04:31:54.552832",
+  "start_time": "2026-01-31T04:48:12.025075",
   "preprocessing": {
-    "unsw-nb15": true
+    "nsl-kdd": true
   },
   "experiments": {
     "SensorNetGuard Decision Tree": true,
     "Farm-Flow Decision Tree": true,
     "CIC IDS 2017 Decision Tree": true,
     "UNSW-NB15 Decision Tree": true,
+    "NSL-KDD Decision Tree": true,
     "SensorNetGuard Decision Stump": true,
     "Farm-Flow Decision Stump": true,
     "UNSW-NB15 Decision Stump": true,
+    "NSL-KDD Decision Stump": true,
     "CIC IDS 2017 max_depth=10": true,
     "Feature Ablation": true
   },
   "summary": {
-    "total_experiments": 9,
-    "successful": 9,
+    "total_experiments": 11,
+    "successful": 11,
     "failed": 0,
-    "duration_seconds": 278.24823,
-    "duration_formatted": "0:04:38.248230",
-    "end_time": "2026-01-31T04:36:32.801062"
+    "duration_seconds": 284.012992,
+    "duration_formatted": "0:04:44.012992",
+    "end_time": "2026-01-31T04:52:56.038067"
   }
 }

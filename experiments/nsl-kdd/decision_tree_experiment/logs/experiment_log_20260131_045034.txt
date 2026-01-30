@@ -1,0 +1,528 @@
+[2026-01-31 04:50:34] Reading data...
+[2026-01-31 04:50:34]   Train file: /Users/raj/Supervised_IDS/data/nsl-kdd-silver/NSL-KDD_Train_Binary.csv
+[2026-01-31 04:50:34]   Test file: /Users/raj/Supervised_IDS/data/nsl-kdd-silver/NSL-KDD_Test_Binary.csv
+[2026-01-31 04:50:34] Loading training data (this may take a while for large files)...
+[2026-01-31 04:50:34]   Training data shape: (125973, 39)
+[2026-01-31 04:50:34] Loading test data...
+[2026-01-31 04:50:34]   Test data shape: (22544, 39)
+[2026-01-31 04:50:34] Found 38 feature columns
+[2026-01-31 04:50:34] 
+Handling missing values...
+[2026-01-31 04:50:34]   Training missing values: 0
+[2026-01-31 04:50:34]   Test missing values: 0
+[2026-01-31 04:50:34] 
+Checking for infinite values...
+[2026-01-31 04:50:34]   Training infinite values: 0
+[2026-01-31 04:50:34]   Test infinite values: 0
+[2026-01-31 04:50:34] 
+Data Summary:
+[2026-01-31 04:50:34]   Training set: 125,973 samples
+[2026-01-31 04:50:34]   Test set: 22,544 samples
+[2026-01-31 04:50:34]   Training class distribution: {0: 67343, 1: 58630}
+[2026-01-31 04:50:34]   Test class distribution: {1: 12833, 0: 9711}
+[2026-01-31 04:50:34] 
+================================================================================
+[2026-01-31 04:50:34] Feature Sanity Checks
+[2026-01-31 04:50:34] ================================================================================
+[2026-01-31 04:50:34] Checking for constant features (zero variance)...
+[2026-01-31 04:50:34]   Dropping constant feature: 19 (only 1 unique value)
+[2026-01-31 04:50:34] Checking for near-constant features (low variance)...
+[2026-01-31 04:50:34] Checking for features with excessive missing values...
+[2026-01-31 04:50:34] 
+Dropping 1 problematic features:
+[2026-01-31 04:50:34]   - 19
+[2026-01-31 04:50:34] 
+Feature count: 38 → 37 (dropped 1)
+[2026-01-31 04:50:34] 
+================================================================================
+[2026-01-31 04:50:34] Training Decision Tree Classifier...
+[2026-01-31 04:50:34] ================================================================================
+[2026-01-31 04:50:34] Tree Parameters:
+[2026-01-31 04:50:34]   criterion: gini
+[2026-01-31 04:50:34]   splitter: best
+[2026-01-31 04:50:34]   max_depth: None
+[2026-01-31 04:50:34]   min_samples_split: 2
+[2026-01-31 04:50:34]   min_samples_leaf: 1
+[2026-01-31 04:50:34]   min_weight_fraction_leaf: 0.0
+[2026-01-31 04:50:34]   max_features: None
+[2026-01-31 04:50:34]   random_state: 42
+[2026-01-31 04:50:34]   max_leaf_nodes: None
+[2026-01-31 04:50:34]   min_impurity_decrease: 0.0
+[2026-01-31 04:50:34]   class_weight: None
+[2026-01-31 04:50:34]   ccp_alpha: 0.0
+[2026-01-31 04:50:34] 
+Training tree (this may take a while for full convergence)...
+[2026-01-31 04:50:35] ✓ Tree training completed!
+[2026-01-31 04:50:35]   Tree depth: 26
+[2026-01-31 04:50:35]   Number of nodes: 723
+[2026-01-31 04:50:35]   Number of leaves: 362
+[2026-01-31 04:50:35] 
+================================================================================
+[2026-01-31 04:50:35] Saving model artifact...
+[2026-01-31 04:50:35] ================================================================================
+[2026-01-31 04:50:35] ✓ Model saved to: /Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/models/decision_tree_model_20260131_045034.joblib
+[2026-01-31 04:50:35] 
+================================================================================
+[2026-01-31 04:50:35] Creating tree visualization...
+[2026-01-31 04:50:35] ================================================================================
+[2026-01-31 04:50:36]   Saved PNG: /Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_045034.png
+[2026-01-31 04:50:36]   Saved SVG: /Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_045034.svg
+[2026-01-31 04:50:36]   Saved PDF: /Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_045034.pdf
+[2026-01-31 04:50:36] ✓ Tree visualization completed!
+[2026-01-31 04:50:36]   Note: graphviz not installed, skipping graphviz export
+[2026-01-31 04:50:36] 
+================================================================================
+[2026-01-31 04:50:36] Extracting tree structure and splits...
+[2026-01-31 04:50:36] ================================================================================
+[2026-01-31 04:50:36] 
+Tree Structure (first 100 lines):
+[2026-01-31 04:50:36] |--- 4 <= 28.50
+|   |--- 32 <= 208.50
+|   |   |--- 5 <= 3.50
+|   |   |   |--- 11 <= 0.50
+|   |   |   |   |--- 33 <= 0.31
+|   |   |   |   |   |--- 4 <= 5.50
+|   |   |   |   |   |   |--- 34 <= 0.01
+|   |   |   |   |   |   |   |--- 0 <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- 0 >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- 34 >  0.01
+|   |   |   |   |   |   |   |--- 22 <= 1.50
+|   |   |   |   |   |   |   |   |--- 32 <= 2.50
+|   |   |   |   |   |   |   |   |   |--- 9 <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- 33 <= 0.21
+|   |   |   |   |   |   |   |   |   |   |   |--- 34 <= 0.15
+|   |   |   |   |   |   |   |   |   |   |   |   |--- 32 <= 1.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- 31 <= 45.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- 31 >  45.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 37 <= 0.00
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 37 >  0.00
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 37 <= 0.06
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 37 >  0.06
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 27 <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 27 >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 37 <= 0.41
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 37 >  0.41
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |--- 32 >  1.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- 4 <= 2.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- 4 >  2.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |--- 34 >  0.15
+|   |   |   |   |   |   |   |   |   |   |   |   |--- 31 <= 7.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- 34 <= 0.55
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- 34 >  0.55
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |   |--- 31 >  7.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- 33 <= 0.05
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 35 <= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 34 <= 0.27
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 34 >  0.27
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 35 >  0.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- 33 >  0.05
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 34 <= 0.53
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 6 <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 6 >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- 34 >  0.53
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- 33 >  0.21
+|   |   |   |   |   |   |   |   |   |   |   |--- 5 <= 1.50
+|   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |--- 5 >  1.50
+|   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- 9 >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- 32 >  2.50
+|   |   |   |   |   |   |   |   |   |--- 40 <= 0.02
+|   |   |   |   |   |   |   |   |   |   |--- 31 <= 51.50
+|   |   |   |   |   |   |   |   |   |   |   |--- 33 <= 0.11
+|   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |--- 33 >  0.11
+|   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- 31 >  51.50
+|   |   |   |   |   |   |   |   |   |   |   |--- 9 <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |   |--- 23 <= 10.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   
+[2026-01-31 04:50:36] 
+Full tree structure saved to: /Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/logs/tree_structure_20260131_045034.txt
+[2026-01-31 04:50:36] 
+================================================================================
+[2026-01-31 04:50:36] Detailed Split Information:
+[2026-01-31 04:50:36] ================================================================================
+[2026-01-31 04:50:36] SPLIT: feature='4', threshold=28.500000, samples=125973, impurity=0.497608
+[2026-01-31 04:50:36]   SPLIT: feature='32', threshold=208.500000, samples=58257, impurity=0.148826
+[2026-01-31 04:50:36]     SPLIT: feature='5', threshold=3.500000, samples=55800, impurity=0.091897
+[2026-01-31 04:50:36]       SPLIT: feature='11', threshold=0.500000, samples=54757, impurity=0.065527
+[2026-01-31 04:50:36]         SPLIT: feature='33', threshold=0.315000, samples=54392, impurity=0.053981
+[2026-01-31 04:50:36]           SPLIT: feature='4', threshold=5.500000, samples=48547, impurity=0.011794
+[2026-01-31 04:50:36]             SPLIT: feature='34', threshold=0.015000, samples=47748, impurity=0.005597
+[2026-01-31 04:50:36]               SPLIT: feature='0', threshold=0.500000, samples=9, impurity=0.197531
+[2026-01-31 04:50:36]                 LEAF: samples=8, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]               SPLIT: feature='22', threshold=1.500000, samples=47739, impurity=0.005265
+[2026-01-31 04:50:36]                 SPLIT: feature='32', threshold=2.500000, samples=1941, impurity=0.094954
+[2026-01-31 04:50:36]                   SPLIT: feature='9', threshold=0.500000, samples=1792, impurity=0.031842
+[2026-01-31 04:50:36]                     SPLIT: feature='33', threshold=0.210000, samples=1789, impurity=0.028644
+[2026-01-31 04:50:36]                     LEAF: samples=3, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                   SPLIT: feature='40', threshold=0.025000, samples=149, impurity=0.496194
+[2026-01-31 04:50:36]                     SPLIT: feature='31', threshold=51.500000, samples=85, impurity=0.225329
+[2026-01-31 04:50:36]                     SPLIT: feature='35', threshold=0.090000, samples=64, impurity=0.194824
+[2026-01-31 04:50:36]                 SPLIT: feature='36', threshold=0.115000, samples=45798, impurity=0.001266
+[2026-01-31 04:50:36]                   SPLIT: feature='32', threshold=120.500000, samples=45739, impurity=0.001049
+[2026-01-31 04:50:36]                     SPLIT: feature='22', threshold=4.500000, samples=45728, impurity=0.000962
+[2026-01-31 04:50:36]                     SPLIT: feature='23', threshold=3.000000, samples=11, impurity=0.297521
+[2026-01-31 04:50:36]                   SPLIT: feature='24', threshold=0.750000, samples=59, impurity=0.155128
+[2026-01-31 04:50:36]                     SPLIT: feature='28', threshold=0.215000, samples=7, impurity=0.408163
+[2026-01-31 04:50:36]                     LEAF: samples=52, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]             SPLIT: feature='22', threshold=2.500000, samples=799, impurity=0.311184
+[2026-01-31 04:50:36]               SPLIT: feature='32', threshold=3.500000, samples=196, impurity=0.342514
+[2026-01-31 04:50:36]                 SPLIT: feature='37', threshold=0.755000, samples=38, impurity=0.188366
+[2026-01-31 04:50:36]                   SPLIT: feature='36', threshold=0.335000, samples=37, impurity=0.149014
+[2026-01-31 04:50:36]                     SPLIT: feature='39', threshold=0.865000, samples=36, impurity=0.104938
+[2026-01-31 04:50:36]                     LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 SPLIT: feature='33', threshold=0.015000, samples=158, impurity=0.107435
+[2026-01-31 04:50:36]                   SPLIT: feature='39', threshold=0.005000, samples=4, impurity=0.375000
+[2026-01-31 04:50:36]                     LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                     LEAF: samples=3, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                   SPLIT: feature='4', threshold=27.000000, samples=154, impurity=0.074886
+[2026-01-31 04:50:36]                     SPLIT: feature='23', threshold=28.000000, samples=152, impurity=0.051247
+[2026-01-31 04:50:36]                     LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]               SPLIT: feature='22', threshold=3.500000, samples=603, impurity=0.003311
+[2026-01-31 04:50:36]                 SPLIT: feature='23', threshold=2.500000, samples=10, impurity=0.180000
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                   LEAF: samples=9, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 LEAF: samples=593, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]           SPLIT: feature='40', threshold=0.025000, samples=5845, impurity=0.330717
+[2026-01-31 04:50:36]             SPLIT: feature='23', threshold=3.500000, samples=4757, impurity=0.067747
+[2026-01-31 04:50:36]               SPLIT: feature='35', threshold=0.950000, samples=896, impurity=0.287588
+[2026-01-31 04:50:36]                 SPLIT: feature='37', threshold=0.165000, samples=205, impurity=0.433076
+[2026-01-31 04:50:36]                   SPLIT: feature='34', threshold=0.415000, samples=150, impurity=0.180000
+[2026-01-31 04:50:36]                     SPLIT: feature='39', threshold=0.120000, samples=139, impurity=0.082604
+[2026-01-31 04:50:36]                     SPLIT: feature='36', threshold=0.105000, samples=11, impurity=0.297521
+[2026-01-31 04:50:36]                   SPLIT: feature='36', threshold=0.125000, samples=55, impurity=0.165289
+[2026-01-31 04:50:36]                     SPLIT: feature='34', threshold=0.855000, samples=49, impurity=0.039983
+[2026-01-31 04:50:36]                     SPLIT: feature='28', threshold=0.875000, samples=6, impurity=0.444444
+[2026-01-31 04:50:36]                 SPLIT: feature='38', threshold=0.915000, samples=691, impurity=0.045237
+[2026-01-31 04:50:36]                   SPLIT: feature='4', threshold=18.500000, samples=677, impurity=0.029106
+[2026-01-31 04:50:36]                     SPLIT: feature='4', threshold=0.500000, samples=671, impurity=0.020647
+[2026-01-31 04:50:36]                     SPLIT: feature='31', threshold=3.500000, samples=6, impurity=0.500000
+[2026-01-31 04:50:36]                   SPLIT: feature='28', threshold=0.510000, samples=14, impurity=0.489796
+[2026-01-31 04:50:36]                     LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                     SPLIT: feature='30', threshold=0.500000, samples=12, impurity=0.500000
+[2026-01-31 04:50:36]               SPLIT: feature='40', threshold=0.005000, samples=3861, impurity=0.005682
+[2026-01-31 04:50:36]                 SPLIT: feature='25', threshold=0.035000, samples=3858, impurity=0.004655
+[2026-01-31 04:50:36]                   LEAF: samples=3515, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                   SPLIT: feature='25', threshold=0.375000, samples=343, impurity=0.051101
+[2026-01-31 04:50:36]                     LEAF: samples=9, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                     LEAF: samples=334, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 SPLIT: feature='35', threshold=0.225000, samples=3, impurity=0.444444
+[2026-01-31 04:50:36]                   LEAF: samples=2, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]             SPLIT: feature='29', threshold=0.030000, samples=1088, impurity=0.058822
+[2026-01-31 04:50:36]               SPLIT: feature='36', threshold=0.875000, samples=1060, impurity=0.014980
+[2026-01-31 04:50:36]                 SPLIT: feature='40', threshold=0.295000, samples=1059, impurity=0.013133
+[2026-01-31 04:50:36]                   SPLIT: feature='35', threshold=0.750000, samples=38, impurity=0.265928
+[2026-01-31 04:50:36]                     LEAF: samples=28, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                     SPLIT: feature='32', threshold=87.500000, samples=10, impurity=0.480000
+[2026-01-31 04:50:36]                   SPLIT: feature='32', threshold=1.500000, samples=1021, impurity=0.001957
+[2026-01-31 04:50:36]                     SPLIT: feature='34', threshold=0.335000, samples=6, impurity=0.277778
+[2026-01-31 04:50:36]                     LEAF: samples=1015, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]               SPLIT: feature='32', threshold=24.500000, samples=28, impurity=0.191327
+[2026-01-31 04:50:36]                 LEAF: samples=25, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 LEAF: samples=3, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]         SPLIT: feature='0', threshold=0.500000, samples=365, impurity=0.093766
+[2026-01-31 04:50:36]           SPLIT: feature='34', threshold=0.945000, samples=348, impurity=0.011428
+[2026-01-31 04:50:36]             SPLIT: feature='9', threshold=0.500000, samples=347, impurity=0.005747
+[2026-01-31 04:50:36]               LEAF: samples=346, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]             LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]           SPLIT: feature='35', threshold=0.265000, samples=17, impurity=0.110727
+[2026-01-31 04:50:36]             LEAF: samples=16, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]             LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]       SPLIT: feature='39', threshold=0.090000, samples=1043, impurity=0.316996
+[2026-01-31 04:50:36]         SPLIT: feature='5', threshold=791.500000, samples=886, impurity=0.135962
+[2026-01-31 04:50:36]           SPLIT: feature='22', threshold=2.500000, samples=820, impurity=0.072751
+[2026-01-31 04:50:36]             SPLIT: feature='32', threshold=1.500000, samples=771, impurity=0.033154
+[2026-01-31 04:50:36]               SPLIT: feature='28', threshold=0.750000, samples=52, impurity=0.260355
+[2026-01-31 04:50:36]                 SPLIT: feature='26', threshold=0.250000, samples=6, impurity=0.444444
+[2026-01-31 04:50:36]                   LEAF: samples=3, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                   SPLIT: feature='5', threshold=9.500000, samples=3, impurity=0.444444
+[2026-01-31 04:50:36]                     LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                     LEAF: samples=2, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 SPLIT: feature='15', threshold=0.500000, samples=46, impurity=0.158790
+[2026-01-31 04:50:36]                   SPLIT: feature='5', threshold=9.500000, samples=44, impurity=0.086777
+[2026-01-31 04:50:36]                     SPLIT: feature='4', threshold=2.000000, samples=2, impurity=0.500000
+[2026-01-31 04:50:36]                     SPLIT: feature='0', threshold=3.500000, samples=42, impurity=0.046485
+[2026-01-31 04:50:36]                   LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]               SPLIT: feature='31', threshold=7.500000, samples=719, impurity=0.013811
+[2026-01-31 04:50:36]                 SPLIT: feature='12', threshold=0.500000, samples=54, impurity=0.137174
+[2026-01-31 04:50:36]                   SPLIT: feature='32', threshold=51.500000, samples=53, impurity=0.106800
+[2026-01-31 04:50:36]                     SPLIT: feature='5', threshold=35.500000, samples=52, impurity=0.073964
+[2026-01-31 04:50:36]                     LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 SPLIT: feature='31', threshold=254.500000, samples=665, impurity=0.003003
+[2026-01-31 04:50:36]                   LEAF: samples=556, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                   SPLIT: feature='4', threshold=6.500000, samples=109, impurity=0.018180
+[2026-01-31 04:50:36]                     SPLIT: feature='11', threshold=0.500000, samples=11, impurity=0.165289
+[2026-01-31 04:50:36]                     LEAF: samples=98, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]             SPLIT: feature='23', threshold=2.500000, samples=49, impurity=0.464806
+[2026-01-31 04:50:36]               SPLIT: feature='39', threshold=0.005000, samples=37, impurity=0.338934
+[2026-01-31 04:50:36]                 SPLIT: feature='4', threshold=6.500000, samples=30, impurity=0.124444
+[2026-01-31 04:50:36]                   SPLIT: feature='23', threshold=1.500000, samples=9, impurity=0.345679
+[2026-01-31 04:50:36]                     SPLIT: feature='33', threshold=0.005000, samples=8, impurity=0.218750
+[2026-01-31 04:50:36]                     LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                   LEAF: samples=21, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 SPLIT: feature='31', threshold=110.500000, samples=7, impurity=0.244898
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                   LEAF: samples=6, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]               SPLIT: feature='33', threshold=0.285000, samples=12, impurity=0.277778
+[2026-01-31 04:50:36]                 LEAF: samples=9, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 SPLIT: feature='22', threshold=52.500000, samples=3, impurity=0.444444
+[2026-01-31 04:50:36]                   LEAF: samples=2, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]           SPLIT: feature='35', threshold=0.665000, samples=66, impurity=0.499541
+[2026-01-31 04:50:36]             SPLIT: feature='4', threshold=2.500000, samples=30, impurity=0.124444
+[2026-01-31 04:50:36]               LEAF: samples=28, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]             SPLIT: feature='36', threshold=0.035000, samples=36, impurity=0.197531
+[2026-01-31 04:50:36]               LEAF: samples=28, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]               SPLIT: feature='36', threshold=0.075000, samples=8, impurity=0.500000
+[2026-01-31 04:50:36]                 LEAF: samples=4, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 LEAF: samples=4, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]         SPLIT: feature='34', threshold=0.090000, samples=157, impurity=0.183050
+[2026-01-31 04:50:36]           LEAF: samples=14, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]           SPLIT: feature='25', threshold=0.045000, samples=143, impurity=0.027581
+[2026-01-31 04:50:36]             SPLIT: feature='34', threshold=0.295000, samples=140, impurity=0.014184
+[2026-01-31 04:50:36]               SPLIT: feature='28', threshold=0.515000, samples=4, impurity=0.375000
+[2026-01-31 04:50:36]                 LEAF: samples=3, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               LEAF: samples=136, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]             SPLIT: feature='22', threshold=15.000000, samples=3, impurity=0.444444
+[2026-01-31 04:50:36]               LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]     SPLIT: feature='4', threshold=0.500000, samples=2457, impurity=0.290874
+[2026-01-31 04:50:36]       LEAF: samples=1985, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]       SPLIT: feature='5', threshold=8.500000, samples=472, impurity=0.148054
+[2026-01-31 04:50:36]         SPLIT: feature='35', threshold=0.045000, samples=434, impurity=0.004598
+[2026-01-31 04:50:36]           LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]           LEAF: samples=433, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]         SPLIT: feature='5', threshold=115.500000, samples=38, impurity=0.051247
+[2026-01-31 04:50:36]           LEAF: samples=37, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]           LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]   SPLIT: feature='22', threshold=324.500000, samples=67716, impurity=0.139034
+[2026-01-31 04:50:36]     SPLIT: feature='9', threshold=0.500000, samples=65768, impurity=0.095700
+[2026-01-31 04:50:36]       SPLIT: feature='35', threshold=0.995000, samples=63136, impurity=0.058942
+[2026-01-31 04:50:36]         SPLIT: feature='7', threshold=0.500000, samples=60046, impurity=0.026097
+[2026-01-31 04:50:36]           SPLIT: feature='5', threshold=0.500000, samples=59933, impurity=0.022467
+[2026-01-31 04:50:36]             SPLIT: feature='23', threshold=34.500000, samples=7034, impurity=0.163086
+[2026-01-31 04:50:36]               SPLIT: feature='33', threshold=0.815000, samples=6724, impurity=0.091728
+[2026-01-31 04:50:36]                 SPLIT: feature='0', threshold=17385.000000, samples=6216, impurity=0.045566
+[2026-01-31 04:50:36]                   SPLIT: feature='23', threshold=25.500000, samples=6211, impurity=0.044065
+[2026-01-31 04:50:36]                     SPLIT: feature='4', threshold=1070.500000, samples=6179, impurity=0.040572
+[2026-01-31 04:50:36]                     SPLIT: feature='34', threshold=0.025000, samples=32, impurity=0.468750
+[2026-01-31 04:50:36]                   LEAF: samples=5, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 SPLIT: feature='31', threshold=64.500000, samples=508, impurity=0.456406
+[2026-01-31 04:50:36]                   SPLIT: feature='31', threshold=43.500000, samples=274, impurity=0.165832
+[2026-01-31 04:50:36]                     SPLIT: feature='36', threshold=0.105000, samples=208, impurity=0.037722
+[2026-01-31 04:50:36]                     SPLIT: feature='32', threshold=59.000000, samples=66, impurity=0.433884
+[2026-01-31 04:50:36]                   SPLIT: feature='4', threshold=197.500000, samples=234, impurity=0.449996
+[2026-01-31 04:50:36]                     LEAF: samples=71, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                     SPLIT: feature='32', threshold=210.000000, samples=163, impurity=0.104332
+[2026-01-31 04:50:36]               SPLIT: feature='4', threshold=572.500000, samples=310, impurity=0.025473
+[2026-01-31 04:50:36]                 LEAF: samples=4, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 LEAF: samples=306, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]             SPLIT: feature='17', threshold=0.500000, samples=52899, impurity=0.001926
+[2026-01-31 04:50:36]               SPLIT: feature='39', threshold=0.995000, samples=52894, impurity=0.001776
+[2026-01-31 04:50:36]                 SPLIT: feature='8', threshold=0.500000, samples=52890, impurity=0.001662
+[2026-01-31 04:50:36]                   SPLIT: feature='4', threshold=52185.000000, samples=52886, impurity=0.001587
+[2026-01-31 04:50:36]                     SPLIT: feature='28', threshold=0.015000, samples=52809, impurity=0.001362
+[2026-01-31 04:50:36]                     SPLIT: feature='4', threshold=57677.000000, samples=77, impurity=0.143700
+[2026-01-31 04:50:36]                   SPLIT: feature='35', threshold=0.265000, samples=4, impurity=0.500000
+[2026-01-31 04:50:36]                     LEAF: samples=2, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                     LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 SPLIT: feature='30', threshold=0.500000, samples=4, impurity=0.375000
+[2026-01-31 04:50:36]                   LEAF: samples=3, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               SPLIT: feature='0', threshold=12.500000, samples=5, impurity=0.320000
+[2026-01-31 04:50:36]                 LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 LEAF: samples=4, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]           LEAF: samples=113, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]         SPLIT: feature='4', threshold=333.500000, samples=3090, impurity=0.463050
+[2026-01-31 04:50:36]           SPLIT: feature='38', threshold=0.015000, samples=1560, impurity=0.083379
+[2026-01-31 04:50:36]             SPLIT: feature='32', threshold=44.500000, samples=1533, impurity=0.069180
+[2026-01-31 04:50:36]               SPLIT: feature='4', threshold=206.500000, samples=526, impurity=0.187259
+[2026-01-31 04:50:36]                 SPLIT: feature='37', threshold=0.090000, samples=451, impurity=0.026254
+[2026-01-31 04:50:36]                   SPLIT: feature='10', threshold=2.500000, samples=450, impurity=0.021975
+[2026-01-31 04:50:36]                     SPLIT: feature='4', threshold=30.500000, samples=449, impurity=0.017659
+[2026-01-31 04:50:36]                     LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 SPLIT: feature='5', threshold=95.000000, samples=75, impurity=0.452978
+[2026-01-31 04:50:36]                   SPLIT: feature='15', threshold=0.500000, samples=56, impurity=0.244898
+[2026-01-31 04:50:36]                     SPLIT: feature='4', threshold=249.000000, samples=51, impurity=0.110727
+[2026-01-31 04:50:36]                     LEAF: samples=5, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                   SPLIT: feature='11', threshold=0.500000, samples=19, impurity=0.099723
+[2026-01-31 04:50:36]                     LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                     LEAF: samples=18, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               LEAF: samples=1007, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]             SPLIT: feature='5', threshold=0.500000, samples=27, impurity=0.499314
+[2026-01-31 04:50:36]               SPLIT: feature='36', threshold=0.055000, samples=14, impurity=0.132653
+[2026-01-31 04:50:36]                 SPLIT: feature='23', threshold=1.500000, samples=2, impurity=0.500000
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 LEAF: samples=12, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]               LEAF: samples=13, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]           SPLIT: feature='5', threshold=2.000000, samples=1530, impurity=0.427153
+[2026-01-31 04:50:36]             SPLIT: feature='4', threshold=1518.000000, samples=1242, impurity=0.254662
+[2026-01-31 04:50:36]               SPLIT: feature='15', threshold=3.000000, samples=1094, impurity=0.129288
+[2026-01-31 04:50:36]                 SPLIT: feature='32', threshold=136.500000, samples=1075, impurity=0.100424
+[2026-01-31 04:50:36]                   SPLIT: feature='36', threshold=0.045000, samples=519, impurity=0.195529
+[2026-01-31 04:50:36]                     SPLIT: feature='4', threshold=353.500000, samples=80, impurity=0.474688
+[2026-01-31 04:50:36]                     SPLIT: feature='36', threshold=0.095000, samples=439, impurity=0.035782
+[2026-01-31 04:50:36]                   LEAF: samples=556, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 LEAF: samples=19, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               SPLIT: feature='0', threshold=6.500000, samples=148, impurity=0.381665
+[2026-01-31 04:50:36]                 LEAF: samples=110, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 LEAF: samples=38, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]             SPLIT: feature='4', threshold=23241.500000, samples=288, impurity=0.006920
+[2026-01-31 04:50:36]               LEAF: samples=285, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               SPLIT: feature='4', threshold=43756.000000, samples=3, impurity=0.444444
+[2026-01-31 04:50:36]                 LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                 LEAF: samples=2, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]       SPLIT: feature='4', threshold=11454.500000, samples=2632, impurity=0.498198
+[2026-01-31 04:50:36]         SPLIT: feature='0', threshold=7.500000, samples=1630, impurity=0.367214
+[2026-01-31 04:50:36]           SPLIT: feature='32', threshold=140.000000, samples=642, impurity=0.499607
+[2026-01-31 04:50:36]             SPLIT: feature='24', threshold=0.750000, samples=363, impurity=0.178676
+[2026-01-31 04:50:36]               SPLIT: feature='36', threshold=0.010000, samples=348, impurity=0.113407
+[2026-01-31 04:50:36]                 SPLIT: feature='5', threshold=98.500000, samples=341, impurity=0.078740
+[2026-01-31 04:50:36]                   LEAF: samples=5, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                   SPLIT: feature='30', threshold=0.250000, samples=336, impurity=0.052136
+[2026-01-31 04:50:36]                     SPLIT: feature='4', threshold=1792.000000, samples=333, impurity=0.035387
+[2026-01-31 04:50:36]                     LEAF: samples=3, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 LEAF: samples=7, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               LEAF: samples=15, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]             SPLIT: feature='18', threshold=0.500000, samples=279, impurity=0.021274
+[2026-01-31 04:50:36]               LEAF: samples=276, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               LEAF: samples=3, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]           SPLIT: feature='0', threshold=44.500000, samples=988, impurity=0.122922
+[2026-01-31 04:50:36]             SPLIT: feature='4', threshold=148.000000, samples=854, impurity=0.013953
+[2026-01-31 04:50:36]               SPLIT: feature='5', threshold=181.500000, samples=5, impurity=0.320000
+[2026-01-31 04:50:36]                 LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 LEAF: samples=4, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]               SPLIT: feature='12', threshold=1.000000, samples=849, impurity=0.004700
+[2026-01-31 04:50:36]                 LEAF: samples=847, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]             SPLIT: feature='34', threshold=0.025000, samples=134, impurity=0.492871
+[2026-01-31 04:50:36]               SPLIT: feature='5', threshold=8442.000000, samples=73, impurity=0.326515
+[2026-01-31 04:50:36]                 SPLIT: feature='40', threshold=0.955000, samples=56, impurity=0.101403
+[2026-01-31 04:50:36]                   SPLIT: feature='0', threshold=73.500000, samples=55, impurity=0.070083
+[2026-01-31 04:50:36]                     SPLIT: feature='21', threshold=0.500000, samples=10, impurity=0.320000
+[2026-01-31 04:50:36]                     LEAF: samples=45, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 SPLIT: feature='31', threshold=5.500000, samples=17, impurity=0.415225
+[2026-01-31 04:50:36]                   SPLIT: feature='9', threshold=2.500000, samples=7, impurity=0.408163
+[2026-01-31 04:50:36]                     SPLIT: feature='5', threshold=16165.000000, samples=3, impurity=0.444444
+[2026-01-31 04:50:36]                     LEAF: samples=4, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]                   LEAF: samples=10, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]               SPLIT: feature='16', threshold=20.000000, samples=61, impurity=0.032249
+[2026-01-31 04:50:36]                 LEAF: samples=59, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                 SPLIT: feature='21', threshold=0.500000, samples=2, impurity=0.500000
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]                   LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]         SPLIT: feature='13', threshold=0.500000, samples=1002, impurity=0.003984
+[2026-01-31 04:50:36]           SPLIT: feature='34', threshold=0.005000, samples=1001, impurity=0.001996
+[2026-01-31 04:50:36]             LEAF: samples=990, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]             SPLIT: feature='12', threshold=0.500000, samples=11, impurity=0.165289
+[2026-01-31 04:50:36]               LEAF: samples=10, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]               LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]           LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]     SPLIT: feature='5', threshold=2.000000, samples=1948, impurity=0.160999
+[2026-01-31 04:50:36]       SPLIT: feature='4', threshold=518.000000, samples=1775, impurity=0.001126
+[2026-01-31 04:50:36]         LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 04:50:36]         LEAF: samples=1774, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]       SPLIT: feature='33', threshold=0.010000, samples=173, impurity=0.022854
+[2026-01-31 04:50:36]         LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 04:50:36]         LEAF: samples=171, class=0, values=[1. 0.]
+[2026-01-31 04:50:36] 
+(Note: Only first 10 levels shown in detail. Full tree structure saved to file.)
+[2026-01-31 04:50:36] 
+================================================================================
+[2026-01-31 04:50:36] Feature Importance (Top 20):
+[2026-01-31 04:50:36] ================================================================================
+[2026-01-31 04:50:36]   4: 0.753417
+[2026-01-31 04:50:36]   32: 0.052207
+[2026-01-31 04:50:36]   22: 0.048184
+[2026-01-31 04:50:36]   5: 0.033619
+[2026-01-31 04:50:36]   40: 0.025502
+[2026-01-31 04:50:36]   9: 0.020302
+[2026-01-31 04:50:36]   35: 0.014645
+[2026-01-31 04:50:36]   11: 0.010112
+[2026-01-31 04:50:36]   23: 0.009484
+[2026-01-31 04:50:36]   33: 0.008925
+[2026-01-31 04:50:36]   0: 0.004970
+[2026-01-31 04:50:36]   7: 0.003522
+[2026-01-31 04:50:36]   39: 0.003328
+[2026-01-31 04:50:36]   34: 0.002904
+[2026-01-31 04:50:36]   31: 0.002070
+[2026-01-31 04:50:36]   36: 0.001476
+[2026-01-31 04:50:36]   37: 0.001411
+[2026-01-31 04:50:36]   29: 0.000903
+[2026-01-31 04:50:36]   15: 0.000757
+[2026-01-31 04:50:36]   24: 0.000509
+[2026-01-31 04:50:36] 
+================================================================================
+[2026-01-31 04:50:36] Making predictions...
+[2026-01-31 04:50:36] ================================================================================
+[2026-01-31 04:50:36] 
+================================================================================
+[2026-01-31 04:50:36] Calculating Metrics...
+[2026-01-31 04:50:36] ================================================================================
+[2026-01-31 04:50:36] 
+Training Set Metrics:
+[2026-01-31 04:50:36]   Accuracy:  0.999929
+[2026-01-31 04:50:36]   Precision: 1.000000
+[2026-01-31 04:50:36]   Recall:    0.999846
+[2026-01-31 04:50:36]   F1 Score:  0.999923
+[2026-01-31 04:50:36]   ROC-AUC:   1.000000
+[2026-01-31 04:50:36]   Avg Precision: 1.000000
+[2026-01-31 04:50:36]   Confusion Matrix:
+[2026-01-31 04:50:36]     [[67343     0]
+ [    9 58621]]
+[2026-01-31 04:50:37] 
+Test Set Metrics:
+[2026-01-31 04:50:37]   Accuracy:  0.778966
+[2026-01-31 04:50:37]   Precision: 0.968601
+[2026-01-31 04:50:37]   Recall:    0.632198
+[2026-01-31 04:50:37]   F1 Score:  0.765053
+[2026-01-31 04:50:37]   ROC-AUC:   0.802728
+[2026-01-31 04:50:37]   Avg Precision: 0.821903
+[2026-01-31 04:50:37]   Confusion Matrix:
+[2026-01-31 04:50:37]     [[9448  263]
+ [4720 8113]]
+[2026-01-31 04:50:37] 
+Classification Report (Test Set):
+[2026-01-31 04:50:37]               precision    recall  f1-score   support
+
+      Benign       0.67      0.97      0.79      9711
+      Attack       0.97      0.63      0.77     12833
+
+    accuracy                           0.78     22544
+   macro avg       0.82      0.80      0.78     22544
+weighted avg       0.84      0.78      0.78     22544
+
+[2026-01-31 04:50:37] 
+✓ Results saved to: /Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/results/results_20260131_045034.json
