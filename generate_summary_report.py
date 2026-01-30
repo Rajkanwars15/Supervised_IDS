@@ -165,11 +165,13 @@ def generate_markdown_report(results_data, base_path):
                 perf = stump_data['stump_performance']
                 report.append("**Performance:**\n")
                 report.append(f"- Test Accuracy: {perf.get('test_accuracy', 0):.4f}")
+                report.append(f"- Test Precision: {perf.get('test_precision', 0):.4f}")
+                report.append(f"- Test Recall: {perf.get('test_recall', 0):.4f}")
                 report.append(f"- Test F1: {perf.get('test_f1', 0):.4f}")
                 report.append(f"- Test ROC-AUC: {perf.get('test_roc_auc', 0):.4f}")
                 report.append("")
             
-            # Noise impact plot
+            # Noise impact plot and table
             if dataset_name == 'SensorNetGuard':
                 stump_exp_dir = base_path / "experiments" / "sensornetguard" / "decision_stump_experiment"
             else:
@@ -178,8 +180,21 @@ def generate_markdown_report(results_data, base_path):
             noise_plot = find_latest_plot(stump_exp_dir / "figs", "noise_impact_*.png")
             if noise_plot:
                 rel_path = get_relative_path(noise_plot, base_path)
-                report.append(f"**Noise Impact Analysis:**\n")
+                report.append(f"**Noise Impact Analysis (Perturbation Study):**\n")
                 report.append(f"![{dataset_name} Noise Impact]({rel_path})\n")
+                report.append("")
+            
+            # Noise experiment results table
+            if 'noise_experiment' in stump_data and stump_data['noise_experiment']:
+                report.append("**Performance vs Noise Level:**\n")
+                report.append("| Noise Level (std) | Accuracy | Precision | Recall | F1 Score |")
+                report.append("|-------------------|----------|-----------|--------|----------|")
+                for noise_result in stump_data['noise_experiment']:
+                    report.append(f"| {noise_result.get('noise_level', 0):.2f} | "
+                                 f"{noise_result.get('accuracy', 0):.4f} | "
+                                 f"{noise_result.get('precision', 0):.4f} | "
+                                 f"{noise_result.get('recall', 0):.4f} | "
+                                 f"{noise_result.get('f1', 0):.4f} |")
                 report.append("")
             
             # Cross-validation results
@@ -189,6 +204,11 @@ def generate_markdown_report(results_data, base_path):
                 report.append(f"- Mean Accuracy: {cv.get('mean_accuracy', 0):.4f} (±{cv.get('std_accuracy', 0):.4f})")
                 report.append(f"- Mean F1: {cv.get('mean_f1', 0):.4f} (±{cv.get('std_f1', 0):.4f})")
                 report.append("")
+        else:
+            # Show that experiment hasn't been run
+            report.append(f"### {dataset_name} Decision Stump\n")
+            report.append("*Experiment not yet run. Results will appear here after execution.*\n")
+            report.append("")
     
     # CIC IDS 2017 max_depth=10 Experiment
     report.append("## 3. CIC IDS 2017 Depth-Limited Experiment\n")
@@ -219,14 +239,83 @@ def generate_markdown_report(results_data, base_path):
     report.append("These experiments show how performance changes as features are removed, starting from lowest importance.\n\n")
     
     ablation_dir = base_path / "experiments" / "shared" / "feature_ablation"
+    ablation_found = False
+    
     if ablation_dir.exists():
         ablation_plots = list(ablation_dir.glob("feature_ablation_*.png"))
-        for plot_file in sorted(ablation_plots):
-            dataset_name = plot_file.stem.replace('feature_ablation_', '').replace('_', ' ').title()
-            rel_path = get_relative_path(plot_file, base_path)
-            report.append(f"### {dataset_name}\n")
-            report.append(f"![{dataset_name} Feature Ablation]({rel_path})\n")
-            report.append("")
+        ablation_jsons = list(ablation_dir.glob("feature_ablation_*.json"))
+        
+        if ablation_plots or ablation_jsons:
+            ablation_found = True
+            # Match plots with JSON files
+            for json_file in sorted(ablation_jsons):
+                dataset_name = json_file.stem.replace('feature_ablation_', '').replace('_', ' ').title()
+                report.append(f"### {dataset_name}\n")
+                
+                # Load JSON for summary stats and detailed table
+                try:
+                    with open(json_file, 'r') as f:
+                        ablation_data = json.load(f)
+                        summary = ablation_data.get('summary', {})
+                        ablation_results = ablation_data.get('ablation_results', [])
+                        
+                        if summary:
+                            report.append(f"- **Max Features Tested**: {summary.get('max_features', 'N/A')}")
+                            report.append(f"- **Min Features Tested**: {summary.get('min_features_tested', 'N/A')}")
+                            report.append(f"- **Best Accuracy**: {summary.get('best_accuracy', 0):.4f}")
+                            report.append(f"- **Best F1 Score**: {summary.get('best_f1', 0):.4f}")
+                            report.append(f"- **Best ROC-AUC**: {summary.get('best_roc_auc', 0):.4f}")
+                            report.append("")
+                        
+                        # Create detailed table showing performance at different feature counts
+                        if ablation_results and len(ablation_results) > 0:
+                            report.append("**Performance vs Number of Features:**\n")
+                            report.append("| Features | Accuracy | Precision | Recall | F1 Score | ROC-AUC |")
+                            report.append("|----------|----------|-----------|--------|----------|---------|")
+                            # Show every 5th result to keep table manageable, plus first and last
+                            for i, result in enumerate(ablation_results):
+                                if i == 0 or i == len(ablation_results) - 1 or i % max(1, len(ablation_results) // 10) == 0:
+                                    report.append(f"| {result.get('num_features', 0)} | "
+                                                 f"{result.get('accuracy', 0):.4f} | "
+                                                 f"{result.get('precision', 0):.4f} | "
+                                                 f"{result.get('recall', 0):.4f} | "
+                                                 f"{result.get('f1', 0):.4f} | "
+                                                 f"{result.get('roc_auc', 0):.4f} |")
+                            report.append("")
+                except Exception as e:
+                    print(f"Error loading ablation JSON {json_file}: {e}")
+                
+                # Find matching plot
+                plot_file = ablation_dir / f"feature_ablation_{json_file.stem.replace('feature_ablation_', '')}.png"
+                if plot_file.exists():
+                    rel_path = get_relative_path(plot_file, base_path)
+                    report.append(f"![{dataset_name} Feature Ablation]({rel_path})\n")
+                    report.append("")
+                else:
+                    # Try to find any plot with similar name
+                    matching_plots = [p for p in ablation_plots if json_file.stem.replace('feature_ablation_', '') in p.stem]
+                    if matching_plots:
+                        rel_path = get_relative_path(matching_plots[0], base_path)
+                        report.append(f"![{dataset_name} Feature Ablation]({rel_path})\n")
+                        report.append("")
+            
+            # Also show any plots without JSON
+            for plot_file in sorted(ablation_plots):
+                dataset_name = plot_file.stem.replace('feature_ablation_', '').replace('_', ' ').title()
+                # Check if we already added this
+                json_exists = any(json_file.stem.replace('feature_ablation_', '') in plot_file.stem 
+                                for json_file in ablation_jsons)
+                if not json_exists:
+                    rel_path = get_relative_path(plot_file, base_path)
+                    report.append(f"### {dataset_name}\n")
+                    report.append(f"![{dataset_name} Feature Ablation]({rel_path})\n")
+                    report.append("")
+    
+    if not ablation_found:
+        report.append("*Feature ablation experiments not yet run. Results will appear here after execution.*\n")
+        report.append("")
+        report.append("To run: `python experiments/shared/feature_ablation_experiment.py`\n")
+        report.append("")
     
     # Top features
     report.append("## 5. Top 10 Most Important Features (by Dataset)\n")
