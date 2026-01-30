@@ -5,9 +5,11 @@ This script trains a decision tree classifier on the Farm-Flow dataset and logs:
 - All splits, thresholds, and feature selections during tree building
 - Comprehensive ML metrics (accuracy, precision, recall, F1, confusion matrix, ROC-AUC)
 - Experiment logs and results saved separately
+- Tree visualization (PNG, SVG, PDF)
+- Saved model artifact (joblib)
 
 Requirements:
-    pip install pandas scikit-learn numpy tqdm
+    pip install pandas scikit-learn numpy tqdm matplotlib graphviz joblib
 """
 
 import pandas as pd
@@ -17,10 +19,12 @@ import sys
 from datetime import datetime
 import json
 from tqdm import tqdm
+import matplotlib.pyplot as plt
+import joblib
 
 # Check for required packages
 try:
-    from sklearn.tree import DecisionTreeClassifier, export_text
+    from sklearn.tree import DecisionTreeClassifier, export_text, plot_tree, export_graphviz
     from sklearn.metrics import (
         accuracy_score, precision_score, recall_score, f1_score,
         confusion_matrix, classification_report, roc_auc_score,
@@ -28,6 +32,20 @@ try:
     )
 except ImportError:
     print("Error: scikit-learn is not installed. Please install it with: pip install scikit-learn")
+    sys.exit(1)
+
+try:
+    import matplotlib
+    import matplotlib.pyplot as plt
+except ImportError:
+    print("Warning: matplotlib is not installed. Tree visualization will be limited.")
+    matplotlib = None
+    plt = None
+
+try:
+    import joblib
+except ImportError:
+    print("Error: joblib is not installed. Please install it with: pip install joblib")
     sys.exit(1)
 
 # Set paths
@@ -46,14 +64,22 @@ experiment_dir = Path(__file__).parent.parent / "decision_tree_experiment"
 experiment_dir.mkdir(parents=True, exist_ok=True)
 logs_dir = experiment_dir / "logs"
 results_dir = experiment_dir / "results"
+models_dir = experiment_dir / "models"
+visualizations_dir = experiment_dir / "visualizations"
 logs_dir.mkdir(parents=True, exist_ok=True)
 results_dir.mkdir(parents=True, exist_ok=True)
+models_dir.mkdir(parents=True, exist_ok=True)
+visualizations_dir.mkdir(parents=True, exist_ok=True)
 
 # Create timestamp for this experiment run
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 experiment_log_file = logs_dir / f"experiment_log_{timestamp}.txt"
 results_file = results_dir / f"results_{timestamp}.json"
 tree_text_file = logs_dir / f"tree_structure_{timestamp}.txt"
+model_file = models_dir / f"decision_tree_model_{timestamp}.joblib"
+tree_viz_png = visualizations_dir / f"tree_visualization_{timestamp}.png"
+tree_viz_svg = visualizations_dir / f"tree_visualization_{timestamp}.svg"
+tree_viz_pdf = visualizations_dir / f"tree_visualization_{timestamp}.pdf"
 
 # Initialize logging
 log_buffer = []
@@ -162,6 +188,74 @@ log(f"✓ Tree training completed!")
 log(f"  Tree depth: {clf.tree_.max_depth}")
 log(f"  Number of nodes: {clf.tree_.node_count}")
 log(f"  Number of leaves: {clf.tree_.n_leaves}")
+
+# Save model artifact
+log(f"\n{'='*80}")
+log("Saving model artifact...")
+log(f"{'='*80}")
+try:
+    joblib.dump(clf, model_file)
+    log(f"✓ Model saved to: {model_file}")
+except Exception as e:
+    log(f"  Error saving model: {e}")
+
+# Create tree visualization
+log(f"\n{'='*80}")
+log("Creating tree visualization...")
+log(f"{'='*80}")
+try:
+    if plt is not None:
+        # Create visualization with matplotlib
+        fig, ax = plt.subplots(figsize=(20, 10))
+        plot_tree(clf, 
+                 feature_names=feature_cols,
+                 class_names=['Benign', 'Attack'],
+                 filled=True,
+                 rounded=True,
+                 fontsize=8,
+                 max_depth=5,  # Limit depth for readability
+                 ax=ax)
+        plt.title(f'Decision Tree Visualization (max_depth=5) - Farm-Flow', fontsize=16)
+        plt.tight_layout()
+        
+        # Save as PNG
+        plt.savefig(tree_viz_png, dpi=300, bbox_inches='tight')
+        log(f"  Saved PNG: {tree_viz_png}")
+        
+        # Save as SVG
+        plt.savefig(tree_viz_svg, format='svg', bbox_inches='tight')
+        log(f"  Saved SVG: {tree_viz_svg}")
+        
+        # Save as PDF
+        plt.savefig(tree_viz_pdf, format='pdf', bbox_inches='tight')
+        log(f"  Saved PDF: {tree_viz_pdf}")
+        
+        plt.close()
+        log(f"✓ Tree visualization completed!")
+    else:
+        log(f"  Warning: matplotlib not available, skipping visualization")
+        
+    # Also try graphviz export if available
+    try:
+        from graphviz import Source
+        dot_data = export_graphviz(clf,
+                                  feature_names=feature_cols,
+                                  class_names=['Benign', 'Attack'],
+                                  filled=True,
+                                  rounded=True,
+                                  special_characters=True,
+                                  max_depth=5)
+        graph = Source(dot_data)
+        graph_viz_file = visualizations_dir / f"tree_graphviz_{timestamp}"
+        graph.render(graph_viz_file, format='png', cleanup=True)
+        log(f"  Saved Graphviz PNG: {graph_viz_file}.png")
+    except ImportError:
+        log(f"  Note: graphviz not installed, skipping graphviz export")
+    except Exception as e:
+        log(f"  Warning: graphviz export failed: {e}")
+        
+except Exception as e:
+    log(f"  Error creating visualization: {e}")
 
 # Extract and log tree structure
 log(f"\n{'='*80}")
@@ -317,6 +411,12 @@ results = {
         'n_features': int(len(feature_cols)),
         'train_class_distribution': y_train.value_counts().to_dict(),
         'test_class_distribution': y_test.value_counts().to_dict()
+    },
+    'model_file': str(model_file),
+    'visualization_files': {
+        'png': str(tree_viz_png),
+        'svg': str(tree_viz_svg),
+        'pdf': str(tree_viz_pdf)
     }
 }
 
