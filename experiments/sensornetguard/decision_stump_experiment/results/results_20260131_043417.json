@@ -1,0 +1,113 @@
+{
+  "timestamp": "20260131_043417",
+  "dataset": "SensorNetGuard",
+  "top_feature": "Error_Rate",
+  "top_feature_importance": 0.8425790559691897,
+  "stump_threshold": 0.15848318487405777,
+  "stump_performance": {
+    "train_accuracy": 0.992625,
+    "test_accuracy": 0.99,
+    "test_precision": 0.9753086419753086,
+    "test_recall": 0.8144329896907216,
+    "test_f1": 0.8876404494382022,
+    "test_roc_auc": 0.9066910087707418
+  },
+  "noise_experiment": [
+    {
+      "noise_level": 0.0,
+      "accuracy": 0.99,
+      "precision": 0.9753086419753086,
+      "recall": 0.8144329896907216,
+      "f1": 0.8876404494382022
+    },
+    {
+      "noise_level": 0.01,
+      "accuracy": 0.99,
+      "precision": 0.963855421686747,
+      "recall": 0.8247422680412371,
+      "f1": 0.8888888888888888
+    },
+    {
+      "noise_level": 0.05,
+      "accuracy": 0.99,
+      "precision": 0.963855421686747,
+      "recall": 0.8247422680412371,
+      "f1": 0.8888888888888888
+    },
+    {
+      "noise_level": 0.1,
+      "accuracy": 0.9905,
+      "precision": 0.9642857142857143,
+      "recall": 0.8350515463917526,
+      "f1": 0.8950276243093923
+    },
+    {
+      "noise_level": 0.2,
+      "accuracy": 0.988,
+      "precision": 0.9294117647058824,
+      "recall": 0.8144329896907216,
+      "f1": 0.8681318681318682
+    },
+    {
+      "noise_level": 0.5,
+      "accuracy": 0.978,
+      "precision": 0.7572815533980582,
+      "recall": 0.8041237113402062,
+      "f1": 0.78
+    },
+    {
+      "noise_level": 1.0,
+      "accuracy": 0.9305,
+      "precision": 0.3870967741935484,
+      "recall": 0.7422680412371134,
+      "f1": 0.508833922261484
+    },
+    {
+      "noise_level": 2.0,
+      "accuracy": 0.8105,
+      "precision": 0.16428571428571428,
+      "recall": 0.711340206185567,
+      "f1": 0.26692456479690524
+    },
+    {
+      "noise_level": 5.0,
+      "accuracy": 0.643,
+      "precision": 0.08701472556894244,
+      "recall": 0.6701030927835051,
+      "f1": 0.15402843601895735
+    }
+  ],
+  "cross_validation": {
+    "fold_scores": [
+      {
+        "fold": 1,
+        "accuracy": 0.99375,
+        "f1": 0.921875
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.99375,
+        "f1": 0.9390243902439024
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.991875,
+        "f1": 0.9221556886227545
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.9925,
+        "f1": 0.918918918918919
+      },
+      {
+        "fold": 5,
+        "accuracy": 0.988125,
+        "f1": 0.8633093525179856
+      }
+    ],
+    "mean_accuracy": 0.992,
+    "std_accuracy": 0.002069118169655855,
+    "mean_f1": 0.9130566700607122,
+    "std_f1": 0.025861319137257546
+  }
+}

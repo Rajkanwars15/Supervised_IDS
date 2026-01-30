@@ -257,6 +257,13 @@ if __name__ == "__main__":
             'train': base_path / "data" / "cic-ids2017-silver" / "CIC-IDS2017_Train_Binary.csv",
             'test': base_path / "data" / "cic-ids2017-silver" / "CIC-IDS2017_Test_Binary.csv",
             'target_col': 'is_attack'
+        },
+        {
+            'name': 'UNSW-NB15',
+            'model_dir': base_path / "experiments" / "unsw-nb15" / "decision_tree_experiment" / "models",
+            'train': base_path / "data" / "unsw-nb15-silver" / "UNSW-NB15_Train_Binary.csv",
+            'test': base_path / "data" / "unsw-nb15-silver" / "UNSW-NB15_Test_Binary.csv",
+            'target_col': 'is_attack'
         }
     ]
     

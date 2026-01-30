@@ -1,6 +1,6 @@
 # Decision Tree Experiments - Comprehensive Summary Report
 
-Generated: 2026-01-31 01:23:29
+Generated: 2026-01-31 04:36:32
 
 ================================================================================
 
@@ -32,6 +32,14 @@ Generated: 2026-01-31 01:23:29
 - **Training class distribution**: {'0': 1818477, '1': 446117}
 - **Test class distribution**: {'0': 454620, '1': 111529}
 
+#### UNSW-NB15 Binary Classification
+
+- **Training samples**: 175,341
+- **Test samples**: 82,332
+- **Features**: 39
+- **Training class distribution**: {'1': 119341, '0': 56000}
+- **Test class distribution**: {'1': 45332, '0': 37000}
+
 ### Tree Properties
 
 | Dataset | Max Depth | Nodes | Leaves |
@@ -39,6 +47,7 @@ Generated: 2026-01-31 01:23:29
 | SensorNetGuard | 7 | 23 | 12 |
 | Farm-Flow | 9 | 41 | 21 |
 | CIC IDS 2017 | 43 | 6,371 | 3,186 |
+| UNSW-NB15 | 45 | 11,367 | 5,684 |
 
 ### Test Set Performance Metrics
 
@@ -47,22 +56,28 @@ Generated: 2026-01-31 01:23:29
 | SensorNetGuard | 0.9995 | 0.9898 | 1.0000 | 0.9949 | 0.9997 | 0.9898 |
 | Farm-Flow | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
 | CIC IDS 2017 | 0.9988 | 0.9969 | 0.9970 | 0.9969 | 0.9985 | 0.9951 |
+| UNSW-NB15 | 0.8626 | 0.8230 | 0.9561 | 0.8846 | 0.8546 | 0.8139 |
 
 ### Decision Tree Visualizations
 
 #### SensorNetGuard
 
-![SensorNetGuard Decision Tree](experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_011951.png)
+![SensorNetGuard Decision Tree](experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_043200.png)
 
 
 #### Farm-Flow
 
-![Farm-Flow Decision Tree](experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_011954.png)
+![Farm-Flow Decision Tree](experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_043202.png)
 
 
 #### CIC IDS 2017
 
-![CIC IDS 2017 Decision Tree](experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_012001.png)
+![CIC IDS 2017 Decision Tree](experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_043207.png)
+
+
+#### UNSW-NB15
+
+![UNSW-NB15 Decision Tree](experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_043412.png)
 
 
 ## 2. Decision Stump Experiments (1-Rule Models)
@@ -86,7 +101,7 @@ These experiments test model robustness by using only the top feature.
 
 **Noise Impact Analysis (Perturbation Study):**
 
-![SensorNetGuard Noise Impact](experiments/sensornetguard/decision_stump_experiment/figs/noise_impact_20260131_012202.png)
+![SensorNetGuard Noise Impact](experiments/sensornetguard/decision_stump_experiment/figs/noise_impact_20260131_043417.png)
 
 
 **Performance vs Noise Level:**
@@ -124,7 +139,7 @@ These experiments test model robustness by using only the top feature.
 
 **Noise Impact Analysis (Perturbation Study):**
 
-![Farm-Flow Noise Impact](experiments/farmflow/decision_stump_experiment/figs/noise_impact_20260131_012204.png)
+![Farm-Flow Noise Impact](experiments/farmflow/decision_stump_experiment/figs/noise_impact_20260131_043419.png)
 
 
 **Performance vs Noise Level:**
@@ -271,6 +286,42 @@ These experiments show how performance changes as features are removed, starting
 ![Sensornetguard Feature Ablation](experiments/shared/feature_ablation/feature_ablation_sensornetguard.png)
 
 
+### Unsw-Nb15
+
+- **Max Features Tested**: 39
+- **Min Features Tested**: 1
+- **Best Accuracy**: 0.8695
+- **Best F1 Score**: 0.8897
+- **Best ROC-AUC**: 0.9308
+
+**Performance vs Number of Features:**
+
+| Features | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
+|----------|----------|-----------|--------|----------|---------|
+| 39 | 0.8621 | 0.8224 | 0.9561 | 0.8842 | 0.8541 |
+| 37 | 0.8616 | 0.8226 | 0.9544 | 0.8836 | 0.8535 |
+| 35 | 0.8624 | 0.8228 | 0.9560 | 0.8844 | 0.8542 |
+| 33 | 0.8618 | 0.8228 | 0.9545 | 0.8838 | 0.8537 |
+| 31 | 0.8624 | 0.8232 | 0.9554 | 0.8844 | 0.8543 |
+| 29 | 0.8627 | 0.8231 | 0.9560 | 0.8846 | 0.8546 |
+| 27 | 0.8609 | 0.8237 | 0.9510 | 0.8828 | 0.8536 |
+| 25 | 0.8588 | 0.8215 | 0.9499 | 0.8810 | 0.8511 |
+| 23 | 0.8596 | 0.8232 | 0.9489 | 0.8816 | 0.8527 |
+| 21 | 0.8585 | 0.8233 | 0.9460 | 0.8804 | 0.8516 |
+| 19 | 0.8297 | 0.8156 | 0.8923 | 0.8523 | 0.8283 |
+| 17 | 0.8281 | 0.8124 | 0.8943 | 0.8514 | 0.8265 |
+| 15 | 0.8285 | 0.8128 | 0.8944 | 0.8517 | 0.8267 |
+| 13 | 0.8271 | 0.8108 | 0.8947 | 0.8507 | 0.8253 |
+| 11 | 0.8263 | 0.8112 | 0.8923 | 0.8498 | 0.8246 |
+| 9 | 0.8567 | 0.8191 | 0.9494 | 0.8795 | 0.8539 |
+| 7 | 0.8582 | 0.8202 | 0.9509 | 0.8807 | 0.8555 |
+| 5 | 0.8634 | 0.8266 | 0.9515 | 0.8846 | 0.9001 |
+| 3 | 0.8434 | 0.8018 | 0.9506 | 0.8699 | 0.9037 |
+| 1 | 0.7663 | 0.7024 | 0.9986 | 0.8247 | 0.7603 |
+
+![Unsw-Nb15 Feature Ablation](experiments/shared/feature_ablation/feature_ablation_unsw-nb15.png)
+
+
 ## 5. Top 10 Most Important Features (by Dataset)
 
 ### SensorNetGuard
@@ -312,6 +363,19 @@ These experiments show how performance changes as features are removed, starting
 9. **Init_Win_bytes_backward**: 0.007101
 10. **Fwd IAT Min**: 0.005157
 
+### UNSW-NB15
+
+1. **sttl**: 0.675291
+2. **ct_srv_dst**: 0.062550
+3. **sbytes**: 0.045731
+4. **smean**: 0.031848
+5. **ct_srv_src**: 0.012004
+6. **sload**: 0.011506
+7. **sloss**: 0.011187
+8. **tcprtt**: 0.011011
+9. **sinpkt**: 0.010228
+10. **ct_dst_src_ltm**: 0.010166
+
 ## 6. Confusion Matrices (Test Set)
 
 ### SensorNetGuard
@@ -339,4 +403,13 @@ Actual Benign    1774       0
               Benign  Attack
 Actual Benign   454271     349
        Attack     339   111190
+```
+
+### UNSW-NB15
+
+```
+                Predicted
+              Benign  Attack
+Actual Benign   27680    9320
+       Attack    1990   43342
 ```
