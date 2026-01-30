@@ -1,12 +1,14 @@
-# Decision Tree Experiments - Summary Report
+# Decision Tree Experiments - Comprehensive Summary Report
 
-Generated: 2026-01-30 20:25:56
+Generated: 2026-01-30 20:55:29
 
 ================================================================================
 
-## Dataset Information
+## 1. Main Decision Tree Experiments
 
-### SensorNetGuard IDS
+### Dataset Information
+
+#### SensorNetGuard IDS
 
 - **Training samples**: 8,000
 - **Test samples**: 2,000
@@ -14,7 +16,7 @@ Generated: 2026-01-30 20:25:56
 - **Training class distribution**: {'0': 7610, '1': 390}
 - **Test class distribution**: {'0': 1903, '1': 97}
 
-### Farm-Flow Binary Classification
+#### Farm-Flow Binary Classification
 
 - **Training samples**: 561,081
 - **Test samples**: 3,545
@@ -22,7 +24,7 @@ Generated: 2026-01-30 20:25:56
 - **Training class distribution**: {'0': 284880, '1': 276201}
 - **Test class distribution**: {'0': 1774, '1': 1771}
 
-### CIC IDS 2017 Binary Classification
+#### CIC IDS 2017 Binary Classification
 
 - **Training samples**: 2,264,594
 - **Test samples**: 566,149
@@ -30,7 +32,7 @@ Generated: 2026-01-30 20:25:56
 - **Training class distribution**: {'0': 1818477, '1': 446117}
 - **Test class distribution**: {'0': 454620, '1': 111529}
 
-## Tree Properties
+### Tree Properties
 
 | Dataset | Max Depth | Nodes | Leaves |
 |---------|-----------|-------|--------|
@@ -38,7 +40,7 @@ Generated: 2026-01-30 20:25:56
 | Farm-Flow | 9 | 41 | 21 |
 | CIC IDS 2017 | 43 | 6,369 | 3,185 |
 
-## Test Set Performance Metrics
+### Test Set Performance Metrics
 
 | Dataset | Accuracy | Precision | Recall | F1 Score | ROC-AUC | Avg Precision |
 |---------|----------|-----------|--------|----------|---------|---------------|
@@ -46,7 +48,32 @@ Generated: 2026-01-30 20:25:56
 | Farm-Flow | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
 | CIC IDS 2017 | 0.9988 | 0.9969 | 0.9970 | 0.9969 | 0.9985 | 0.9951 |
 
-## Top 10 Most Important Features (by Dataset)
+### Decision Tree Visualizations
+
+## 2. Decision Stump Experiments (1-Rule Models)
+
+These experiments test model robustness by using only the top feature.
+
+
+## 3. CIC IDS 2017 Depth-Limited Experiment
+
+Comparison of unlimited depth vs max_depth=10:
+
+
+| Metric | Unlimited Depth | max_depth=10 | Difference |
+|--------|-----------------|--------------|------------|
+| Accuracy | 0.9988 | 0.9968 | +0.0019 |
+| Precision | 0.9969 | 0.9950 | +0.0019 |
+| Recall | 0.9970 | 0.9890 | +0.0080 |
+| F1_score | 0.9969 | 0.9920 | +0.0050 |
+| Roc_auc | 0.9985 | 0.9958 | +0.0027 |
+
+## 4. Feature Ablation Experiments
+
+These experiments show how performance changes as features are removed, starting from lowest importance.
+
+
+## 5. Top 10 Most Important Features (by Dataset)
 
 ### SensorNetGuard
 
@@ -87,7 +114,7 @@ Generated: 2026-01-30 20:25:56
 9. **Init_Win_bytes_backward**: 0.007099
 10. **Fwd IAT Min**: 0.005158
 
-## Confusion Matrices (Test Set)
+## 6. Confusion Matrices (Test Set)
 
 ### SensorNetGuard
 
@@ -115,29 +142,3 @@ Actual Benign    1774       0
 Actual Benign   454271     349
        Attack     336   111193
 ```
-
-## Generated Artifacts
-
-### SensorNetGuard
-
-- **Model**: `/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/models/decision_tree_model_20260130_193426.joblib`
-- **Visualizations**:
-  - PNG: `/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260130_193426.png`
-  - SVG: `/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260130_193426.svg`
-  - PDF: `/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260130_193426.pdf`
-
-### Farm-Flow
-
-- **Model**: `/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/models/decision_tree_model_20260130_193059.joblib`
-- **Visualizations**:
-  - PNG: `/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260130_193059.png`
-  - SVG: `/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260130_193059.svg`
-  - PDF: `/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260130_193059.pdf`
-
-### CIC IDS 2017
-
-- **Model**: `/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/models/decision_tree_model_20260130_193109.joblib`
-- **Visualizations**:
-  - PNG: `/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260130_193109.png`
-  - SVG: `/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260130_193109.svg`
-  - PDF: `/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260130_193109.pdf`

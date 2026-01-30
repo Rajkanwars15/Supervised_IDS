@@ -1,20 +1,24 @@
 {
-  "start_time": "2026-01-30T20:25:49.036168",
+  "start_time": "2026-01-30T20:54:23.923793",
   "preprocessing": {
     "farmflow": true,
     "cicids2017": true
   },
   "experiments": {
-    "SensorNetGuard": false,
-    "Farm-Flow": false,
-    "CIC IDS 2017": false
+    "SensorNetGuard Decision Tree": false,
+    "Farm-Flow Decision Tree": false,
+    "CIC IDS 2017 Decision Tree": false,
+    "SensorNetGuard Decision Stump": false,
+    "Farm-Flow Decision Stump": false,
+    "CIC IDS 2017 max_depth=10": true,
+    "Feature Ablation": false
   },
   "summary": {
-    "total_experiments": 3,
-    "successful": 0,
-    "failed": 3,
-    "duration_seconds": 0.847289,
-    "duration_formatted": "0:00:00.847289",
-    "end_time": "2026-01-30T20:25:49.883457"
+    "total_experiments": 7,
+    "successful": 1,
+    "failed": 6,
+    "duration_seconds": 65.262845,
+    "duration_formatted": "0:01:05.262845",
+    "end_time": "2026-01-30T20:55:29.186638"
   }
 }
