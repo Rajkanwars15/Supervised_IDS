@@ -1,5 +1,5 @@
 {
-  "experiment_timestamp": "20260130_160131",
+  "experiment_timestamp": "20260130_193059",
   "dataset": "Farm-Flow Binary Classification",
   "tree_parameters": {
     "criterion": "gini",
@@ -27,11 +27,11 @@
     },
     {
       "feature": "traffic",
-      "importance": 0.13594615072513036
+      "importance": 0.1359461507251304
     },
     {
       "feature": "bwd_pkts_payload.tot",
-      "importance": 0.003807572462518203
+      "importance": 0.003807572462518204
     },
     {
       "feature": "orig_ip_bytes",
@@ -39,23 +39,23 @@
     },
     {
       "feature": "bwd_pkts_payload.avg",
-      "importance": 0.0010909292910642064
+      "importance": 0.0010909292910642062
     },
     {
       "feature": "fwd_pkts_per_sec",
-      "importance": 0.0008680568786745195
+      "importance": 0.0008680568786745196
     },
     {
       "feature": "data_pkts_difference",
-      "importance": 0.0007366787284258873
+      "importance": 0.000736678728425887
     },
     {
       "feature": "resp_pkts",
-      "importance": 8.142199911045544e-05
+      "importance": 8.142199911045545e-05
     },
     {
       "feature": "fwd_iat.avg",
-      "importance": 1.7363084054348374e-05
+      "importance": 1.736308405434844e-05
     },
     {
       "feature": "pkts_difference",
@@ -190,5 +190,11 @@
       "0": 1774,
       "1": 1771
     }
+  },
+  "model_file": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/models/decision_tree_model_20260130_193059.joblib",
+  "visualization_files": {
+    "png": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260130_193059.png",
+    "svg": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260130_193059.svg",
+    "pdf": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260130_193059.pdf"
   }
 }

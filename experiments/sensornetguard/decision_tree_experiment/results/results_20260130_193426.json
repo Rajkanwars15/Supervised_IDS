@@ -1,5 +1,5 @@
 {
-  "experiment_timestamp": "20260130_064935",
+  "experiment_timestamp": "20260130_193426",
   "tree_parameters": {
     "criterion": "gini",
     "splitter": "best",
@@ -26,15 +26,15 @@
     },
     {
       "feature": "Energy_Consumption_Rate",
-      "importance": 0.09918611218174592
+      "importance": 0.0991861121817459
     },
     {
       "feature": "Data_Throughput",
-      "importance": 0.028864713313518794
+      "importance": 0.02886471331351879
     },
     {
       "feature": "Packet_Drop_Rate",
-      "importance": 0.013450976425984673
+      "importance": 0.01345097642598467
     },
     {
       "feature": "Data_Transmission_Frequency",
@@ -111,7 +111,7 @@
     "accuracy": 0.9995,
     "precision": 0.9897959183673469,
     "recall": 1.0,
-    "f1_score": 0.9948717948717949,
+    "f1_score": 0.9948717948717948,
     "roc_auc": 0.9997372569626906,
     "average_precision": 0.9897959183673469,
     "confusion_matrix": [
@@ -137,5 +137,11 @@
       "0": 1903,
       "1": 97
     }
+  },
+  "model_file": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/models/decision_tree_model_20260130_193426.joblib",
+  "visualization_files": {
+    "png": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260130_193426.png",
+    "svg": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260130_193426.svg",
+    "pdf": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260130_193426.pdf"
   }
 }
