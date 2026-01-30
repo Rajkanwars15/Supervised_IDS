@@ -33,3 +33,6 @@ Thumbs.db
 # Project specific
 *.log
 .pytest_cache/
+
+#data
+data/
