@@ -45,6 +45,24 @@ The CIC IDS 2017 dataset is located in `data/CIC IDS2017/MachineLearningCVE/`:
 - Binary classification: BENIGN=0, all attacks=1
 - Files need to be combined and preprocessed before use
 
+## Quick Start - Run All Experiments
+
+Run all decision tree experiments with a single command:
+
+```bash
+python run_all_experiments.py
+```
+
+This script will:
+- Check if preprocessing is needed for Farm-Flow and CIC IDS 2017
+- Run preprocessing automatically if needed
+- Execute all three decision tree experiments (SensorNetGuard, Farm-Flow, CIC IDS 2017)
+- Generate tree visualizations and save model artifacts
+- Provide a summary of all results
+- Save experiment summary to `experiment_results_summary.json`
+
+The script includes progress tracking, error handling, and colored terminal output for easy monitoring.
+
 ## Scripts
 
 ### Distribution Plots
