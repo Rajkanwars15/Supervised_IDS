@@ -25,7 +25,17 @@ pip install -r requirements.txt
 
 ## Data
 
+### SensorNetGuard Dataset
 The dataset is located in `data/sensornetguard_data.csv` and contains network sensor data with a binary classification target `Is_Malicious` (0 for benign, 1 for malicious).
+
+### Farm-Flow Dataset
+The Farm-Flow binary classification dataset is located in `data/farm-flow/Datasets/`:
+- `Farm-Flow_Train_Binary.csv` - Training set (~561k samples)
+- `Farm-Flow_Test_Binary.csv` - Test set (~3.5k samples)
+- Target column: `is_attack` (0 for benign, 1 for attack)
+- 30 feature columns (preprocessed/normalized)
+
+The subfolder CSVs (08_2022, 09_2022, 10_2022) contain raw data with 101 features but are not needed for the binary classification experiment - the train/test binary files are sufficient.
 
 ## Scripts
 
@@ -83,24 +93,71 @@ This script will:
 - Save results (JSON format) to `experiments/sensornetguard/decision_tree_experiment/results/`
 - Extract and log full tree structure
 
+### Farm-Flow Experiments
+
+#### Preprocessing
+
+Preprocess and validate the Farm-Flow binary classification dataset:
+
+```bash
+python experiments/farmflow/scripts/preprocess_farmflow.py
+```
+
+This script will:
+- Load train/test binary CSV files
+- Validate data quality (missing values, infinite values, target distribution)
+- Perform necessary preprocessing
+- Save cleaned data to `data/farm-flow-silver/`
+
+#### Decision Tree Experiment
+
+Train a decision tree classifier on the Farm-Flow dataset:
+
+```bash
+python experiments/farmflow/scripts/decision_tree_experiment.py
+```
+
+This script will:
+- Load preprocessed data from `data/farm-flow-silver/` (or original if silver not found)
+- Train a decision tree with no depth limit (allows full convergence)
+- Log all splits, thresholds, and feature selections
+- Calculate comprehensive ML metrics
+- Save experiment logs to `experiments/farmflow/decision_tree_experiment/logs/`
+- Save results (JSON format) to `experiments/farmflow/decision_tree_experiment/results/`
+
 ## Project Structure
 
 ```
 Supervised_IDS/
 ├── data/
-│   └── sensornetguard_data.csv
+│   ├── sensornetguard_data.csv
+│   ├── farm-flow/                  # Farm-Flow raw data
+│   │   └── Datasets/
+│   │       ├── Farm-Flow_Train_Binary.csv
+│   │       ├── Farm-Flow_Test_Binary.csv
+│   │       └── [subfolders with monthly data]
+│   └── farm-flow-silver/            # Preprocessed Farm-Flow data
+│       ├── Farm-Flow_Train_Binary.csv
+│       └── Farm-Flow_Test_Binary.csv
 ├── experiments/
-│   └── sensornetguard/
-│       ├── overlay_plots/          # Overlay distribution plots
-│       │   ├── figs/               # Generated overlay plots
-│       │   └── generate_overlay_distributions.py
-│       ├── bin_plots/              # Bin-based distribution plots
-│       │   ├── figs/               # Generated bin plots
-│       │   └── generate_bin_distributions.py
-│       ├── decision_tree_experiment/  # Decision tree experiment
+│   ├── sensornetguard/
+│   │   ├── overlay_plots/          # Overlay distribution plots
+│   │   │   ├── figs/               # Generated overlay plots
+│   │   │   └── generate_overlay_distributions.py
+│   │   ├── bin_plots/              # Bin-based distribution plots
+│   │   │   ├── figs/               # Generated bin plots
+│   │   │   └── generate_bin_distributions.py
+│   │   ├── decision_tree_experiment/  # Decision tree experiment
+│   │   │   ├── logs/               # Experiment logs
+│   │   │   └── results/            # Results (JSON)
+│   │   └── scripts/                 # Analysis scripts
+│   │       └── decision_tree_experiment.py
+│   └── farmflow/
+│       ├── decision_tree_experiment/  # Farm-Flow decision tree experiment
 │       │   ├── logs/               # Experiment logs
 │       │   └── results/            # Results (JSON)
-│       └── scripts/                 # Analysis scripts
+│       └── scripts/                 # Farm-Flow scripts
+│           ├── preprocess_farmflow.py
 │           └── decision_tree_experiment.py
 ├── .venv/                          # Virtual environment
 ├── requirements.txt                 # Python dependencies
