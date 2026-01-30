@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-01-30T21:16:02.798258",
+  "generated_at": "2026-01-31T01:23:29.865936",
   "results": {
     "decision_trees": {
       "SensorNetGuard": {
-        "experiment_timestamp": "20260130_193426",
+        "experiment_timestamp": "20260131_011951",
         "tree_parameters": {
           "criterion": "gini",
           "splitter": "best",
@@ -30,15 +30,15 @@
           },
           {
             "feature": "Energy_Consumption_Rate",
-            "importance": 0.0991861121817459
+            "importance": 0.09918611218174592
           },
           {
             "feature": "Data_Throughput",
-            "importance": 0.02886471331351879
+            "importance": 0.028864713313518794
           },
           {
             "feature": "Packet_Drop_Rate",
-            "importance": 0.01345097642598467
+            "importance": 0.013450976425984673
           },
           {
             "feature": "Data_Transmission_Frequency",
@@ -115,7 +115,7 @@
           "accuracy": 0.9995,
           "precision": 0.9897959183673469,
           "recall": 1.0,
-          "f1_score": 0.9948717948717948,
+          "f1_score": 0.9948717948717949,
           "roc_auc": 0.9997372569626906,
           "average_precision": 0.9897959183673469,
           "confusion_matrix": [
@@ -142,15 +142,15 @@
             "1": 97
           }
         },
-        "model_file": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/models/decision_tree_model_20260130_193426.joblib",
+        "model_file": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/models/decision_tree_model_20260131_011951.joblib",
         "visualization_files": {
-          "png": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260130_193426.png",
-          "svg": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260130_193426.svg",
-          "pdf": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260130_193426.pdf"
+          "png": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_011951.png",
+          "svg": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_011951.svg",
+          "pdf": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_011951.pdf"
         }
       },
       "Farm-Flow": {
-        "experiment_timestamp": "20260130_193059",
+        "experiment_timestamp": "20260131_011954",
         "dataset": "Farm-Flow Binary Classification",
         "tree_parameters": {
           "criterion": "gini",
@@ -178,15 +178,15 @@
           },
           {
             "feature": "traffic",
-            "importance": 0.1359461507251304
+            "importance": 0.13551731430023625
           },
           {
             "feature": "bwd_pkts_payload.tot",
-            "importance": 0.003807572462518204
+            "importance": 0.0038075724625182025
           },
           {
             "feature": "orig_ip_bytes",
-            "importance": 0.0028355792071671263
+            "importance": 0.002890579112111863
           },
           {
             "feature": "bwd_pkts_payload.avg",
@@ -194,19 +194,19 @@
           },
           {
             "feature": "fwd_pkts_per_sec",
-            "importance": 0.0008680568786745196
+            "importance": 0.0008680568786745194
           },
           {
             "feature": "data_pkts_difference",
-            "importance": 0.000736678728425887
+            "importance": 0.0007366787284258872
           },
           {
-            "feature": "resp_pkts",
-            "importance": 8.142199911045545e-05
+            "feature": "resp_ip_bytes",
+            "importance": 0.00045525851905983244
           },
           {
             "feature": "fwd_iat.avg",
-            "importance": 1.736308405434844e-05
+            "importance": 1.736308405434837e-05
           },
           {
             "feature": "pkts_difference",
@@ -214,6 +214,10 @@
           },
           {
             "feature": "flow_iat.avg",
+            "importance": 0.0
+          },
+          {
+            "feature": "flow_iat.tot",
             "importance": 0.0
           },
           {
@@ -229,31 +233,11 @@
             "importance": 0.0
           },
           {
-            "feature": "flow_pkts_payload.avg",
-            "importance": 0.0
-          },
-          {
-            "feature": "flow_pkts_payload.tot",
-            "importance": 0.0
-          },
-          {
-            "feature": "flow_iat.tot",
-            "importance": 0.0
-          },
-          {
             "feature": "missed_bytes",
             "importance": 0.0
           },
           {
-            "feature": "fwd_pkts_payload.avg",
-            "importance": 0.0
-          },
-          {
             "feature": "bwd_header_size_max",
-            "importance": 0.0
-          },
-          {
-            "feature": "bwd_header_size_min",
             "importance": 0.0
           },
           {
@@ -285,11 +269,11 @@
             "importance": 0.0
           },
           {
-            "feature": "resp_ip_bytes",
+            "feature": "resp_pkts",
             "importance": 0.0
           },
           {
-            "feature": "fwd_pkts_payload.tot",
+            "feature": "bwd_header_size_min",
             "importance": 0.0
           }
         ],
@@ -332,7 +316,7 @@
         "data_info": {
           "n_train_samples": 561081,
           "n_test_samples": 3545,
-          "n_features": 30,
+          "n_features": 26,
           "train_class_distribution": {
             "0": 284880,
             "1": 276201
@@ -342,15 +326,15 @@
             "1": 1771
           }
         },
-        "model_file": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/models/decision_tree_model_20260130_193059.joblib",
+        "model_file": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/models/decision_tree_model_20260131_011954.joblib",
         "visualization_files": {
-          "png": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260130_193059.png",
-          "svg": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260130_193059.svg",
-          "pdf": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260130_193059.pdf"
+          "png": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_011954.png",
+          "svg": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_011954.svg",
+          "pdf": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_011954.pdf"
         }
       },
       "CIC IDS 2017": {
-        "experiment_timestamp": "20260130_193109",
+        "experiment_timestamp": "20260131_012001",
         "dataset": "CIC IDS 2017 Binary Classification",
         "tree_parameters": {
           "criterion": "gini",
@@ -368,276 +352,268 @@
         },
         "tree_properties": {
           "max_depth": 43,
-          "n_nodes": 6369,
-          "n_leaves": 3185
+          "n_nodes": 6371,
+          "n_leaves": 3186
         },
         "feature_importance": [
           {
             "feature": "Bwd Packet Length Std",
-            "importance": 0.3760079507320276
+            "importance": 0.37643895511206965
           },
           {
             "feature": "Average Packet Size",
-            "importance": 0.18968242690891476
+            "importance": 0.19023460291012298
           },
           {
             "feature": "Bwd Header Length",
-            "importance": 0.13232908425882292
+            "importance": 0.13238513968673501
           },
           {
             "feature": "Destination Port",
-            "importance": 0.1051783537902745
+            "importance": 0.10515281545494327
           },
           {
             "feature": "Max Packet Length",
-            "importance": 0.09244865878996122
+            "importance": 0.09238613993967475
           },
           {
             "feature": "Init_Win_bytes_forward",
-            "importance": 0.027092612376874648
+            "importance": 0.026965984971847032
           },
           {
             "feature": "min_seg_size_forward",
-            "importance": 0.018742686585256838
+            "importance": 0.018668069981088994
           },
           {
             "feature": "Fwd Packet Length Std",
-            "importance": 0.009505359369117942
+            "importance": 0.009499439221747927
           },
           {
             "feature": "Init_Win_bytes_backward",
-            "importance": 0.007099474533188815
+            "importance": 0.007101172626546557
           },
           {
             "feature": "Fwd IAT Min",
-            "importance": 0.005158232680022585
+            "importance": 0.005157096744714815
           },
           {
             "feature": "Fwd Packet Length Max",
-            "importance": 0.004784149987973796
+            "importance": 0.0048670746299169865
           },
           {
             "feature": "Fwd IAT Mean",
-            "importance": 0.0033987069982667445
+            "importance": 0.003388501639014874
           },
           {
             "feature": "Flow IAT Min",
-            "importance": 0.003304573247847357
+            "importance": 0.003336667503765869
           },
           {
             "feature": "Fwd IAT Max",
-            "importance": 0.0030570350462614487
+            "importance": 0.0032885821559934117
           },
           {
             "feature": "Active Std",
-            "importance": 0.0021554991573442235
+            "importance": 0.002155499157344224
           },
           {
             "feature": "Bwd IAT Mean",
-            "importance": 0.00203811547419237
+            "importance": 0.0021102994052873783
           },
           {
             "feature": "Bwd IAT Std",
-            "importance": 0.0019398309592359665
-          },
-          {
-            "feature": "Subflow Fwd Bytes",
-            "importance": 0.0014074957045567553
-          },
-          {
-            "feature": "Bwd Packets/s",
-            "importance": 0.0013747028179532548
-          },
-          {
-            "feature": "Bwd Packet Length Mean",
-            "importance": 0.0013599589784155535
-          },
-          {
-            "feature": "Packet Length Mean",
-            "importance": 0.0011956041264020196
-          },
-          {
-            "feature": "Total Length of Fwd Packets",
-            "importance": 0.0009955100810839193
-          },
-          {
-            "feature": "Fwd Header Length",
-            "importance": 0.0009226685394793472
-          },
-          {
-            "feature": "Avg Bwd Segment Size",
-            "importance": 0.000920544951781027
-          },
-          {
-            "feature": "Flow IAT Std",
-            "importance": 0.0008478283017861514
-          },
-          {
-            "feature": "Fwd IAT Total",
-            "importance": 0.0007031187721614955
-          },
-          {
-            "feature": "Fwd Packet Length Min",
-            "importance": 0.0006423312506828167
-          },
-          {
-            "feature": "Flow Duration",
-            "importance": 0.0006336705804493751
-          },
-          {
-            "feature": "Fwd IAT Std",
-            "importance": 0.0005444349167262659
-          },
-          {
-            "feature": "Fwd Header Length.1",
-            "importance": 0.00047533568248966696
-          },
-          {
-            "feature": "Flow Bytes/s",
-            "importance": 0.0004548671020922559
-          },
-          {
-            "feature": "Flow IAT Mean",
-            "importance": 0.00044198962269828806
-          },
-          {
-            "feature": "Subflow Bwd Bytes",
-            "importance": 0.0003303693968182362
-          },
-          {
-            "feature": "Min Packet Length",
-            "importance": 0.0002871279315109286
-          },
-          {
-            "feature": "URG Flag Count",
-            "importance": 0.00027590493966462166
-          },
-          {
-            "feature": "Fwd Packets/s",
-            "importance": 0.00026049305825617163
-          },
-          {
-            "feature": "Down/Up Ratio",
-            "importance": 0.00024039997570462517
-          },
-          {
-            "feature": "Flow IAT Max",
-            "importance": 0.00023057326562950407
-          },
-          {
-            "feature": "Total Length of Bwd Packets",
-            "importance": 0.00022791579975317935
-          },
-          {
-            "feature": "PSH Flag Count",
-            "importance": 0.00020623446832315027
-          },
-          {
-            "feature": "Flow Packets/s",
-            "importance": 0.00019327593469095955
+            "importance": 0.001994697392365587
           },
           {
             "feature": "Total Fwd Packets",
-            "importance": 0.00014755371062835987
+            "importance": 0.0013592340990600668
           },
           {
-            "feature": "Bwd IAT Max",
-            "importance": 0.00013501242396219058
+            "feature": "Subflow Fwd Bytes",
+            "importance": 0.0013363539222613408
           },
           {
-            "feature": "Avg Fwd Segment Size",
-            "importance": 0.00011377823186619957
+            "feature": "Packet Length Mean",
+            "importance": 0.0012205929359161707
           },
           {
-            "feature": "Bwd Packet Length Max",
-            "importance": 0.00010588559957709271
+            "feature": "Flow Packets/s",
+            "importance": 0.0010840012054342775
           },
           {
-            "feature": "Bwd IAT Min",
-            "importance": 7.626552674041256e-05
+            "feature": "Fwd Header Length.1",
+            "importance": 0.0010209511459527947
           },
           {
-            "feature": "Bwd Packet Length Min",
-            "importance": 5.4985957513709315e-05
+            "feature": "Total Length of Fwd Packets",
+            "importance": 0.0009593635362626921
           },
           {
-            "feature": "Subflow Bwd Packets",
-            "importance": 4.978790921096091e-05
+            "feature": "Flow IAT Std",
+            "importance": 0.0008275984450930374
           },
           {
-            "feature": "Active Min",
-            "importance": 4.346181688506181e-05
+            "feature": "Bwd Packet Length Mean",
+            "importance": 0.000721478634479241
           },
           {
-            "feature": "Idle Max",
-            "importance": 3.6812653039681554e-05
+            "feature": "Fwd Header Length",
+            "importance": 0.0006018778674078835
           },
           {
-            "feature": "Bwd IAT Total",
-            "importance": 2.7078794777548235e-05
+            "feature": "Flow Bytes/s",
+            "importance": 0.00047439418400855687
           },
           {
-            "feature": "Idle Min",
-            "importance": 2.1190362068525967e-05
+            "feature": "Bwd Packets/s",
+            "importance": 0.0004654778202856081
+          },
+          {
+            "feature": "Fwd IAT Total",
+            "importance": 0.00042312923378173925
+          },
+          {
+            "feature": "Fwd Packet Length Min",
+            "importance": 0.00038145706633952895
           },
           {
             "feature": "Fwd Packet Length Mean",
-            "importance": 1.6100136343837813e-05
+            "importance": 0.0003489446014580356
           },
           {
-            "feature": "Total Backward Packets",
-            "importance": 1.5397833303666072e-05
+            "feature": "Flow IAT Mean",
+            "importance": 0.00033922341931628014
           },
           {
-            "feature": "ACK Flag Count",
-            "importance": 1.3716421845497003e-05
+            "feature": "Total Length of Bwd Packets",
+            "importance": 0.0003283494607116135
           },
           {
-            "feature": "Packet Length Variance",
-            "importance": 1.16354891985991e-05
+            "feature": "Avg Bwd Segment Size",
+            "importance": 0.00031757106421562533
           },
           {
-            "feature": "Idle Mean",
-            "importance": 1.0878709340657493e-05
+            "feature": "Min Packet Length",
+            "importance": 0.00028712793151092897
+          },
+          {
+            "feature": "URG Flag Count",
+            "importance": 0.0002746952861649129
+          },
+          {
+            "feature": "Fwd Packets/s",
+            "importance": 0.00026887136053127585
+          },
+          {
+            "feature": "Down/Up Ratio",
+            "importance": 0.00024039997570462522
           },
           {
             "feature": "Subflow Fwd Packets",
-            "importance": 7.631396323377352e-06
+            "importance": 0.00019842182245301444
           },
           {
-            "feature": "Active Max",
-            "importance": 6.377826670934026e-06
+            "feature": "Bwd Packet Length Max",
+            "importance": 0.0001956724442485295
           },
           {
-            "feature": "Active Mean",
-            "importance": 4.668835224732225e-06
+            "feature": "Flow IAT Max",
+            "importance": 0.00019281366435273037
           },
           {
-            "feature": "act_data_pkt_fwd",
-            "importance": 3.1513654518674665e-06
+            "feature": "Flow Duration",
+            "importance": 0.00016580887226794728
           },
           {
-            "feature": "SYN Flag Count",
-            "importance": 2.790537276781858e-06
+            "feature": "Fwd IAT Std",
+            "importance": 0.0001362749896967008
+          },
+          {
+            "feature": "Subflow Bwd Bytes",
+            "importance": 0.00010373252488158733
+          },
+          {
+            "feature": "Bwd IAT Max",
+            "importance": 9.442331250878797e-05
           },
           {
             "feature": "FIN Flag Count",
-            "importance": 7.313680569231852e-07
+            "importance": 8.812951974685358e-05
           },
           {
-            "feature": "Idle Std",
-            "importance": 0.0
+            "feature": "Bwd Packet Length Min",
+            "importance": 6.507613590086246e-05
+          },
+          {
+            "feature": "Idle Min",
+            "importance": 6.252409614710525e-05
+          },
+          {
+            "feature": "Bwd IAT Min",
+            "importance": 5.747066123911819e-05
+          },
+          {
+            "feature": "Active Min",
+            "importance": 4.389658819116021e-05
+          },
+          {
+            "feature": "Idle Max",
+            "importance": 3.133601467816215e-05
+          },
+          {
+            "feature": "ACK Flag Count",
+            "importance": 2.9951435001659207e-05
+          },
+          {
+            "feature": "PSH Flag Count",
+            "importance": 2.9659741098330058e-05
+          },
+          {
+            "feature": "Bwd IAT Total",
+            "importance": 2.8785334797195074e-05
+          },
+          {
+            "feature": "Idle Mean",
+            "importance": 1.495824607934033e-05
+          },
+          {
+            "feature": "Subflow Bwd Packets",
+            "importance": 1.4581972431300326e-05
+          },
+          {
+            "feature": "Avg Fwd Segment Size",
+            "importance": 1.0885075971232984e-05
+          },
+          {
+            "feature": "Packet Length Std",
+            "importance": 8.875782289292266e-06
+          },
+          {
+            "feature": "Active Mean",
+            "importance": 5.134535765677752e-06
+          },
+          {
+            "feature": "act_data_pkt_fwd",
+            "importance": 3.151365451867472e-06
+          },
+          {
+            "feature": "Active Max",
+            "importance": 2.8980902894225586e-06
           },
           {
             "feature": "Fwd PSH Flags",
-            "importance": 0.0
+            "importance": 2.790537276781862e-06
           },
           {
-            "feature": "Bwd PSH Flags",
-            "importance": 0.0
+            "feature": "Total Backward Packets",
+            "importance": 9.155081599705503e-07
           },
           {
             "feature": "Fwd URG Flags",
+            "importance": 0.0
+          },
+          {
+            "feature": "Packet Length Variance",
             "importance": 0.0
           },
           {
@@ -645,7 +621,11 @@
             "importance": 0.0
           },
           {
-            "feature": "Bwd URG Flags",
+            "feature": "RST Flag Count",
+            "importance": 0.0
+          },
+          {
+            "feature": "Idle Std",
             "importance": 0.0
           },
           {
@@ -653,35 +633,7 @@
             "importance": 0.0
           },
           {
-            "feature": "Bwd Avg Bulk Rate",
-            "importance": 0.0
-          },
-          {
-            "feature": "Bwd Avg Packets/Bulk",
-            "importance": 0.0
-          },
-          {
-            "feature": "Bwd Avg Bytes/Bulk",
-            "importance": 0.0
-          },
-          {
-            "feature": "Fwd Avg Bulk Rate",
-            "importance": 0.0
-          },
-          {
-            "feature": "Fwd Avg Packets/Bulk",
-            "importance": 0.0
-          },
-          {
-            "feature": "Fwd Avg Bytes/Bulk",
-            "importance": 0.0
-          },
-          {
-            "feature": "RST Flag Count",
-            "importance": 0.0
-          },
-          {
-            "feature": "Packet Length Std",
+            "feature": "SYN Flag Count",
             "importance": 0.0
           }
         ],
@@ -689,7 +641,7 @@
           "accuracy": 0.9997558061180062,
           "precision": 0.9993701331014108,
           "recall": 0.9993902944743195,
-          "f1_score": 0.9993802136861818,
+          "f1_score": 0.9993802136861819,
           "roc_auc": 0.9999997222255449,
           "average_precision": 0.9999985571780559,
           "confusion_matrix": [
@@ -704,27 +656,27 @@
           ]
         },
         "test_metrics": {
-          "accuracy": 0.9987900711650113,
-          "precision": 0.9968711337433434,
-          "recall": 0.9969873306494275,
-          "f1_score": 0.996929228810558,
-          "roc_auc": 0.9985126356527751,
-          "average_precision": 0.9951332474719743,
+          "accuracy": 0.9987847722066099,
+          "precision": 0.9968710495880365,
+          "recall": 0.9969604318159403,
+          "f1_score": 0.9969157386985135,
+          "roc_auc": 0.9984991858218574,
+          "average_precision": 0.9951116470081245,
           "confusion_matrix": [
             [
               454271,
               349
             ],
             [
-              336,
-              111193
+              339,
+              111190
             ]
           ]
         },
         "data_info": {
           "n_train_samples": 2264594,
           "n_test_samples": 566149,
-          "n_features": 78,
+          "n_features": 70,
           "train_class_distribution": {
             "0": 1818477,
             "1": 446117
@@ -734,18 +686,245 @@
             "1": 111529
           }
         },
-        "model_file": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/models/decision_tree_model_20260130_193109.joblib",
+        "model_file": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/models/decision_tree_model_20260131_012001.joblib",
         "visualization_files": {
-          "png": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260130_193109.png",
-          "svg": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260130_193109.svg",
-          "pdf": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260130_193109.pdf"
+          "png": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_012001.png",
+          "svg": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_012001.svg",
+          "pdf": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_012001.pdf"
         }
       }
     },
-    "decision_stumps": {},
+    "decision_stumps": {
+      "SensorNetGuard": {
+        "timestamp": "20260131_012202",
+        "dataset": "SensorNetGuard",
+        "top_feature": "Error_Rate",
+        "top_feature_importance": 0.8425790559691897,
+        "stump_threshold": 0.15848318487405777,
+        "stump_performance": {
+          "train_accuracy": 0.992625,
+          "test_accuracy": 0.99,
+          "test_precision": 0.9753086419753086,
+          "test_recall": 0.8144329896907216,
+          "test_f1": 0.8876404494382022,
+          "test_roc_auc": 0.9066910087707418
+        },
+        "noise_experiment": [
+          {
+            "noise_level": 0.0,
+            "accuracy": 0.99,
+            "precision": 0.9753086419753086,
+            "recall": 0.8144329896907216,
+            "f1": 0.8876404494382022
+          },
+          {
+            "noise_level": 0.01,
+            "accuracy": 0.99,
+            "precision": 0.963855421686747,
+            "recall": 0.8247422680412371,
+            "f1": 0.8888888888888888
+          },
+          {
+            "noise_level": 0.05,
+            "accuracy": 0.99,
+            "precision": 0.963855421686747,
+            "recall": 0.8247422680412371,
+            "f1": 0.8888888888888888
+          },
+          {
+            "noise_level": 0.1,
+            "accuracy": 0.9905,
+            "precision": 0.9642857142857143,
+            "recall": 0.8350515463917526,
+            "f1": 0.8950276243093923
+          },
+          {
+            "noise_level": 0.2,
+            "accuracy": 0.988,
+            "precision": 0.9294117647058824,
+            "recall": 0.8144329896907216,
+            "f1": 0.8681318681318682
+          },
+          {
+            "noise_level": 0.5,
+            "accuracy": 0.978,
+            "precision": 0.7572815533980582,
+            "recall": 0.8041237113402062,
+            "f1": 0.78
+          },
+          {
+            "noise_level": 1.0,
+            "accuracy": 0.9305,
+            "precision": 0.3870967741935484,
+            "recall": 0.7422680412371134,
+            "f1": 0.508833922261484
+          },
+          {
+            "noise_level": 2.0,
+            "accuracy": 0.8105,
+            "precision": 0.16428571428571428,
+            "recall": 0.711340206185567,
+            "f1": 0.26692456479690524
+          },
+          {
+            "noise_level": 5.0,
+            "accuracy": 0.643,
+            "precision": 0.08701472556894244,
+            "recall": 0.6701030927835051,
+            "f1": 0.15402843601895735
+          }
+        ],
+        "cross_validation": {
+          "fold_scores": [
+            {
+              "fold": 1,
+              "accuracy": 0.99375,
+              "f1": 0.921875
+            },
+            {
+              "fold": 2,
+              "accuracy": 0.99375,
+              "f1": 0.9390243902439024
+            },
+            {
+              "fold": 3,
+              "accuracy": 0.991875,
+              "f1": 0.9221556886227545
+            },
+            {
+              "fold": 4,
+              "accuracy": 0.9925,
+              "f1": 0.918918918918919
+            },
+            {
+              "fold": 5,
+              "accuracy": 0.988125,
+              "f1": 0.8633093525179856
+            }
+          ],
+          "mean_accuracy": 0.992,
+          "std_accuracy": 0.002069118169655855,
+          "mean_f1": 0.9130566700607122,
+          "std_f1": 0.025861319137257546
+        }
+      },
+      "Farm-Flow": {
+        "timestamp": "20260131_012204",
+        "dataset": "Farm-Flow",
+        "top_feature": "orig_pkts",
+        "top_feature_importance": 0.8546162476238548,
+        "stump_threshold": 0.16897037625312805,
+        "stump_performance": {
+          "train_accuracy": 0.961313963581016,
+          "test_accuracy": 0.9001410437235543,
+          "test_precision": 0.9937282229965156,
+          "test_recall": 0.8051948051948052,
+          "test_f1": 0.8895820336868372,
+          "test_roc_auc": 0.900060762236636
+        },
+        "noise_experiment": [
+          {
+            "noise_level": 0.0,
+            "accuracy": 0.9001410437235543,
+            "precision": 0.9937282229965156,
+            "recall": 0.8051948051948052,
+            "f1": 0.8895820336868372
+          },
+          {
+            "noise_level": 0.01,
+            "accuracy": 0.9001410437235543,
+            "precision": 0.9937282229965156,
+            "recall": 0.8051948051948052,
+            "f1": 0.8895820336868372
+          },
+          {
+            "noise_level": 0.05,
+            "accuracy": 0.9001410437235543,
+            "precision": 0.9937282229965156,
+            "recall": 0.8051948051948052,
+            "f1": 0.8895820336868372
+          },
+          {
+            "noise_level": 0.1,
+            "accuracy": 0.9001410437235543,
+            "precision": 0.9937282229965156,
+            "recall": 0.8051948051948052,
+            "f1": 0.8895820336868372
+          },
+          {
+            "noise_level": 0.2,
+            "accuracy": 0.8840620592383639,
+            "precision": 0.9795486600846263,
+            "recall": 0.7843026538678712,
+            "f1": 0.8711194731890874
+          },
+          {
+            "noise_level": 0.5,
+            "accuracy": 0.7703808180535966,
+            "precision": 0.8500365764447696,
+            "recall": 0.6561264822134387,
+            "f1": 0.7405991077119184
+          },
+          {
+            "noise_level": 1.0,
+            "accuracy": 0.680394922425952,
+            "precision": 0.7359467455621301,
+            "recall": 0.5618294748729531,
+            "f1": 0.6372078130003203
+          },
+          {
+            "noise_level": 2.0,
+            "accuracy": 0.6050775740479548,
+            "precision": 0.6264485344239945,
+            "recall": 0.5189158667419537,
+            "f1": 0.5676343421865349
+          },
+          {
+            "noise_level": 5.0,
+            "accuracy": 0.5413258110014104,
+            "precision": 0.5447254780999383,
+            "recall": 0.49858836815358554,
+            "f1": 0.5206367924528302
+          }
+        ],
+        "cross_validation": {
+          "fold_scores": [
+            {
+              "fold": 1,
+              "accuracy": 0.961717030396464,
+              "f1": 0.9598692199906586
+            },
+            {
+              "fold": 2,
+              "accuracy": 0.9617612461681043,
+              "f1": 0.9597712464257254
+            },
+            {
+              "fold": 3,
+              "accuracy": 0.9610037784273188,
+              "f1": 0.9591310682331845
+            },
+            {
+              "fold": 4,
+              "accuracy": 0.9608611962643473,
+              "f1": 0.9588509753218281
+            },
+            {
+              "fold": 5,
+              "accuracy": 0.9612265630569615,
+              "f1": 0.9592675460358177
+            }
+          ],
+          "mean_accuracy": 0.9613139628626393,
+          "std_accuracy": 0.0003664359410995988,
+          "mean_f1": 0.9593780112014428,
+          "std_f1": 0.0003864893832977826
+        }
+      }
+    },
     "maxdepth10": {
       "CIC IDS 2017": {
-        "timestamp": "20260130_211500",
+        "timestamp": "20260131_012208",
         "dataset": "CIC IDS 2017",
         "max_depth": 10,
         "tree_properties": {
@@ -831,6 +1010,2444 @@
         ]
       }
     },
-    "feature_ablation": {}
+    "feature_ablation": {
+      "farm-flow": {
+        "dataset": "Farm-Flow",
+        "ablation_results": [
+          {
+            "num_features": 30,
+            "features": [
+              "missed_bytes",
+              "pkts_difference",
+              "flow_iat.avg",
+              "flow_iat.tot",
+              "bwd_iat.avg",
+              "bwd_iat.tot",
+              "fwd_iat.tot",
+              "flow_pkts_payload.avg",
+              "flow_pkts_payload.tot",
+              "fwd_pkts_payload.avg",
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 29,
+            "features": [
+              "pkts_difference",
+              "flow_iat.avg",
+              "flow_iat.tot",
+              "bwd_iat.avg",
+              "bwd_iat.tot",
+              "fwd_iat.tot",
+              "flow_pkts_payload.avg",
+              "flow_pkts_payload.tot",
+              "fwd_pkts_payload.avg",
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 28,
+            "features": [
+              "flow_iat.avg",
+              "flow_iat.tot",
+              "bwd_iat.avg",
+              "bwd_iat.tot",
+              "fwd_iat.tot",
+              "flow_pkts_payload.avg",
+              "flow_pkts_payload.tot",
+              "fwd_pkts_payload.avg",
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 27,
+            "features": [
+              "flow_iat.tot",
+              "bwd_iat.avg",
+              "bwd_iat.tot",
+              "fwd_iat.tot",
+              "flow_pkts_payload.avg",
+              "flow_pkts_payload.tot",
+              "fwd_pkts_payload.avg",
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 26,
+            "features": [
+              "bwd_iat.avg",
+              "bwd_iat.tot",
+              "fwd_iat.tot",
+              "flow_pkts_payload.avg",
+              "flow_pkts_payload.tot",
+              "fwd_pkts_payload.avg",
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 25,
+            "features": [
+              "bwd_iat.tot",
+              "fwd_iat.tot",
+              "flow_pkts_payload.avg",
+              "flow_pkts_payload.tot",
+              "fwd_pkts_payload.avg",
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 24,
+            "features": [
+              "fwd_iat.tot",
+              "flow_pkts_payload.avg",
+              "flow_pkts_payload.tot",
+              "fwd_pkts_payload.avg",
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 23,
+            "features": [
+              "flow_pkts_payload.avg",
+              "flow_pkts_payload.tot",
+              "fwd_pkts_payload.avg",
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 22,
+            "features": [
+              "flow_pkts_payload.tot",
+              "fwd_pkts_payload.avg",
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 21,
+            "features": [
+              "fwd_pkts_payload.avg",
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 20,
+            "features": [
+              "fwd_pkts_payload.tot",
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 19,
+            "features": [
+              "bwd_header_size_min",
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 18,
+            "features": [
+              "bwd_header_size_max",
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 17,
+            "features": [
+              "fwd_header_size_max",
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 16,
+            "features": [
+              "resp_ip_bytes",
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 15,
+            "features": [
+              "bwd_header_size_tot",
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 14,
+            "features": [
+              "flow_pkts_per_sec",
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 13,
+            "features": [
+              "down_up_ratio",
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 12,
+            "features": [
+              "bwd_pkts_per_sec",
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 11,
+            "features": [
+              "fwd_header_size_tot",
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 10,
+            "features": [
+              "fwd_header_size_min",
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 9,
+            "features": [
+              "fwd_iat.avg",
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 8,
+            "features": [
+              "resp_pkts",
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 7,
+            "features": [
+              "data_pkts_difference",
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 6,
+            "features": [
+              "fwd_pkts_per_sec",
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 5,
+            "features": [
+              "bwd_pkts_payload.avg",
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 4,
+            "features": [
+              "orig_ip_bytes",
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 3,
+            "features": [
+              "bwd_pkts_payload.tot",
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 2,
+            "features": [
+              "traffic",
+              "orig_pkts"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 1,
+            "features": [
+              "orig_pkts"
+            ],
+            "accuracy": 0.9049365303244006,
+            "precision": 0.9838056680161943,
+            "recall": 0.8232636928289102,
+            "f1": 0.8964033200122964,
+            "roc_auc": 0.912860618622591
+          }
+        ],
+        "summary": {
+          "max_features": 30,
+          "min_features_tested": 1,
+          "best_accuracy": 1.0,
+          "best_f1": 1.0,
+          "best_roc_auc": 1.0
+        }
+      },
+      "cic_ids_2017": {
+        "dataset": "CIC IDS 2017",
+        "ablation_results": [
+          {
+            "num_features": 78,
+            "features": [
+              "Fwd Avg Packets/Bulk",
+              "Idle Std",
+              "Packet Length Std",
+              "RST Flag Count",
+              "Bwd URG Flags",
+              "Fwd URG Flags",
+              "Bwd PSH Flags",
+              "Fwd PSH Flags",
+              "CWE Flag Count",
+              "ECE Flag Count",
+              "Fwd Avg Bytes/Bulk",
+              "Fwd Avg Bulk Rate",
+              "Bwd Avg Bytes/Bulk",
+              "Bwd Avg Packets/Bulk",
+              "Bwd Avg Bulk Rate",
+              "FIN Flag Count",
+              "SYN Flag Count",
+              "act_data_pkt_fwd",
+              "Active Mean",
+              "Active Max",
+              "Subflow Fwd Packets",
+              "Idle Mean",
+              "Packet Length Variance",
+              "ACK Flag Count",
+              "Total Backward Packets",
+              "Fwd Packet Length Mean",
+              "Idle Min",
+              "Bwd IAT Total",
+              "Idle Max",
+              "Active Min",
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987900711650113,
+            "precision": 0.9969067728226371,
+            "recall": 0.9969514655381112,
+            "f1": 0.9969291186794762,
+            "roc_auc": 0.9984946667188241
+          },
+          {
+            "num_features": 75,
+            "features": [
+              "RST Flag Count",
+              "Bwd URG Flags",
+              "Fwd URG Flags",
+              "Bwd PSH Flags",
+              "Fwd PSH Flags",
+              "CWE Flag Count",
+              "ECE Flag Count",
+              "Fwd Avg Bytes/Bulk",
+              "Fwd Avg Bulk Rate",
+              "Bwd Avg Bytes/Bulk",
+              "Bwd Avg Packets/Bulk",
+              "Bwd Avg Bulk Rate",
+              "FIN Flag Count",
+              "SYN Flag Count",
+              "act_data_pkt_fwd",
+              "Active Mean",
+              "Active Max",
+              "Subflow Fwd Packets",
+              "Idle Mean",
+              "Packet Length Variance",
+              "ACK Flag Count",
+              "Total Backward Packets",
+              "Fwd Packet Length Mean",
+              "Idle Min",
+              "Bwd IAT Total",
+              "Idle Max",
+              "Active Min",
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987812395676756,
+            "precision": 0.9968888131763693,
+            "recall": 0.9969245667046239,
+            "f1": 0.9969066896199263,
+            "roc_auc": 0.9984834694625615
+          },
+          {
+            "num_features": 72,
+            "features": [
+              "Bwd PSH Flags",
+              "Fwd PSH Flags",
+              "CWE Flag Count",
+              "ECE Flag Count",
+              "Fwd Avg Bytes/Bulk",
+              "Fwd Avg Bulk Rate",
+              "Bwd Avg Bytes/Bulk",
+              "Bwd Avg Packets/Bulk",
+              "Bwd Avg Bulk Rate",
+              "FIN Flag Count",
+              "SYN Flag Count",
+              "act_data_pkt_fwd",
+              "Active Mean",
+              "Active Max",
+              "Subflow Fwd Packets",
+              "Idle Mean",
+              "Packet Length Variance",
+              "ACK Flag Count",
+              "Total Backward Packets",
+              "Fwd Packet Length Mean",
+              "Idle Min",
+              "Bwd IAT Total",
+              "Idle Max",
+              "Active Min",
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987706416508728,
+            "precision": 0.9968262791260613,
+            "recall": 0.996933532982453,
+            "f1": 0.9968799031694087,
+            "roc_auc": 0.9984801757626651
+          },
+          {
+            "num_features": 69,
+            "features": [
+              "ECE Flag Count",
+              "Fwd Avg Bytes/Bulk",
+              "Fwd Avg Bulk Rate",
+              "Bwd Avg Bytes/Bulk",
+              "Bwd Avg Packets/Bulk",
+              "Bwd Avg Bulk Rate",
+              "FIN Flag Count",
+              "SYN Flag Count",
+              "act_data_pkt_fwd",
+              "Active Mean",
+              "Active Max",
+              "Subflow Fwd Packets",
+              "Idle Mean",
+              "Packet Length Variance",
+              "ACK Flag Count",
+              "Total Backward Packets",
+              "Fwd Packet Length Mean",
+              "Idle Min",
+              "Bwd IAT Total",
+              "Idle Max",
+              "Active Min",
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987759406092742,
+            "precision": 0.9968352728120349,
+            "recall": 0.9969514655381112,
+            "f1": 0.9968933657893676,
+            "roc_auc": 0.9984947296437052
+          },
+          {
+            "num_features": 66,
+            "features": [
+              "Bwd Avg Bytes/Bulk",
+              "Bwd Avg Packets/Bulk",
+              "Bwd Avg Bulk Rate",
+              "FIN Flag Count",
+              "SYN Flag Count",
+              "act_data_pkt_fwd",
+              "Active Mean",
+              "Active Max",
+              "Subflow Fwd Packets",
+              "Idle Mean",
+              "Packet Length Variance",
+              "ACK Flag Count",
+              "Total Backward Packets",
+              "Fwd Packet Length Mean",
+              "Idle Min",
+              "Bwd IAT Total",
+              "Idle Max",
+              "Active Min",
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987883048455442,
+            "precision": 0.9968711056920774,
+            "recall": 0.9969783643715984,
+            "f1": 0.9969247321468597,
+            "roc_auc": 0.9984947238156838
+          },
+          {
+            "num_features": 63,
+            "features": [
+              "FIN Flag Count",
+              "SYN Flag Count",
+              "act_data_pkt_fwd",
+              "Active Mean",
+              "Active Max",
+              "Subflow Fwd Packets",
+              "Idle Mean",
+              "Packet Length Variance",
+              "ACK Flag Count",
+              "Total Backward Packets",
+              "Fwd Packet Length Mean",
+              "Idle Min",
+              "Bwd IAT Total",
+              "Idle Max",
+              "Active Min",
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987688753314057,
+            "precision": 0.9968440682828863,
+            "recall": 0.9969066341489657,
+            "f1": 0.9968753502342367,
+            "roc_auc": 0.9984510416413612
+          },
+          {
+            "num_features": 60,
+            "features": [
+              "Active Mean",
+              "Active Max",
+              "Subflow Fwd Packets",
+              "Idle Mean",
+              "Packet Length Variance",
+              "ACK Flag Count",
+              "Total Backward Packets",
+              "Fwd Packet Length Mean",
+              "Idle Min",
+              "Bwd IAT Total",
+              "Idle Max",
+              "Active Min",
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987918374844784,
+            "precision": 0.9969068005558793,
+            "recall": 0.9969604318159403,
+            "f1": 0.99693361546462,
+            "roc_auc": 0.9984901906208695
+          },
+          {
+            "num_features": 57,
+            "features": [
+              "Idle Mean",
+              "Packet Length Variance",
+              "ACK Flag Count",
+              "Total Backward Packets",
+              "Fwd Packet Length Mean",
+              "Idle Min",
+              "Bwd IAT Total",
+              "Idle Max",
+              "Active Min",
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987918374844784,
+            "precision": 0.9969068005558793,
+            "recall": 0.9969604318159403,
+            "f1": 0.99693361546462,
+            "roc_auc": 0.9984946650818503
+          },
+          {
+            "num_features": 54,
+            "features": [
+              "Total Backward Packets",
+              "Fwd Packet Length Mean",
+              "Idle Min",
+              "Bwd IAT Total",
+              "Idle Max",
+              "Active Min",
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987918374844784,
+            "precision": 0.996862252902416,
+            "recall": 0.9970052632050856,
+            "f1": 0.9969337529250384,
+            "roc_auc": 0.9985160064778077
+          },
+          {
+            "num_features": 51,
+            "features": [
+              "Bwd IAT Total",
+              "Idle Max",
+              "Active Min",
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9988059680402156,
+            "precision": 0.9968892036540651,
+            "recall": 0.9970500945942311,
+            "f1": 0.996969642633004,
+            "roc_auc": 0.9985462356360164
+          },
+          {
+            "num_features": 48,
+            "features": [
+              "Subflow Bwd Packets",
+              "Bwd Packet Length Min",
+              "Bwd IAT Min",
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987971364428799,
+            "precision": 0.9969068837526224,
+            "recall": 0.9969873306494275,
+            "f1": 0.9969471055781446,
+            "roc_auc": 0.9985260304872876
+          },
+          {
+            "num_features": 45,
+            "features": [
+              "Bwd Packet Length Max",
+              "Avg Fwd Segment Size",
+              "Bwd IAT Max",
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987671090119385,
+            "precision": 0.9967727765775296,
+            "recall": 0.9969693980937694,
+            "f1": 0.9968710776403086,
+            "roc_auc": 0.9984869650821984
+          },
+          {
+            "num_features": 42,
+            "features": [
+              "Total Fwd Packets",
+              "Flow Packets/s",
+              "PSH Flag Count",
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987847722066099,
+            "precision": 0.9968710495880365,
+            "recall": 0.9969604318159403,
+            "f1": 0.9969157386985135,
+            "roc_auc": 0.9984991807038487
+          },
+          {
+            "num_features": 39,
+            "features": [
+              "Total Length of Bwd Packets",
+              "Flow IAT Max",
+              "Down/Up Ratio",
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987989027623471,
+            "precision": 0.9969336429576896,
+            "recall": 0.9969693980937694,
+            "f1": 0.9969515202051448,
+            "roc_auc": 0.9985114408590773
+          },
+          {
+            "num_features": 36,
+            "features": [
+              "Fwd Packets/s",
+              "URG Flag Count",
+              "Min Packet Length",
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9988253975543541,
+            "precision": 0.9970142562539227,
+            "recall": 0.9970231957607438,
+            "f1": 0.9970187259872947,
+            "roc_auc": 0.9985528193969936
+          },
+          {
+            "num_features": 33,
+            "features": [
+              "Subflow Bwd Bytes",
+              "Flow IAT Mean",
+              "Flow Bytes/s",
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9988006690818142,
+            "precision": 0.996960404562083,
+            "recall": 0.9969514655381112,
+            "f1": 0.9969559350300595,
+            "roc_auc": 0.9985013273978506
+          },
+          {
+            "num_features": 30,
+            "features": [
+              "Fwd Header Length.1",
+              "Fwd IAT Std",
+              "Flow Duration",
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.99876004373407,
+            "precision": 0.9968439268006205,
+            "recall": 0.9968618027598203,
+            "f1": 0.9968528647000807,
+            "roc_auc": 0.9984599670934565
+          },
+          {
+            "num_features": 27,
+            "features": [
+              "Fwd Packet Length Min",
+              "Fwd IAT Total",
+              "Flow IAT Std",
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987529784562015,
+            "precision": 0.9968259945665331,
+            "recall": 0.9968438702041621,
+            "f1": 0.9968349323052094,
+            "roc_auc": 0.9984308632463081
+          },
+          {
+            "num_features": 24,
+            "features": [
+              "Avg Bwd Segment Size",
+              "Fwd Header Length",
+              "Total Length of Fwd Packets",
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987883048455442,
+            "precision": 0.9969334779918764,
+            "recall": 0.9969156004267948,
+            "f1": 0.9969245391291873,
+            "roc_auc": 0.9984990857297805
+          },
+          {
+            "num_features": 21,
+            "features": [
+              "Packet Length Mean",
+              "Bwd Packet Length Mean",
+              "Bwd Packets/s",
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987406142199315,
+            "precision": 0.9967278073619852,
+            "recall": 0.9968797353154785,
+            "f1": 0.996803765549703,
+            "roc_auc": 0.9984465803846457
+          },
+          {
+            "num_features": 18,
+            "features": [
+              "Subflow Fwd Bytes",
+              "Bwd IAT Std",
+              "Bwd IAT Mean",
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9987971364428799,
+            "precision": 0.99693361546462,
+            "recall": 0.9969604318159403,
+            "f1": 0.9969470234599503,
+            "roc_auc": 0.9984979453506719
+          },
+          {
+            "num_features": 15,
+            "features": [
+              "Active Std",
+              "Fwd IAT Max",
+              "Flow IAT Min",
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9988006690818142,
+            "precision": 0.9969425815012731,
+            "recall": 0.9969693980937694,
+            "f1": 0.9969559896171899,
+            "roc_auc": 0.998512495987348
+          },
+          {
+            "num_features": 12,
+            "features": [
+              "Fwd IAT Mean",
+              "Fwd Packet Length Max",
+              "Fwd IAT Min",
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9990673833213518,
+            "precision": 0.9967954742787579,
+            "recall": 0.9984757327690555,
+            "f1": 0.9976348960339716,
+            "roc_auc": 0.9990270015581336
+          },
+          {
+            "num_features": 9,
+            "features": [
+              "Init_Win_bytes_backward",
+              "Fwd Packet Length Std",
+              "min_seg_size_forward",
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9983290617840886,
+            "precision": 0.9967031091387659,
+            "recall": 0.9948085251369599,
+            "f1": 0.9957549159509258,
+            "roc_auc": 0.9995325294119956
+          },
+          {
+            "num_features": 6,
+            "features": [
+              "Init_Win_bytes_forward",
+              "Max Packet Length",
+              "Destination Port",
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9978733513615674,
+            "precision": 0.995499743997413,
+            "recall": 0.9936967066861534,
+            "f1": 0.994597408191837,
+            "roc_auc": 0.9994087603521966
+          },
+          {
+            "num_features": 3,
+            "features": [
+              "Bwd Header Length",
+              "Average Packet Size",
+              "Bwd Packet Length Std"
+            ],
+            "accuracy": 0.9689057121005248,
+            "precision": 0.9928117949525159,
+            "recall": 0.8482995454097141,
+            "f1": 0.91488415270955,
+            "roc_auc": 0.9952080571479835
+          }
+        ],
+        "summary": {
+          "max_features": 78,
+          "min_features_tested": 3,
+          "best_accuracy": 0.9990673833213518,
+          "best_f1": 0.9976348960339716,
+          "best_roc_auc": 0.9995325294119956
+        }
+      },
+      "sensornetguard": {
+        "dataset": "SensorNetGuard",
+        "ablation_results": [
+          {
+            "num_features": 17,
+            "features": [
+              "Packet_Rate",
+              "Data_Reception_Frequency",
+              "Route_Reply_Frequency",
+              "Memory_Usage",
+              "Battery_Level",
+              "Number_of_Neighbors",
+              "Signal_Strength",
+              "Packet_Duplication_Rate",
+              "SNR",
+              "Bandwidth",
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 0.9995,
+            "precision": 0.9897959183673469,
+            "recall": 1.0,
+            "f1": 0.9948717948717949,
+            "roc_auc": 0.9997372569626906
+          },
+          {
+            "num_features": 16,
+            "features": [
+              "Data_Reception_Frequency",
+              "Route_Reply_Frequency",
+              "Memory_Usage",
+              "Battery_Level",
+              "Number_of_Neighbors",
+              "Signal_Strength",
+              "Packet_Duplication_Rate",
+              "SNR",
+              "Bandwidth",
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 15,
+            "features": [
+              "Route_Reply_Frequency",
+              "Memory_Usage",
+              "Battery_Level",
+              "Number_of_Neighbors",
+              "Signal_Strength",
+              "Packet_Duplication_Rate",
+              "SNR",
+              "Bandwidth",
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 14,
+            "features": [
+              "Memory_Usage",
+              "Battery_Level",
+              "Number_of_Neighbors",
+              "Signal_Strength",
+              "Packet_Duplication_Rate",
+              "SNR",
+              "Bandwidth",
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 0.999,
+            "precision": 1.0,
+            "recall": 0.979381443298969,
+            "f1": 0.9895833333333334,
+            "roc_auc": 0.9896907216494846
+          },
+          {
+            "num_features": 13,
+            "features": [
+              "Battery_Level",
+              "Number_of_Neighbors",
+              "Signal_Strength",
+              "Packet_Duplication_Rate",
+              "SNR",
+              "Bandwidth",
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 0.999,
+            "precision": 1.0,
+            "recall": 0.979381443298969,
+            "f1": 0.9895833333333334,
+            "roc_auc": 0.9896907216494846
+          },
+          {
+            "num_features": 12,
+            "features": [
+              "Number_of_Neighbors",
+              "Signal_Strength",
+              "Packet_Duplication_Rate",
+              "SNR",
+              "Bandwidth",
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 0.999,
+            "precision": 0.9797979797979798,
+            "recall": 1.0,
+            "f1": 0.9897959183673469,
+            "roc_auc": 0.999474513925381
+          },
+          {
+            "num_features": 11,
+            "features": [
+              "Signal_Strength",
+              "Packet_Duplication_Rate",
+              "SNR",
+              "Bandwidth",
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 0.9995,
+            "precision": 0.9897959183673469,
+            "recall": 1.0,
+            "f1": 0.9948717948717949,
+            "roc_auc": 0.9997372569626906
+          },
+          {
+            "num_features": 10,
+            "features": [
+              "Packet_Duplication_Rate",
+              "SNR",
+              "Bandwidth",
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 0.999,
+            "precision": 0.9797979797979798,
+            "recall": 1.0,
+            "f1": 0.9897959183673469,
+            "roc_auc": 0.999474513925381
+          },
+          {
+            "num_features": 9,
+            "features": [
+              "SNR",
+              "Bandwidth",
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 8,
+            "features": [
+              "Bandwidth",
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 0.9985,
+            "precision": 0.9895833333333334,
+            "recall": 0.979381443298969,
+            "f1": 0.9844559585492227,
+            "roc_auc": 0.9894279786121751
+          },
+          {
+            "num_features": 7,
+            "features": [
+              "CPU_Usage",
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 6,
+            "features": [
+              "Route_Request_Frequency",
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 5,
+            "features": [
+              "Data_Transmission_Frequency",
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 4,
+            "features": [
+              "Packet_Drop_Rate",
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "roc_auc": 1.0
+          },
+          {
+            "num_features": 3,
+            "features": [
+              "Data_Throughput",
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 0.9995,
+            "precision": 0.9897959183673469,
+            "recall": 1.0,
+            "f1": 0.9948717948717949,
+            "roc_auc": 0.9997372569626906
+          },
+          {
+            "num_features": 2,
+            "features": [
+              "Energy_Consumption_Rate",
+              "Error_Rate"
+            ],
+            "accuracy": 0.997,
+            "precision": 0.9595959595959596,
+            "recall": 0.979381443298969,
+            "f1": 0.9693877551020408,
+            "roc_auc": 0.9886397495002466
+          },
+          {
+            "num_features": 1,
+            "features": [
+              "Error_Rate"
+            ],
+            "accuracy": 0.9835,
+            "precision": 0.8478260869565217,
+            "recall": 0.8041237113402062,
+            "f1": 0.8253968253968254,
+            "roc_auc": 0.89838345314777
+          }
+        ],
+        "summary": {
+          "max_features": 17,
+          "min_features_tested": 1,
+          "best_accuracy": 1.0,
+          "best_f1": 1.0,
+          "best_roc_auc": 1.0
+        }
+      }
+    }
   }
 }

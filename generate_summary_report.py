@@ -272,9 +272,10 @@ def generate_markdown_report(results_data, base_path):
                             report.append("**Performance vs Number of Features:**\n")
                             report.append("| Features | Accuracy | Precision | Recall | F1 Score | ROC-AUC |")
                             report.append("|----------|----------|-----------|--------|----------|---------|")
-                            # Show every 5th result to keep table manageable, plus first and last
+                            # Show first, last, and every Nth result to keep table manageable
+                            step = max(1, len(ablation_results) // 15)  # Show ~15 rows max
                             for i, result in enumerate(ablation_results):
-                                if i == 0 or i == len(ablation_results) - 1 or i % max(1, len(ablation_results) // 10) == 0:
+                                if i == 0 or i == len(ablation_results) - 1 or i % step == 0:
                                     report.append(f"| {result.get('num_features', 0)} | "
                                                  f"{result.get('accuracy', 0):.4f} | "
                                                  f"{result.get('precision', 0):.4f} | "

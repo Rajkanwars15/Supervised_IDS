@@ -1,0 +1,475 @@
+[2026-01-31 01:20:01] Reading data...
+[2026-01-31 01:20:01]   Train file: /Users/raj/Supervised_IDS/data/cic-ids2017-silver/CIC-IDS2017_Train_Binary.csv
+[2026-01-31 01:20:01]   Test file: /Users/raj/Supervised_IDS/data/cic-ids2017-silver/CIC-IDS2017_Test_Binary.csv
+[2026-01-31 01:20:01] Loading training data (this may take a while for large files)...
+[2026-01-31 01:20:09]   Training data shape: (2264594, 79)
+[2026-01-31 01:20:09] Loading test data...
+[2026-01-31 01:20:11]   Test data shape: (566149, 79)
+[2026-01-31 01:20:11] Found 78 feature columns
+[2026-01-31 01:20:13] 
+Handling missing values...
+[2026-01-31 01:20:13]   Training missing values: 4534
+[2026-01-31 01:20:13]   Test missing values: 1200
+[2026-01-31 01:20:13]   Filling missing values with median...
+[2026-01-31 01:20:15] 
+Checking for infinite values...
+[2026-01-31 01:20:15]   Training infinite values: 0
+[2026-01-31 01:20:15]   Test infinite values: 0
+[2026-01-31 01:20:15] 
+Data Summary:
+[2026-01-31 01:20:15]   Training set: 2,264,594 samples
+[2026-01-31 01:20:15]   Test set: 566,149 samples
+[2026-01-31 01:20:15]   Training class distribution: {0: 1818477, 1: 446117}
+[2026-01-31 01:20:15]   Test class distribution: {0: 454620, 1: 111529}
+[2026-01-31 01:20:15] 
+================================================================================
+[2026-01-31 01:20:15] Feature Sanity Checks
+[2026-01-31 01:20:15] ================================================================================
+[2026-01-31 01:20:15] Checking for constant features (zero variance)...
+[2026-01-31 01:20:16]   Dropping constant feature: Bwd PSH Flags (only 1 unique value)
+[2026-01-31 01:20:16]   Dropping constant feature: Bwd URG Flags (only 1 unique value)
+[2026-01-31 01:20:16]   Dropping constant feature: Fwd Avg Bytes/Bulk (only 1 unique value)
+[2026-01-31 01:20:16]   Dropping constant feature: Fwd Avg Packets/Bulk (only 1 unique value)
+[2026-01-31 01:20:16]   Dropping constant feature: Fwd Avg Bulk Rate (only 1 unique value)
+[2026-01-31 01:20:16]   Dropping constant feature: Bwd Avg Bytes/Bulk (only 1 unique value)
+[2026-01-31 01:20:16]   Dropping constant feature: Bwd Avg Packets/Bulk (only 1 unique value)
+[2026-01-31 01:20:16]   Dropping constant feature: Bwd Avg Bulk Rate (only 1 unique value)
+[2026-01-31 01:20:16] Checking for near-constant features (low variance)...
+[2026-01-31 01:20:17] Checking for features with excessive missing values...
+[2026-01-31 01:20:17] 
+Dropping 8 problematic features:
+[2026-01-31 01:20:17]   - Bwd PSH Flags
+[2026-01-31 01:20:17]   - Bwd URG Flags
+[2026-01-31 01:20:17]   - Fwd Avg Bytes/Bulk
+[2026-01-31 01:20:17]   - Fwd Avg Packets/Bulk
+[2026-01-31 01:20:17]   - Fwd Avg Bulk Rate
+[2026-01-31 01:20:17]   - Bwd Avg Bytes/Bulk
+[2026-01-31 01:20:17]   - Bwd Avg Packets/Bulk
+[2026-01-31 01:20:17]   - Bwd Avg Bulk Rate
+[2026-01-31 01:20:17] 
+Feature count: 78 → 70 (dropped 8)
+[2026-01-31 01:20:17] 
+================================================================================
+[2026-01-31 01:20:17] Training Decision Tree Classifier...
+[2026-01-31 01:20:17] ================================================================================
+[2026-01-31 01:20:17] Tree Parameters:
+[2026-01-31 01:20:17]   criterion: gini
+[2026-01-31 01:20:17]   splitter: best
+[2026-01-31 01:20:17]   max_depth: None
+[2026-01-31 01:20:17]   min_samples_split: 2
+[2026-01-31 01:20:17]   min_samples_leaf: 1
+[2026-01-31 01:20:17]   min_weight_fraction_leaf: 0.0
+[2026-01-31 01:20:17]   max_features: None
+[2026-01-31 01:20:17]   random_state: 42
+[2026-01-31 01:20:17]   max_leaf_nodes: None
+[2026-01-31 01:20:17]   min_impurity_decrease: 0.0
+[2026-01-31 01:20:17]   class_weight: None
+[2026-01-31 01:20:17]   ccp_alpha: 0.0
+[2026-01-31 01:20:17] 
+Training tree (this may take a while for full convergence)...
+[2026-01-31 01:21:56] ✓ Tree training completed!
+[2026-01-31 01:21:56]   Tree depth: 43
+[2026-01-31 01:21:56]   Number of nodes: 6371
+[2026-01-31 01:21:56]   Number of leaves: 3186
+[2026-01-31 01:21:56] 
+================================================================================
+[2026-01-31 01:21:56] Saving model artifact...
+[2026-01-31 01:21:56] ================================================================================
+[2026-01-31 01:21:56] ✓ Model saved to: /Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/models/decision_tree_model_20260131_012001.joblib
+[2026-01-31 01:21:56] 
+================================================================================
+[2026-01-31 01:21:56] Creating tree visualization...
+[2026-01-31 01:21:56] ================================================================================
+[2026-01-31 01:21:57]   Saved PNG: /Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_012001.png
+[2026-01-31 01:21:58]   Saved SVG: /Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_012001.svg
+[2026-01-31 01:21:58]   Saved PDF: /Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_012001.pdf
+[2026-01-31 01:21:58] ✓ Tree visualization completed!
+[2026-01-31 01:21:58]   Note: graphviz not installed, skipping graphviz export
+[2026-01-31 01:21:58] 
+================================================================================
+[2026-01-31 01:21:58] Extracting tree structure and splits...
+[2026-01-31 01:21:58] ================================================================================
+[2026-01-31 01:21:58] 
+Tree Structure (first 100 lines):
+[2026-01-31 01:21:58] |--- Bwd Packet Length Std <= 1495.69
+|   |--- Average Packet Size <= 7.69
+|   |   |--- Bwd Header Length <= 22.00
+|   |   |   |--- Max Packet Length <= 5.00
+|   |   |   |   |--- Destination Port <= 80.50
+|   |   |   |   |   |--- min_seg_size_forward <= 30.00
+|   |   |   |   |   |   |--- Bwd IAT Min <= 1155523.00
+|   |   |   |   |   |   |   |--- Bwd IAT Mean <= 8238927.25
+|   |   |   |   |   |   |   |   |--- Idle Min <= 10900000.00
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- Idle Min >  10900000.00
+|   |   |   |   |   |   |   |   |   |--- Idle Mean <= 12011865.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- Idle Mean >  12011865.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- Bwd IAT Mean >  8238927.25
+|   |   |   |   |   |   |   |   |--- Idle Min <= 43400000.00
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- Idle Min >  43400000.00
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- Bwd IAT Min >  1155523.00
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- min_seg_size_forward >  30.00
+|   |   |   |   |   |   |--- Init_Win_bytes_forward <= 246.50
+|   |   |   |   |   |   |   |--- Init_Win_bytes_forward <= 228.00
+|   |   |   |   |   |   |   |   |--- Flow IAT Min <= 375.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- Flow IAT Min >  375.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- Init_Win_bytes_forward >  228.00
+|   |   |   |   |   |   |   |   |--- Fwd IAT Min <= 3051014.00
+|   |   |   |   |   |   |   |   |   |--- Init_Win_bytes_forward <= 233.00
+|   |   |   |   |   |   |   |   |   |   |--- Fwd IAT Min <= 35952.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- Fwd IAT Min >  35952.00
+|   |   |   |   |   |   |   |   |   |   |   |--- Destination Port <= 50.50
+|   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |--- Destination Port >  50.50
+|   |   |   |   |   |   |   |   |   |   |   |   |--- URG Flag Count <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |--- URG Flag Count >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- Fwd IAT Total <= 212000.00
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- Fwd IAT Total >  212000.00
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- Fwd Packets/s <= 2.94
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- Fwd Packets/s <= 2.37
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- Fwd Packets/s >  2.37
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- Fwd Packets/s >  2.94
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- Init_Win_bytes_forward >  233.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- Fwd IAT Min >  3051014.00
+|   |   |   |   |   |   |   |   |   |--- Flow Duration <= 3810087.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- Flow Duration >  3810087.50
+|   |   |   |   |   |   |   |   |   |   |--- Init_Win_bytes_forward <= 233.50
+|   |   |   |   |   |   |   |   |   |   |   |--- Fwd Packets/s <= 0.15
+|   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |--- Fwd Packets/s >  0.15
+|   |   |   |   |   |   |   |   |   |   |   |   |--- Fwd IAT Mean <= 8575995.00
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |--- Fwd IAT Mean >  8575995.00
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- Init_Win_bytes_forward >  233.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- Init_Win_bytes_forward >  246.50
+|   |   |   |   |   |   |   |--- Init_Win_bytes_forward <= 29339.50
+|   |   |   |   |   |   |   |   |--- Flow IAT Min <= 1045.50
+|   |   |   |   |   |   |   |   |   |--- Init_Win_bytes_forward <= 296.50
+|   |   |   |   |   |   |   |   |   |   |--- Flow IAT Min <= 49.50
+|   |   |   |   |   |   |   |   |   |   |   |--- Destination Port <= 51.00
+|   |   |   |   |   |   |   |   |   |   |   |   |--- Fwd Header Length <= 102.00
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |   |   |--- Fwd Header Length >  102.00
+|   |   |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+
+[2026-01-31 01:21:58] 
+Full tree structure saved to: /Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/logs/tree_structure_20260131_012001.txt
+[2026-01-31 01:21:58] 
+================================================================================
+[2026-01-31 01:21:58] Detailed Split Information:
+[2026-01-31 01:21:58] ================================================================================
+[2026-01-31 01:21:58] SPLIT: feature='Bwd Packet Length Std', threshold=1495.687744, samples=2264594, impurity=0.316378
+[2026-01-31 01:21:58]   SPLIT: feature='Average Packet Size', threshold=7.694444, samples=2068630, impurity=0.214285
+[2026-01-31 01:21:58]     SPLIT: feature='Bwd Header Length', threshold=22.000000, samples=566784, impurity=0.486051
+[2026-01-31 01:21:58]       SPLIT: feature='Max Packet Length', threshold=5.000000, samples=341084, impurity=0.454080
+[2026-01-31 01:21:58]         SPLIT: feature='Destination Port', threshold=80.500000, samples=169850, impurity=0.448264
+[2026-01-31 01:21:58]           SPLIT: feature='min_seg_size_forward', threshold=30.000000, samples=77008, impurity=0.376927
+[2026-01-31 01:21:58]             SPLIT: feature='Bwd IAT Min', threshold=1155523.000000, samples=10296, impurity=0.000971
+[2026-01-31 01:21:58]               SPLIT: feature='Bwd IAT Mean', threshold=8238927.250000, samples=10294, impurity=0.000583
+[2026-01-31 01:21:58]                 SPLIT: feature='Idle Min', threshold=10900000.000000, samples=10290, impurity=0.000389
+[2026-01-31 01:21:58]                   LEAF: samples=10190, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                   SPLIT: feature='Idle Mean', threshold=12011865.500000, samples=100, impurity=0.039200
+[2026-01-31 01:21:58]                     LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                     LEAF: samples=98, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 SPLIT: feature='Idle Min', threshold=43400000.000000, samples=4, impurity=0.375000
+[2026-01-31 01:21:58]                   LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                   LEAF: samples=3, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]               LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]             SPLIT: feature='Init_Win_bytes_forward', threshold=246.500000, samples=66712, impurity=0.235819
+[2026-01-31 01:21:58]               SPLIT: feature='Init_Win_bytes_forward', threshold=228.000000, samples=4265, impurity=0.088538
+[2026-01-31 01:21:58]                 SPLIT: feature='Flow IAT Min', threshold=375.500000, samples=185, impurity=0.102264
+[2026-01-31 01:21:58]                   LEAF: samples=10, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                   LEAF: samples=175, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                 SPLIT: feature='Fwd IAT Min', threshold=3051014.000000, samples=4080, impurity=0.011211
+[2026-01-31 01:21:58]                   SPLIT: feature='Init_Win_bytes_forward', threshold=233.000000, samples=4065, impurity=0.008817
+[2026-01-31 01:21:58]                     SPLIT: feature='Fwd IAT Min', threshold=35952.000000, samples=375, impurity=0.091392
+[2026-01-31 01:21:58]                     LEAF: samples=3690, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                   SPLIT: feature='Flow Duration', threshold=3810087.500000, samples=15, impurity=0.444444
+[2026-01-31 01:21:58]                     LEAF: samples=3, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                     SPLIT: feature='Init_Win_bytes_forward', threshold=233.500000, samples=12, impurity=0.277778
+[2026-01-31 01:21:58]               SPLIT: feature='Init_Win_bytes_forward', threshold=29339.500000, samples=62447, impurity=0.148470
+[2026-01-31 01:21:58]                 SPLIT: feature='Flow IAT Min', threshold=1045.500000, samples=59982, impurity=0.082265
+[2026-01-31 01:21:58]                   SPLIT: feature='Init_Win_bytes_forward', threshold=296.500000, samples=52596, impurity=0.031247
+[2026-01-31 01:21:58]                     SPLIT: feature='Flow IAT Min', threshold=49.500000, samples=52472, impurity=0.028511
+[2026-01-31 01:21:58]                     SPLIT: feature='Init_Win_bytes_forward', threshold=1393.000000, samples=124, impurity=0.474506
+[2026-01-31 01:21:58]                   SPLIT: feature='Fwd IAT Mean', threshold=1097365.500000, samples=7386, impurity=0.360594
+[2026-01-31 01:21:58]                     SPLIT: feature='Flow Packets/s', threshold=1415.434509, samples=1718, impurity=0.085622
+[2026-01-31 01:21:58]                     SPLIT: feature='Active Min', threshold=7033814.000000, samples=5668, impurity=0.035344
+[2026-01-31 01:21:58]                 LEAF: samples=2465, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]           LEAF: samples=92842, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]         SPLIT: feature='Fwd Packet Length Std', threshold=3.375218, samples=171234, impurity=0.074289
+[2026-01-31 01:21:58]           SPLIT: feature='Init_Win_bytes_forward', threshold=250.500000, samples=167625, impurity=0.035579
+[2026-01-31 01:21:58]             SPLIT: feature='Destination Port', threshold=261.500000, samples=1094, impurity=0.023484
+[2026-01-31 01:21:58]               SPLIT: feature='Bwd Packet Length Min', threshold=3.000000, samples=18, impurity=0.401235
+[2026-01-31 01:21:58]                 LEAF: samples=13, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                 LEAF: samples=5, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]               LEAF: samples=1076, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]             SPLIT: feature='Flow IAT Min', threshold=5133.500000, samples=166531, impurity=0.023215
+[2026-01-31 01:21:58]               SPLIT: feature='Init_Win_bytes_backward', threshold=237.000000, samples=165765, impurity=0.014278
+[2026-01-31 01:21:58]                 SPLIT: feature='Init_Win_bytes_forward', threshold=29608.000000, samples=165621, impurity=0.012575
+[2026-01-31 01:21:58]                   SPLIT: feature='URG Flag Count', threshold=0.500000, samples=165527, impurity=0.011783
+[2026-01-31 01:21:58]                     SPLIT: feature='Fwd IAT Min', threshold=5207.000000, samples=165504, impurity=0.011510
+[2026-01-31 01:21:58]                     LEAF: samples=23, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                   SPLIT: feature='Fwd Header Length', threshold=42.000000, samples=94, impurity=0.409461
+[2026-01-31 01:21:58]                     LEAF: samples=27, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                     LEAF: samples=67, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 LEAF: samples=144, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]               SPLIT: feature='Fwd Packet Length Std', threshold=1.500000, samples=766, impurity=0.005208
+[2026-01-31 01:21:58]                 LEAF: samples=764, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]           SPLIT: feature='Fwd IAT Total', threshold=94818792.000000, samples=3609, impurity=0.016487
+[2026-01-31 01:21:58]             SPLIT: feature='Destination Port', threshold=234.500000, samples=3598, impurity=0.010506
+[2026-01-31 01:21:58]               SPLIT: feature='Init_Win_bytes_forward', threshold=648.000000, samples=96, impurity=0.317491
+[2026-01-31 01:21:58]                 SPLIT: feature='Flow IAT Min', threshold=747927.500000, samples=22, impurity=0.235537
+[2026-01-31 01:21:58]                   LEAF: samples=15, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                   SPLIT: feature='Fwd IAT Min', threshold=6028498.500000, samples=7, impurity=0.489796
+[2026-01-31 01:21:58]                     SPLIT: feature='Flow Bytes/s', threshold=1.249252, samples=4, impurity=0.375000
+[2026-01-31 01:21:58]                     LEAF: samples=3, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                 LEAF: samples=74, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]               LEAF: samples=3502, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]             LEAF: samples=11, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]       SPLIT: feature='Init_Win_bytes_forward', threshold=0.500000, samples=225700, impurity=0.115066
+[2026-01-31 01:21:58]         SPLIT: feature='Destination Port', threshold=234.500000, samples=14128, impurity=0.496284
+[2026-01-31 01:21:58]           SPLIT: feature='Init_Win_bytes_backward', threshold=193.000000, samples=6468, impurity=0.004012
+[2026-01-31 01:21:58]             LEAF: samples=7, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]             SPLIT: feature='Average Packet Size', threshold=0.900000, samples=6461, impurity=0.001856
+[2026-01-31 01:21:58]               LEAF: samples=3, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]               SPLIT: feature='Fwd IAT Min', threshold=76136.000000, samples=6458, impurity=0.000929
+[2026-01-31 01:21:58]                 SPLIT: feature='Bwd Header Length', threshold=74.000000, samples=6456, impurity=0.000310
+[2026-01-31 01:21:58]                   LEAF: samples=6443, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                   SPLIT: feature='Fwd Packet Length Min', threshold=3.000000, samples=13, impurity=0.142012
+[2026-01-31 01:21:58]                     LEAF: samples=12, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                     LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 LEAF: samples=2, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]           LEAF: samples=7660, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]         SPLIT: feature='Destination Port', threshold=22.500000, samples=211572, impurity=0.067312
+[2026-01-31 01:21:58]           SPLIT: feature='Init_Win_bytes_backward', threshold=246.000000, samples=6090, impurity=0.494884
+[2026-01-31 01:21:58]             SPLIT: feature='Fwd IAT Min', threshold=64.500000, samples=3426, impurity=0.055023
+[2026-01-31 01:21:58]               SPLIT: feature='Bwd IAT Min', threshold=1752.000000, samples=3333, impurity=0.005983
+[2026-01-31 01:21:58]                 SPLIT: feature='Flow Duration', threshold=47.500000, samples=3328, impurity=0.003000
+[2026-01-31 01:21:58]                   SPLIT: feature='Flow Packets/s', threshold=49054.373047, samples=84, impurity=0.046485
+[2026-01-31 01:21:58]                     LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                     SPLIT: feature='Flow IAT Min', threshold=19.500000, samples=83, impurity=0.023806
+[2026-01-31 01:21:58]                   SPLIT: feature='Init_Win_bytes_forward', threshold=242.000000, samples=3244, impurity=0.001848
+[2026-01-31 01:21:58]                     SPLIT: feature='Flow IAT Std', threshold=0.353553, samples=633, impurity=0.009434
+[2026-01-31 01:21:58]                     LEAF: samples=2611, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 LEAF: samples=5, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]               SPLIT: feature='URG Flag Count', threshold=0.500000, samples=93, impurity=0.120708
+[2026-01-31 01:21:58]                 SPLIT: feature='Fwd IAT Total', threshold=967909.500000, samples=89, impurity=0.043934
+[2026-01-31 01:21:58]                   SPLIT: feature='Init_Win_bytes_forward', threshold=30984.000000, samples=88, impurity=0.022469
+[2026-01-31 01:21:58]                     LEAF: samples=87, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                     LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                   LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 LEAF: samples=4, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]             SPLIT: feature='Bwd Header Length', threshold=176.000000, samples=2664, impurity=0.017856
+[2026-01-31 01:21:58]               SPLIT: feature='Flow IAT Min', threshold=146.000000, samples=2641, impurity=0.000757
+[2026-01-31 01:21:58]                 LEAF: samples=2622, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                 SPLIT: feature='Flow Bytes/s', threshold=19007.603516, samples=19, impurity=0.099723
+[2026-01-31 01:21:58]                   LEAF: samples=18, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                   LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]               LEAF: samples=23, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]           SPLIT: feature='Fwd IAT Max', threshold=50215504.000000, samples=205482, impurity=0.044152
+[2026-01-31 01:21:58]             SPLIT: feature='Fwd Header Length.1', threshold=88.000000, samples=204360, impurity=0.033988
+[2026-01-31 01:21:58]               SPLIT: feature='Flow IAT Mean', threshold=6085487.500000, samples=181799, impurity=0.014633
+[2026-01-31 01:21:58]                 SPLIT: feature='Fwd Packets/s', threshold=366666.671875, samples=180784, impurity=0.011734
+[2026-01-31 01:21:58]                   SPLIT: feature='Bwd Header Length', threshold=26.000000, samples=179771, impurity=0.009246
+[2026-01-31 01:21:58]                     SPLIT: feature='Average Packet Size', threshold=3.750000, samples=1512, impurity=0.247725
+[2026-01-31 01:21:58]                     SPLIT: feature='Destination Port', threshold=80.500000, samples=178259, impurity=0.006887
+[2026-01-31 01:21:58]                   SPLIT: feature='Destination Port', threshold=81.000000, samples=1013, impurity=0.353143
+[2026-01-31 01:21:58]                     SPLIT: feature='Down/Up Ratio', threshold=0.500000, samples=248, impurity=0.120708
+[2026-01-31 01:21:58]                     LEAF: samples=765, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 SPLIT: feature='Fwd Header Length', threshold=62.000000, samples=1015, impurity=0.393246
+[2026-01-31 01:21:58]                   LEAF: samples=725, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                   SPLIT: feature='Total Fwd Packets', threshold=2.500000, samples=290, impurity=0.110369
+[2026-01-31 01:21:58]                     SPLIT: feature='Fwd IAT Min', threshold=307.500000, samples=274, impurity=0.007273
+[2026-01-31 01:21:58]                     LEAF: samples=16, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]               SPLIT: feature='Fwd IAT Min', threshold=3687.000000, samples=22561, impurity=0.175581
+[2026-01-31 01:21:58]                 SPLIT: feature='Destination Port', threshold=107.500000, samples=4710, impurity=0.471220
+[2026-01-31 01:21:58]                   SPLIT: feature='Bwd IAT Std', threshold=0.707107, samples=1673, impurity=0.032913
+[2026-01-31 01:21:58]                     SPLIT: feature='Init_Win_bytes_backward', threshold=29080.000000, samples=1657, impurity=0.014379
+[2026-01-31 01:21:58]                     LEAF: samples=16, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                   SPLIT: feature='Init_Win_bytes_backward', threshold=28460.500000, samples=3037, impurity=0.090930
+[2026-01-31 01:21:58]                     SPLIT: feature='Flow IAT Min', threshold=93.500000, samples=2779, impurity=0.012160
+[2026-01-31 01:21:58]                     SPLIT: feature='Init_Win_bytes_backward', threshold=29080.000000, samples=258, impurity=0.499970
+[2026-01-31 01:21:58]                 SPLIT: feature='Flow Bytes/s', threshold=16.935923, samples=17851, impurity=0.044239
+[2026-01-31 01:21:58]                   SPLIT: feature='Fwd IAT Min', threshold=14041.500000, samples=16756, impurity=0.000835
+[2026-01-31 01:21:58]                     SPLIT: feature='Fwd IAT Std', threshold=3215230.125000, samples=98, impurity=0.096835
+[2026-01-31 01:21:58]                     SPLIT: feature='Idle Min', threshold=11458554.000000, samples=16658, impurity=0.000240
+[2026-01-31 01:21:58]                   SPLIT: feature='Flow IAT Std', threshold=270740.531250, samples=1095, impurity=0.462219
+[2026-01-31 01:21:58]                     SPLIT: feature='Flow Bytes/s', threshold=18.832120, samples=81, impurity=0.024387
+[2026-01-31 01:21:58]                     SPLIT: feature='Flow IAT Max', threshold=515144.500000, samples=1014, impurity=0.476034
+[2026-01-31 01:21:58]             SPLIT: feature='Init_Win_bytes_backward', threshold=29080.000000, samples=1122, impurity=0.026381
+[2026-01-31 01:21:58]               SPLIT: feature='Bwd Header Length', threshold=92.000000, samples=1116, impurity=0.015999
+[2026-01-31 01:21:58]                 SPLIT: feature='Fwd IAT Std', threshold=41750000.000000, samples=1112, impurity=0.008952
+[2026-01-31 01:21:58]                   LEAF: samples=1094, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                   SPLIT: feature='Bwd Header Length', threshold=36.000000, samples=18, impurity=0.401235
+[2026-01-31 01:21:58]                     LEAF: samples=5, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                     LEAF: samples=13, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                 LEAF: samples=4, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]               LEAF: samples=6, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]     SPLIT: feature='Destination Port', threshold=21.500000, samples=1501846, impurity=0.021584
+[2026-01-31 01:21:58]       SPLIT: feature='Fwd IAT Min', threshold=2.500000, samples=9170, impurity=0.429963
+[2026-01-31 01:21:58]         SPLIT: feature='Bwd Packets/s', threshold=3.074462, samples=2579, impurity=0.184390
+[2026-01-31 01:21:58]           SPLIT: feature='Fwd Packet Length Mean', threshold=6.500000, samples=386, impurity=0.450052
+[2026-01-31 01:21:58]             LEAF: samples=132, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]             LEAF: samples=254, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]           SPLIT: feature='Subflow Bwd Bytes', threshold=3.000000, samples=2193, impurity=0.009982
+[2026-01-31 01:21:58]             LEAF: samples=11, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]             LEAF: samples=2182, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]         SPLIT: feature='Total Fwd Packets', threshold=9.500000, samples=6591, impurity=0.154230
+[2026-01-31 01:21:58]           SPLIT: feature='min_seg_size_forward', threshold=26.000000, samples=6075, impurity=0.012757
+[2026-01-31 01:21:58]             LEAF: samples=39, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]             LEAF: samples=6036, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]           LEAF: samples=516, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]       SPLIT: feature='Active Std', threshold=4527712.000000, samples=1492676, impurity=0.013423
+[2026-01-31 01:21:58]         SPLIT: feature='Bwd IAT Std', threshold=71400000.000000, samples=1489757, impurity=0.011439
+[2026-01-31 01:21:58]           SPLIT: feature='Destination Port', threshold=32.000000, samples=1488812, impurity=0.010393
+[2026-01-31 01:21:58]             SPLIT: feature='Fwd Packet Length Max', threshold=552.000000, samples=8471, impurity=0.404764
+[2026-01-31 01:21:58]               SPLIT: feature='Init_Win_bytes_forward', threshold=239.500000, samples=6096, impurity=0.003929
+[2026-01-31 01:21:58]                 SPLIT: feature='Avg Fwd Segment Size', threshold=7.000000, samples=13, impurity=0.142012
+[2026-01-31 01:21:58]                   LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                   LEAF: samples=12, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                 LEAF: samples=6083, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]               LEAF: samples=2375, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]             SPLIT: feature='Packet Length Mean', threshold=5.666667, samples=1480341, impurity=0.007256
+[2026-01-31 01:21:58]               LEAF: samples=430, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]               SPLIT: feature='Flow IAT Std', threshold=70900776.000000, samples=1479911, impurity=0.006681
+[2026-01-31 01:21:58]                 SPLIT: feature='Bwd Packet Length Std', threshold=1299.135559, samples=1479599, impurity=0.006314
+[2026-01-31 01:21:58]                   SPLIT: feature='Fwd Packet Length Min', threshold=1856.000000, samples=1476347, impurity=0.005155
+[2026-01-31 01:21:58]                     SPLIT: feature='Min Packet Length', threshold=354.000000, samples=1476190, impurity=0.004960
+[2026-01-31 01:21:58]                     SPLIT: feature='Destination Port', threshold=261.500000, samples=157, impurity=0.141182
+[2026-01-31 01:21:58]                   SPLIT: feature='Destination Port', threshold=261.500000, samples=3252, impurity=0.392199
+[2026-01-31 01:21:58]                     SPLIT: feature='Total Length of Bwd Packets', threshold=11725.000000, samples=1217, impurity=0.406952
+[2026-01-31 01:21:58]                     LEAF: samples=2035, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 SPLIT: feature='Fwd Packet Length Mean', threshold=112.500000, samples=312, impurity=0.213922
+[2026-01-31 01:21:58]                   LEAF: samples=38, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                   LEAF: samples=274, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]           SPLIT: feature='Bwd Packet Length Std', threshold=1.322876, samples=945, impurity=0.269950
+[2026-01-31 01:21:58]             LEAF: samples=793, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]             LEAF: samples=152, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]         SPLIT: feature='Bwd IAT Mean', threshold=22700000.000000, samples=2919, impurity=0.499251
+[2026-01-31 01:21:58]           SPLIT: feature='Subflow Fwd Bytes', threshold=754440.000000, samples=1408, impurity=0.007077
+[2026-01-31 01:21:58]             SPLIT: feature='Total Backward Packets', threshold=5.500000, samples=1405, impurity=0.004261
+[2026-01-31 01:21:58]               SPLIT: feature='Subflow Bwd Bytes', threshold=3372.500000, samples=12, impurity=0.277778
+[2026-01-31 01:21:58]                 LEAF: samples=10, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]               SPLIT: feature='Bwd Packet Length Std', threshold=1151.680054, samples=1393, impurity=0.001435
+[2026-01-31 01:21:58]                 LEAF: samples=1387, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 SPLIT: feature='Total Length of Bwd Packets', threshold=33202.000000, samples=6, impurity=0.277778
+[2026-01-31 01:21:58]                   LEAF: samples=1, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]                   LEAF: samples=5, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]             SPLIT: feature='Flow IAT Min', threshold=0.500000, samples=3, impurity=0.444444
+[2026-01-31 01:21:58]               LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]               LEAF: samples=2, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]           LEAF: samples=1511, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]   SPLIT: feature='Destination Port', threshold=261.500000, samples=195964, impurity=0.023118
+[2026-01-31 01:21:58]     SPLIT: feature='Init_Win_bytes_backward', threshold=243.500000, samples=193826, impurity=0.001681
+[2026-01-31 01:21:58]       SPLIT: feature='Init_Win_bytes_backward', threshold=223.000000, samples=193721, impurity=0.000640
+[2026-01-31 01:21:58]         LEAF: samples=56, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]         SPLIT: feature='Init_Win_bytes_forward', threshold=47367.500000, samples=193665, impurity=0.000062
+[2026-01-31 01:21:58]           SPLIT: feature='Subflow Bwd Bytes', threshold=14034.000000, samples=193661, impurity=0.000021
+[2026-01-31 01:21:58]             SPLIT: feature='Total Length of Bwd Packets', threshold=9758.000000, samples=193660, impurity=0.000010
+[2026-01-31 01:21:58]               SPLIT: feature='Flow Duration', threshold=1105100.500000, samples=1334, impurity=0.001498
+[2026-01-31 01:21:58]                 LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]                 LEAF: samples=1333, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]               LEAF: samples=192326, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]             LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]           LEAF: samples=4, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]       SPLIT: feature='Init_Win_bytes_backward', threshold=336.500000, samples=105, impurity=0.073288
+[2026-01-31 01:21:58]         SPLIT: feature='Fwd Packet Length Mean', threshold=132.091671, samples=11, impurity=0.462810
+[2026-01-31 01:21:58]           LEAF: samples=6, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]           SPLIT: feature='Bwd IAT Mean', threshold=99662.750000, samples=5, impurity=0.320000
+[2026-01-31 01:21:58]             LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]             LEAF: samples=4, class=1, values=[0. 1.]
+[2026-01-31 01:21:58]         LEAF: samples=94, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]     SPLIT: feature='Avg Bwd Segment Size', threshold=3695.479492, samples=2138, impurity=0.008384
+[2026-01-31 01:21:58]       LEAF: samples=2128, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]       SPLIT: feature='Fwd Packet Length Max', threshold=493.000000, samples=10, impurity=0.180000
+[2026-01-31 01:21:58]         LEAF: samples=1, class=0, values=[1. 0.]
+[2026-01-31 01:21:58]         LEAF: samples=9, class=1, values=[0. 1.]
+[2026-01-31 01:21:58] 
+(Note: Only first 10 levels shown in detail. Full tree structure saved to file.)
+[2026-01-31 01:21:58] 
+================================================================================
+[2026-01-31 01:21:58] Feature Importance (Top 20):
+[2026-01-31 01:21:58] ================================================================================
+[2026-01-31 01:21:58]   Bwd Packet Length Std: 0.376439
+[2026-01-31 01:21:58]   Average Packet Size: 0.190235
+[2026-01-31 01:21:58]   Bwd Header Length: 0.132385
+[2026-01-31 01:21:58]   Destination Port: 0.105153
+[2026-01-31 01:21:58]   Max Packet Length: 0.092386
+[2026-01-31 01:21:58]   Init_Win_bytes_forward: 0.026966
+[2026-01-31 01:21:58]   min_seg_size_forward: 0.018668
+[2026-01-31 01:21:58]   Fwd Packet Length Std: 0.009499
+[2026-01-31 01:21:58]   Init_Win_bytes_backward: 0.007101
+[2026-01-31 01:21:58]   Fwd IAT Min: 0.005157
+[2026-01-31 01:21:58]   Fwd Packet Length Max: 0.004867
+[2026-01-31 01:21:58]   Fwd IAT Mean: 0.003389
+[2026-01-31 01:21:58]   Flow IAT Min: 0.003337
+[2026-01-31 01:21:58]   Fwd IAT Max: 0.003289
+[2026-01-31 01:21:58]   Active Std: 0.002155
+[2026-01-31 01:21:58]   Bwd IAT Mean: 0.002110
+[2026-01-31 01:21:58]   Bwd IAT Std: 0.001995
+[2026-01-31 01:21:58]   Total Fwd Packets: 0.001359
+[2026-01-31 01:21:58]   Subflow Fwd Bytes: 0.001336
+[2026-01-31 01:21:58]   Packet Length Mean: 0.001221
+[2026-01-31 01:21:58] 
+================================================================================
+[2026-01-31 01:21:58] Making predictions...
+[2026-01-31 01:21:58] ================================================================================
+[2026-01-31 01:22:00] 
+================================================================================
+[2026-01-31 01:22:00] Calculating Metrics...
+[2026-01-31 01:22:00] ================================================================================
+[2026-01-31 01:22:00] 
+Training Set Metrics:
+[2026-01-31 01:22:00]   Accuracy:  0.999756
+[2026-01-31 01:22:00]   Precision: 0.999370
+[2026-01-31 01:22:00]   Recall:    0.999390
+[2026-01-31 01:22:00]   F1 Score:  0.999380
+[2026-01-31 01:22:00]   ROC-AUC:   1.000000
+[2026-01-31 01:22:00]   Avg Precision: 0.999999
+[2026-01-31 01:22:00]   Confusion Matrix:
+[2026-01-31 01:22:00]     [[1818196     281]
+ [    272  445845]]
+[2026-01-31 01:22:00] 
+Test Set Metrics:
+[2026-01-31 01:22:00]   Accuracy:  0.998785
+[2026-01-31 01:22:00]   Precision: 0.996871
+[2026-01-31 01:22:00]   Recall:    0.996960
+[2026-01-31 01:22:00]   F1 Score:  0.996916
+[2026-01-31 01:22:00]   ROC-AUC:   0.998499
+[2026-01-31 01:22:00]   Avg Precision: 0.995112
+[2026-01-31 01:22:00]   Confusion Matrix:
+[2026-01-31 01:22:00]     [[454271    349]
+ [   339 111190]]
+[2026-01-31 01:22:00] 
+Classification Report (Test Set):
+[2026-01-31 01:22:01]               precision    recall  f1-score   support
+
+      Benign       1.00      1.00      1.00    454620
+      Attack       1.00      1.00      1.00    111529
+
+    accuracy                           1.00    566149
+   macro avg       1.00      1.00      1.00    566149
+weighted avg       1.00      1.00      1.00    566149
+
+[2026-01-31 01:22:01] 
+✓ Results saved to: /Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/results/results_20260131_012001.json

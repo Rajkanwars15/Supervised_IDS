@@ -106,13 +106,13 @@ def run_ablation_experiment(dataset_name, model_file_path, train_path, test_path
         auc = roc_auc_score(y_test, y_test_proba) if len(np.unique(y_test)) > 1 else 0.0
         
         ablation_results.append({
-            'num_features': num_features,
+            'num_features': int(num_features),  # Convert to Python int
             'features': features_to_keep,
-            'accuracy': acc,
-            'precision': prec,
-            'recall': rec,
-            'f1': f1,
-            'roc_auc': auc
+            'accuracy': float(acc),
+            'precision': float(prec),
+            'recall': float(rec),
+            'f1': float(f1),
+            'roc_auc': float(auc)
         })
         
         print(f"  {num_features:3d} features: Accuracy={acc:.4f}, F1={f1:.4f}, ROC-AUC={auc:.4f}")
@@ -181,14 +181,28 @@ def run_ablation_experiment(dataset_name, model_file_path, train_path, test_path
     print(f"\n✓ Plot saved to: {plot_file}")
     plt.close()
     
-    # Save results
+    # Save results (convert numpy types to Python native types for JSON)
     results_file = output_dir / f"feature_ablation_{dataset_name.lower().replace(' ', '_')}.json"
+    
+    # Convert ablation_results to JSON-serializable format
+    serializable_results = []
+    for result in ablation_results:
+        serializable_results.append({
+            'num_features': int(result['num_features']),
+            'features': result['features'],  # List of strings, already serializable
+            'accuracy': float(result['accuracy']),
+            'precision': float(result['precision']),
+            'recall': float(result['recall']),
+            'f1': float(result['f1']),
+            'roc_auc': float(result['roc_auc'])
+        })
+    
     results = {
         'dataset': dataset_name,
-        'ablation_results': ablation_results,
+        'ablation_results': serializable_results,
         'summary': {
-            'max_features': len(feature_cols),
-            'min_features_tested': ablation_df['num_features'].min(),
+            'max_features': int(len(feature_cols)),
+            'min_features_tested': int(ablation_df['num_features'].min()),
             'best_accuracy': float(ablation_df['accuracy'].max()),
             'best_f1': float(ablation_df['f1'].max()),
             'best_roc_auc': float(ablation_df['roc_auc'].max())
@@ -202,28 +216,44 @@ def run_ablation_experiment(dataset_name, model_file_path, train_path, test_path
     
     return ablation_df
 
+def find_latest_model(model_dir):
+    """Find the latest model file in a directory"""
+    if not model_dir.exists():
+        return None
+    
+    model_files = sorted(model_dir.glob("decision_tree_model_*.joblib"),
+                        key=lambda p: p.stat().st_mtime,
+                        reverse=True)
+    
+    return model_files[0] if model_files else None
+
 if __name__ == "__main__":
-    base_path = Path(__file__).parent.parent.parent.parent
+    # Calculate base path: shared -> experiments -> Supervised_IDS
+    # __file__ is at: experiments/shared/feature_ablation_experiment.py
+    # parent = experiments/shared/
+    # parent.parent = experiments/
+    # parent.parent.parent = Supervised_IDS/ (project root)
+    base_path = Path(__file__).parent.parent.parent
     
     # Run for each dataset
     datasets = [
         {
             'name': 'SensorNetGuard',
-            'model': base_path / "experiments" / "sensornetguard" / "decision_tree_experiment" / "models" / "decision_tree_model_20260130_193426.joblib",
+            'model_dir': base_path / "experiments" / "sensornetguard" / "decision_tree_experiment" / "models",
             'train': base_path / "data" / "sensornetguard_data.csv",
             'test': None,  # Will split from train
             'target_col': 'Is_Malicious'
         },
         {
             'name': 'Farm-Flow',
-            'model': base_path / "experiments" / "farmflow" / "decision_tree_experiment" / "models" / "decision_tree_model_20260130_193059.joblib",
+            'model_dir': base_path / "experiments" / "farmflow" / "decision_tree_experiment" / "models",
             'train': base_path / "data" / "farm-flow-silver" / "Farm-Flow_Train_Binary.csv",
             'test': base_path / "data" / "farm-flow-silver" / "Farm-Flow_Test_Binary.csv",
             'target_col': 'is_attack'
         },
         {
             'name': 'CIC IDS 2017',
-            'model': base_path / "experiments" / "cicids2017" / "decision_tree_experiment" / "models" / "decision_tree_model_20260130_193109.joblib",
+            'model_dir': base_path / "experiments" / "cicids2017" / "decision_tree_experiment" / "models",
             'train': base_path / "data" / "cic-ids2017-silver" / "CIC-IDS2017_Train_Binary.csv",
             'test': base_path / "data" / "cic-ids2017-silver" / "CIC-IDS2017_Test_Binary.csv",
             'target_col': 'is_attack'
@@ -234,13 +264,21 @@ if __name__ == "__main__":
     output_dir.mkdir(parents=True, exist_ok=True)
     
     for dataset in datasets:
-        if not dataset['model'].exists():
-            print(f"\n⚠ Skipping {dataset['name']}: Model file not found")
+        # Find latest model
+        model_file = find_latest_model(dataset['model_dir'])
+        if model_file is None:
+            print(f"\n⚠ Skipping {dataset['name']}: No model file found in {dataset['model_dir']}")
             continue
+        
+        print(f"\n✓ Found model for {dataset['name']}: {model_file.name}")
         
         if dataset['test'] is None:
             # For SensorNetGuard, split the data
             print(f"\n{dataset['name']}: Splitting data for train/test...")
+            if not dataset['train'].exists():
+                print(f"⚠ Skipping {dataset['name']}: Training data file not found: {dataset['train']}")
+                continue
+            
             df = pd.read_csv(dataset['train'])
             exclude_cols = ['Node_ID', 'Timestamp', 'IP_Address', dataset['target_col']]
             feature_cols = [col for col in df.columns if col not in exclude_cols and pd.api.types.is_numeric_dtype(df[col])]
@@ -256,18 +294,20 @@ if __name__ == "__main__":
             dataset['train_df'] = train_df
             dataset['test_df'] = test_df
             dataset['feature_cols'] = feature_cols
-            dataset['target_col'] = dataset['target_col']
-        
-        if not dataset['train'].exists() or not dataset['test'].exists():
-            print(f"\n⚠ Skipping {dataset['name']}: Data files not found")
-            continue
+        else:
+            # Check if train and test files exist
+            if not dataset['train'].exists() or not dataset['test'].exists():
+                print(f"\n⚠ Skipping {dataset['name']}: Data files not found")
+                print(f"  Train: {dataset['train'].exists()}")
+                print(f"  Test: {dataset['test'].exists()}")
+                continue
         
         try:
             if dataset['test'] is None:
                 # SensorNetGuard with split data
                 run_ablation_experiment(
                     dataset['name'],
-                    dataset['model'],
+                    model_file,
                     None,  # train_path
                     None,  # test_path
                     output_dir,
@@ -279,7 +319,7 @@ if __name__ == "__main__":
             else:
                 run_ablation_experiment(
                     dataset['name'],
-                    dataset['model'],
+                    model_file,
                     dataset['train'],
                     dataset['test'],
                     output_dir,

@@ -1,0 +1,335 @@
+{
+  "dataset": "SensorNetGuard",
+  "ablation_results": [
+    {
+      "num_features": 17,
+      "features": [
+        "Packet_Rate",
+        "Data_Reception_Frequency",
+        "Route_Reply_Frequency",
+        "Memory_Usage",
+        "Battery_Level",
+        "Number_of_Neighbors",
+        "Signal_Strength",
+        "Packet_Duplication_Rate",
+        "SNR",
+        "Bandwidth",
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 0.9995,
+      "precision": 0.9897959183673469,
+      "recall": 1.0,
+      "f1": 0.9948717948717949,
+      "roc_auc": 0.9997372569626906
+    },
+    {
+      "num_features": 16,
+      "features": [
+        "Data_Reception_Frequency",
+        "Route_Reply_Frequency",
+        "Memory_Usage",
+        "Battery_Level",
+        "Number_of_Neighbors",
+        "Signal_Strength",
+        "Packet_Duplication_Rate",
+        "SNR",
+        "Bandwidth",
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    {
+      "num_features": 15,
+      "features": [
+        "Route_Reply_Frequency",
+        "Memory_Usage",
+        "Battery_Level",
+        "Number_of_Neighbors",
+        "Signal_Strength",
+        "Packet_Duplication_Rate",
+        "SNR",
+        "Bandwidth",
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    {
+      "num_features": 14,
+      "features": [
+        "Memory_Usage",
+        "Battery_Level",
+        "Number_of_Neighbors",
+        "Signal_Strength",
+        "Packet_Duplication_Rate",
+        "SNR",
+        "Bandwidth",
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 0.999,
+      "precision": 1.0,
+      "recall": 0.979381443298969,
+      "f1": 0.9895833333333334,
+      "roc_auc": 0.9896907216494846
+    },
+    {
+      "num_features": 13,
+      "features": [
+        "Battery_Level",
+        "Number_of_Neighbors",
+        "Signal_Strength",
+        "Packet_Duplication_Rate",
+        "SNR",
+        "Bandwidth",
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 0.999,
+      "precision": 1.0,
+      "recall": 0.979381443298969,
+      "f1": 0.9895833333333334,
+      "roc_auc": 0.9896907216494846
+    },
+    {
+      "num_features": 12,
+      "features": [
+        "Number_of_Neighbors",
+        "Signal_Strength",
+        "Packet_Duplication_Rate",
+        "SNR",
+        "Bandwidth",
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 0.999,
+      "precision": 0.9797979797979798,
+      "recall": 1.0,
+      "f1": 0.9897959183673469,
+      "roc_auc": 0.999474513925381
+    },
+    {
+      "num_features": 11,
+      "features": [
+        "Signal_Strength",
+        "Packet_Duplication_Rate",
+        "SNR",
+        "Bandwidth",
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 0.9995,
+      "precision": 0.9897959183673469,
+      "recall": 1.0,
+      "f1": 0.9948717948717949,
+      "roc_auc": 0.9997372569626906
+    },
+    {
+      "num_features": 10,
+      "features": [
+        "Packet_Duplication_Rate",
+        "SNR",
+        "Bandwidth",
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 0.999,
+      "precision": 0.9797979797979798,
+      "recall": 1.0,
+      "f1": 0.9897959183673469,
+      "roc_auc": 0.999474513925381
+    },
+    {
+      "num_features": 9,
+      "features": [
+        "SNR",
+        "Bandwidth",
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    {
+      "num_features": 8,
+      "features": [
+        "Bandwidth",
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 0.9985,
+      "precision": 0.9895833333333334,
+      "recall": 0.979381443298969,
+      "f1": 0.9844559585492227,
+      "roc_auc": 0.9894279786121751
+    },
+    {
+      "num_features": 7,
+      "features": [
+        "CPU_Usage",
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    {
+      "num_features": 6,
+      "features": [
+        "Route_Request_Frequency",
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    {
+      "num_features": 5,
+      "features": [
+        "Data_Transmission_Frequency",
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    {
+      "num_features": 4,
+      "features": [
+        "Packet_Drop_Rate",
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0
+    },
+    {
+      "num_features": 3,
+      "features": [
+        "Data_Throughput",
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 0.9995,
+      "precision": 0.9897959183673469,
+      "recall": 1.0,
+      "f1": 0.9948717948717949,
+      "roc_auc": 0.9997372569626906
+    },
+    {
+      "num_features": 2,
+      "features": [
+        "Energy_Consumption_Rate",
+        "Error_Rate"
+      ],
+      "accuracy": 0.997,
+      "precision": 0.9595959595959596,
+      "recall": 0.979381443298969,
+      "f1": 0.9693877551020408,
+      "roc_auc": 0.9886397495002466
+    },
+    {
+      "num_features": 1,
+      "features": [
+        "Error_Rate"
+      ],
+      "accuracy": 0.9835,
+      "precision": 0.8478260869565217,
+      "recall": 0.8041237113402062,
+      "f1": 0.8253968253968254,
+      "roc_auc": 0.89838345314777
+    }
+  ],
+  "summary": {
+    "max_features": 17,
+    "min_features_tested": 1,
+    "best_accuracy": 1.0,
+    "best_f1": 1.0,
+    "best_roc_auc": 1.0
+  }
+}
