@@ -1,5 +1,5 @@
 {
-  "start_time": "2026-01-30T20:54:23.923793",
+  "start_time": "2026-01-30T21:14:57.890095",
   "preprocessing": {
     "farmflow": true,
     "cicids2017": true
@@ -17,8 +17,8 @@
     "total_experiments": 7,
     "successful": 1,
     "failed": 6,
-    "duration_seconds": 65.262845,
-    "duration_formatted": "0:01:05.262845",
-    "end_time": "2026-01-30T20:55:29.186638"
+    "duration_seconds": 64.883826,
+    "duration_formatted": "0:01:04.883826",
+    "end_time": "2026-01-30T21:16:02.773921"
   }
 }

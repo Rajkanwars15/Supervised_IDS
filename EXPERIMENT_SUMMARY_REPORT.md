@@ -1,6 +1,6 @@
 # Decision Tree Experiments - Comprehensive Summary Report
 
-Generated: 2026-01-30 20:55:29
+Generated: 2026-01-30 21:16:02
 
 ================================================================================
 
@@ -55,6 +55,16 @@ Generated: 2026-01-30 20:55:29
 These experiments test model robustness by using only the top feature.
 
 
+### SensorNetGuard Decision Stump
+
+*Experiment not yet run. Results will appear here after execution.*
+
+
+### Farm-Flow Decision Stump
+
+*Experiment not yet run. Results will appear here after execution.*
+
+
 ## 3. CIC IDS 2017 Depth-Limited Experiment
 
 Comparison of unlimited depth vs max_depth=10:
@@ -71,6 +81,12 @@ Comparison of unlimited depth vs max_depth=10:
 ## 4. Feature Ablation Experiments
 
 These experiments show how performance changes as features are removed, starting from lowest importance.
+
+
+*Feature ablation experiments not yet run. Results will appear here after execution.*
+
+
+To run: `python experiments/shared/feature_ablation_experiment.py`
 
 
 ## 5. Top 10 Most Important Features (by Dataset)

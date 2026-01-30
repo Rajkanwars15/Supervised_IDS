@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-30T20:55:29.209388",
+  "generated_at": "2026-01-30T21:16:02.798258",
   "results": {
     "decision_trees": {
       "SensorNetGuard": {
@@ -745,7 +745,7 @@
     "decision_stumps": {},
     "maxdepth10": {
       "CIC IDS 2017": {
-        "timestamp": "20260130_205426",
+        "timestamp": "20260130_211500",
         "dataset": "CIC IDS 2017",
         "max_depth": 10,
         "tree_properties": {
