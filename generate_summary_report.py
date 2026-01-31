@@ -220,29 +220,36 @@ def generate_markdown_report(results_data, base_path):
             report.append("*Experiment not yet run. Results will appear here after execution.*\n")
             report.append("")
     
-    # CIC IDS 2017 max_depth=10 Experiment
-    report.append("## 3. CIC IDS 2017 Depth-Limited Experiment\n")
-    if 'CIC IDS 2017' in results_data.get('maxdepth10', {}):
-        maxdepth_data = results_data['maxdepth10']['CIC IDS 2017']
-        report.append("Comparison of unlimited depth vs max_depth=10:\n\n")
-        
-        # Get original results for comparison
-        original = results_data.get('decision_trees', {}).get('CIC IDS 2017', {})
-        
-        report.append("| Metric | Unlimited Depth | max_depth=10 | Difference |")
-        report.append("|--------|-----------------|--------------|------------|")
-        
-        if original and 'test_metrics' in original and 'test_metrics' in maxdepth_data:
-            orig_metrics = original['test_metrics']
-            maxd_metrics = maxdepth_data['test_metrics']
+    # Depth-Limited Experiments (max_depth=10)
+    report.append("## 3. Depth-Limited Experiments (max_depth=10)\n")
+    report.append("Comparison of unlimited depth vs max_depth=10 for datasets with trees > 10 depth.\n\n")
+    
+    maxdepth_datasets = results_data.get('maxdepth10', {})
+    if maxdepth_datasets:
+        for dataset_name in sorted(maxdepth_datasets.keys()):
+            maxdepth_data = maxdepth_datasets[dataset_name]
+            report.append(f"### {dataset_name}\n")
+            report.append("Comparison of unlimited depth vs max_depth=10:\n\n")
             
-            for metric in ['accuracy', 'precision', 'recall', 'f1_score', 'roc_auc']:
-                orig_val = orig_metrics.get(metric, 0)
-                maxd_val = maxd_metrics.get(metric, 0)
-                diff = orig_val - maxd_val
-                report.append(f"| {metric.capitalize()} | {orig_val:.4f} | {maxd_val:.4f} | {diff:+.4f} |")
-        
-        report.append("")
+            # Get original results for comparison
+            original = results_data.get('decision_trees', {}).get(dataset_name, {})
+            
+            report.append("| Metric | Unlimited Depth | max_depth=10 | Difference |")
+            report.append("|--------|-----------------|--------------|------------|")
+            
+            if original and 'test_metrics' in original and 'test_metrics' in maxdepth_data:
+                orig_metrics = original['test_metrics']
+                maxd_metrics = maxdepth_data['test_metrics']
+                
+                for metric in ['accuracy', 'precision', 'recall', 'f1_score', 'roc_auc']:
+                    orig_val = orig_metrics.get(metric, 0)
+                    maxd_val = maxd_metrics.get(metric, 0)
+                    diff = orig_val - maxd_val
+                    report.append(f"| {metric.capitalize()} | {orig_val:.4f} | {maxd_val:.4f} | {diff:+.4f} |")
+            
+            report.append("")
+    else:
+        report.append("*No depth-limited experiments found. These are created automatically for trees with depth > 10.*\n\n")
     
     # Feature Ablation Experiments
     report.append("## 4. Feature Ablation Experiments\n")
@@ -259,7 +266,16 @@ def generate_markdown_report(results_data, base_path):
             ablation_found = True
             # Match plots with JSON files
             for json_file in sorted(ablation_jsons):
-                dataset_name = json_file.stem.replace('feature_ablation_', '').replace('_', ' ').title()
+                dataset_name_raw = json_file.stem.replace('feature_ablation_', '')
+                # Handle special cases for dataset name formatting
+                dataset_name_map = {
+                    'nsl-kdd': 'NSL-KDD',
+                    'cic_ids_2017': 'CIC IDS 2017',
+                    'unsw-nb15': 'UNSW-NB15',
+                    'farm-flow': 'Farm-Flow',
+                    'sensornetguard': 'SensorNetGuard'
+                }
+                dataset_name = dataset_name_map.get(dataset_name_raw, dataset_name_raw.replace('_', ' ').title())
                 report.append(f"### {dataset_name}\n")
                 
                 # Load JSON for summary stats and detailed table
@@ -328,8 +344,49 @@ def generate_markdown_report(results_data, base_path):
         report.append("To run: `python experiments/shared/feature_ablation_experiment.py`\n")
         report.append("")
     
+    # Model Comparison Experiments
+    report.append("## 5. Comprehensive Model Comparison\n")
+    report.append("Comparison of baseline models (decision stumps, shallow trees) against ensemble methods (Random Forest, XGBoost) and neural networks (MLP), plus linear models (Logistic Regression, Linear SVM).\n\n")
+    
+    model_comp_data = results_data.get('model_comparison', {})
+    if model_comp_data:
+        for dataset_name in sorted(model_comp_data.keys()):
+            comp_data = model_comp_data[dataset_name]
+            report.append(f"### {dataset_name}\n")
+            
+            model_results = comp_data.get('model_results', [])
+            successful_results = [r for r in model_results if r.get('status') == 'success']
+            
+            if successful_results:
+                report.append("| Model | Test Accuracy | Test Precision | Test Recall | Test F1 | Test ROC-AUC |")
+                report.append("|-------|---------------|-----------------|-------------|---------|--------------|")
+                
+                for result in sorted(successful_results, key=lambda x: x.get('test_accuracy', 0), reverse=True):
+                    report.append(f"| {result.get('model_name', 'N/A')} | "
+                                 f"{result.get('test_accuracy', 0):.4f} | "
+                                 f"{result.get('test_precision', 0):.4f} | "
+                                 f"{result.get('test_recall', 0):.4f} | "
+                                 f"{result.get('test_f1', 0):.4f} | "
+                                 f"{result.get('test_roc_auc', 0):.4f} |")
+                report.append("")
+                
+                # Find and add plot
+                model_comp_dir = base_path / "experiments" / "shared" / "model_comparison"
+                plot_file = model_comp_dir / f"model_comparison_{dataset_name.lower().replace(' ', '_')}.png"
+                if plot_file.exists():
+                    rel_path = get_relative_path(plot_file, base_path)
+                    report.append(f"![{dataset_name} Model Comparison]({rel_path})\n")
+                    report.append("")
+            else:
+                report.append("*No successful model results found.*\n\n")
+    else:
+        report.append("*Model comparison experiments not yet run. Results will appear here after execution.*\n")
+        report.append("")
+        report.append("To run: `python experiments/shared/model_comparison_experiment.py`\n")
+        report.append("")
+    
     # Top features
-    report.append("## 5. Top 10 Most Important Features (by Dataset)\n")
+    report.append("## 6. Top 10 Most Important Features (by Dataset)\n")
     
     for dataset_name in datasets.keys():
         key = dataset_name
@@ -343,7 +400,7 @@ def generate_markdown_report(results_data, base_path):
                 report.append("")
     
     # Confusion matrices
-    report.append("## 6. Confusion Matrices (Test Set)\n")
+    report.append("## 7. Confusion Matrices (Test Set)\n")
     
     for dataset_name in datasets.keys():
         key = dataset_name
@@ -372,7 +429,8 @@ def main():
         'decision_trees': {},
         'decision_stumps': {},
         'maxdepth10': {},
-        'feature_ablation': {}
+        'feature_ablation': {},
+        'model_comparison': {}
     }
     
     # Load main decision tree experiments
@@ -410,15 +468,23 @@ def main():
         else:
             print(f"  ✗ No results found for {name}")
     
-    # Load max_depth=10 experiment
-    print("\nLoading CIC IDS 2017 max_depth=10 experiment...")
-    maxdepth_dir = base_path / "experiments" / "cicids2017" / "decision_tree_maxdepth10_experiment"
-    maxdepth_results = load_latest_results(maxdepth_dir)
-    if maxdepth_results:
-        results_data['maxdepth10']['CIC IDS 2017'] = maxdepth_results
-        print(f"  ✓ Loaded CIC IDS 2017 max_depth=10 results")
-    else:
-        print(f"  ✗ No results found for CIC IDS 2017 max_depth=10")
+    # Load max_depth=10 experiments for all datasets
+    print("\nLoading max_depth=10 experiments...")
+    maxdepth_experiments = {
+        'SensorNetGuard': base_path / "experiments" / "sensornetguard" / "decision_tree_maxdepth10_experiment",
+        'Farm-Flow': base_path / "experiments" / "farmflow" / "decision_tree_maxdepth10_experiment",
+        'CIC IDS 2017': base_path / "experiments" / "cicids2017" / "decision_tree_maxdepth10_experiment",
+        'UNSW-NB15': base_path / "experiments" / "unsw-nb15" / "decision_tree_maxdepth10_experiment",
+        'NSL-KDD': base_path / "experiments" / "nsl-kdd" / "decision_tree_maxdepth10_experiment"
+    }
+    
+    for name, exp_dir in maxdepth_experiments.items():
+        maxdepth_results = load_latest_results(exp_dir)
+        if maxdepth_results:
+            results_data['maxdepth10'][name] = maxdepth_results
+            print(f"  ✓ Loaded {name} max_depth=10 results")
+        else:
+            print(f"  ✗ No results found for {name} max_depth=10")
     
     # Check for feature ablation results
     print("\nChecking for feature ablation results...")
@@ -434,6 +500,21 @@ def main():
                     print(f"  ✓ Loaded feature ablation results for {dataset_name}")
             except Exception as e:
                 print(f"  ✗ Error loading {ablation_file}: {e}")
+    
+    # Load model comparison results
+    print("\nChecking for model comparison results...")
+    model_comp_dir = base_path / "experiments" / "shared" / "model_comparison"
+    if model_comp_dir.exists():
+        model_comp_files = list(model_comp_dir.glob("model_comparison_*.json"))
+        for comp_file in model_comp_files:
+            try:
+                with open(comp_file, 'r') as f:
+                    comp_data = json.load(f)
+                    dataset_name = comp_data.get('dataset', comp_file.stem.replace('model_comparison_', ''))
+                    results_data['model_comparison'][dataset_name] = comp_data
+                    print(f"  ✓ Loaded model comparison results for {dataset_name}")
+            except Exception as e:
+                print(f"  ✗ Error loading {comp_file}: {e}")
     
     if not any(results_data.values()):
         print("\nNo results found. Please run experiments first.")

@@ -244,6 +244,16 @@ def main():
             'name': 'Feature Ablation',
             'script': base_path / "experiments" / "shared" / "feature_ablation_experiment.py",
             'description': 'Feature Ablation Experiment (All Datasets)'
+        },
+        {
+            'name': 'Create Depth-Limited Experiments',
+            'script': base_path / "experiments" / "shared" / "create_depth_limited_experiments.py",
+            'description': 'Create max_depth=10 Experiments for Trees > 10 Depth'
+        },
+        {
+            'name': 'Model Comparison',
+            'script': base_path / "experiments" / "shared" / "model_comparison_experiment.py",
+            'description': 'Comprehensive Model Comparison (All Models, All Datasets)'
         }
     ]
     

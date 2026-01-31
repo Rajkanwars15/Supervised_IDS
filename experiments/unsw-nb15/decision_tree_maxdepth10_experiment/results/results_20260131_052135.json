@@ -1,0 +1,86 @@
+{
+  "timestamp": "20260131_052135",
+  "dataset": "UNSW-NB15",
+  "max_depth": 10,
+  "tree_properties": {
+    "max_depth": 10,
+    "n_nodes": 371,
+    "n_leaves": 186
+  },
+  "test_metrics": {
+    "accuracy": 0.8794271972015741,
+    "precision": 0.839381913690305,
+    "recall": 0.9658298773493338,
+    "f1_score": 0.8981773050372848,
+    "roc_auc": 0.9735482670197773,
+    "confusion_matrix": [
+      [
+        28622,
+        8378
+      ],
+      [
+        1549,
+        43783
+      ]
+    ]
+  },
+  "train_metrics": {
+    "accuracy": 0.9440119538499268,
+    "precision": 0.9618381770033902,
+    "recall": 0.9556564801702684,
+    "f1_score": 0.9587373641846878,
+    "roc_auc": 0.9900691222301758,
+    "confusion_matrix": [
+      [
+        51475,
+        4525
+      ],
+      [
+        5292,
+        114049
+      ]
+    ]
+  },
+  "top_10_features": [
+    {
+      "feature": "sttl",
+      "importance": 0.8027384819362369
+    },
+    {
+      "feature": "ct_srv_dst",
+      "importance": 0.06789884961425473
+    },
+    {
+      "feature": "sbytes",
+      "importance": 0.03809671251114618
+    },
+    {
+      "feature": "smean",
+      "importance": 0.027557492397904525
+    },
+    {
+      "feature": "sloss",
+      "importance": 0.01294572346542448
+    },
+    {
+      "feature": "ct_state_ttl",
+      "importance": 0.009081689502895814
+    },
+    {
+      "feature": "dmean",
+      "importance": 0.006597300805135185
+    },
+    {
+      "feature": "ct_dst_src_ltm",
+      "importance": 0.005787884970632132
+    },
+    {
+      "feature": "sinpkt",
+      "importance": 0.005335430776597281
+    },
+    {
+      "feature": "sload",
+      "importance": 0.0036514962069395555
+    }
+  ]
+}

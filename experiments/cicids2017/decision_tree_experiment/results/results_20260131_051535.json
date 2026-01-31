@@ -1,0 +1,360 @@
+{
+  "experiment_timestamp": "20260131_051535",
+  "dataset": "CIC IDS 2017 Binary Classification",
+  "tree_parameters": {
+    "criterion": "gini",
+    "splitter": "best",
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "min_weight_fraction_leaf": 0.0,
+    "max_features": null,
+    "random_state": 42,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "class_weight": null,
+    "ccp_alpha": 0.0
+  },
+  "tree_properties": {
+    "max_depth": 43,
+    "n_nodes": 6371,
+    "n_leaves": 3186
+  },
+  "feature_importance": [
+    {
+      "feature": "Bwd Packet Length Std",
+      "importance": 0.37643895511206965
+    },
+    {
+      "feature": "Average Packet Size",
+      "importance": 0.19023460291012298
+    },
+    {
+      "feature": "Bwd Header Length",
+      "importance": 0.13238513968673501
+    },
+    {
+      "feature": "Destination Port",
+      "importance": 0.10515281545494327
+    },
+    {
+      "feature": "Max Packet Length",
+      "importance": 0.09238613993967475
+    },
+    {
+      "feature": "Init_Win_bytes_forward",
+      "importance": 0.026965984971847032
+    },
+    {
+      "feature": "min_seg_size_forward",
+      "importance": 0.018668069981088994
+    },
+    {
+      "feature": "Fwd Packet Length Std",
+      "importance": 0.009499439221747927
+    },
+    {
+      "feature": "Init_Win_bytes_backward",
+      "importance": 0.007101172626546557
+    },
+    {
+      "feature": "Fwd IAT Min",
+      "importance": 0.005157096744714815
+    },
+    {
+      "feature": "Fwd Packet Length Max",
+      "importance": 0.0048670746299169865
+    },
+    {
+      "feature": "Fwd IAT Mean",
+      "importance": 0.003388501639014874
+    },
+    {
+      "feature": "Flow IAT Min",
+      "importance": 0.003336667503765869
+    },
+    {
+      "feature": "Fwd IAT Max",
+      "importance": 0.0032885821559934117
+    },
+    {
+      "feature": "Active Std",
+      "importance": 0.002155499157344224
+    },
+    {
+      "feature": "Bwd IAT Mean",
+      "importance": 0.0021102994052873783
+    },
+    {
+      "feature": "Bwd IAT Std",
+      "importance": 0.001994697392365587
+    },
+    {
+      "feature": "Total Fwd Packets",
+      "importance": 0.0013592340990600668
+    },
+    {
+      "feature": "Subflow Fwd Bytes",
+      "importance": 0.0013363539222613408
+    },
+    {
+      "feature": "Packet Length Mean",
+      "importance": 0.0012205929359161707
+    },
+    {
+      "feature": "Flow Packets/s",
+      "importance": 0.0010840012054342775
+    },
+    {
+      "feature": "Fwd Header Length.1",
+      "importance": 0.0010209511459527947
+    },
+    {
+      "feature": "Total Length of Fwd Packets",
+      "importance": 0.0009593635362626921
+    },
+    {
+      "feature": "Flow IAT Std",
+      "importance": 0.0008275984450930374
+    },
+    {
+      "feature": "Bwd Packet Length Mean",
+      "importance": 0.000721478634479241
+    },
+    {
+      "feature": "Fwd Header Length",
+      "importance": 0.0006018778674078835
+    },
+    {
+      "feature": "Flow Bytes/s",
+      "importance": 0.00047439418400855687
+    },
+    {
+      "feature": "Bwd Packets/s",
+      "importance": 0.0004654778202856081
+    },
+    {
+      "feature": "Fwd IAT Total",
+      "importance": 0.00042312923378173925
+    },
+    {
+      "feature": "Fwd Packet Length Min",
+      "importance": 0.00038145706633952895
+    },
+    {
+      "feature": "Fwd Packet Length Mean",
+      "importance": 0.0003489446014580356
+    },
+    {
+      "feature": "Flow IAT Mean",
+      "importance": 0.00033922341931628014
+    },
+    {
+      "feature": "Total Length of Bwd Packets",
+      "importance": 0.0003283494607116135
+    },
+    {
+      "feature": "Avg Bwd Segment Size",
+      "importance": 0.00031757106421562533
+    },
+    {
+      "feature": "Min Packet Length",
+      "importance": 0.00028712793151092897
+    },
+    {
+      "feature": "URG Flag Count",
+      "importance": 0.0002746952861649129
+    },
+    {
+      "feature": "Fwd Packets/s",
+      "importance": 0.00026887136053127585
+    },
+    {
+      "feature": "Down/Up Ratio",
+      "importance": 0.00024039997570462522
+    },
+    {
+      "feature": "Subflow Fwd Packets",
+      "importance": 0.00019842182245301444
+    },
+    {
+      "feature": "Bwd Packet Length Max",
+      "importance": 0.0001956724442485295
+    },
+    {
+      "feature": "Flow IAT Max",
+      "importance": 0.00019281366435273037
+    },
+    {
+      "feature": "Flow Duration",
+      "importance": 0.00016580887226794728
+    },
+    {
+      "feature": "Fwd IAT Std",
+      "importance": 0.0001362749896967008
+    },
+    {
+      "feature": "Subflow Bwd Bytes",
+      "importance": 0.00010373252488158733
+    },
+    {
+      "feature": "Bwd IAT Max",
+      "importance": 9.442331250878797e-05
+    },
+    {
+      "feature": "FIN Flag Count",
+      "importance": 8.812951974685358e-05
+    },
+    {
+      "feature": "Bwd Packet Length Min",
+      "importance": 6.507613590086246e-05
+    },
+    {
+      "feature": "Idle Min",
+      "importance": 6.252409614710525e-05
+    },
+    {
+      "feature": "Bwd IAT Min",
+      "importance": 5.747066123911819e-05
+    },
+    {
+      "feature": "Active Min",
+      "importance": 4.389658819116021e-05
+    },
+    {
+      "feature": "Idle Max",
+      "importance": 3.133601467816215e-05
+    },
+    {
+      "feature": "ACK Flag Count",
+      "importance": 2.9951435001659207e-05
+    },
+    {
+      "feature": "PSH Flag Count",
+      "importance": 2.9659741098330058e-05
+    },
+    {
+      "feature": "Bwd IAT Total",
+      "importance": 2.8785334797195074e-05
+    },
+    {
+      "feature": "Idle Mean",
+      "importance": 1.495824607934033e-05
+    },
+    {
+      "feature": "Subflow Bwd Packets",
+      "importance": 1.4581972431300326e-05
+    },
+    {
+      "feature": "Avg Fwd Segment Size",
+      "importance": 1.0885075971232984e-05
+    },
+    {
+      "feature": "Packet Length Std",
+      "importance": 8.875782289292266e-06
+    },
+    {
+      "feature": "Active Mean",
+      "importance": 5.134535765677752e-06
+    },
+    {
+      "feature": "act_data_pkt_fwd",
+      "importance": 3.151365451867472e-06
+    },
+    {
+      "feature": "Active Max",
+      "importance": 2.8980902894225586e-06
+    },
+    {
+      "feature": "Fwd PSH Flags",
+      "importance": 2.790537276781862e-06
+    },
+    {
+      "feature": "Total Backward Packets",
+      "importance": 9.155081599705503e-07
+    },
+    {
+      "feature": "Fwd URG Flags",
+      "importance": 0.0
+    },
+    {
+      "feature": "Packet Length Variance",
+      "importance": 0.0
+    },
+    {
+      "feature": "ECE Flag Count",
+      "importance": 0.0
+    },
+    {
+      "feature": "RST Flag Count",
+      "importance": 0.0
+    },
+    {
+      "feature": "Idle Std",
+      "importance": 0.0
+    },
+    {
+      "feature": "CWE Flag Count",
+      "importance": 0.0
+    },
+    {
+      "feature": "SYN Flag Count",
+      "importance": 0.0
+    }
+  ],
+  "training_metrics": {
+    "accuracy": 0.9997558061180062,
+    "precision": 0.9993701331014108,
+    "recall": 0.9993902944743195,
+    "f1_score": 0.9993802136861819,
+    "roc_auc": 0.9999997222255449,
+    "average_precision": 0.9999985571780559,
+    "confusion_matrix": [
+      [
+        1818196,
+        281
+      ],
+      [
+        272,
+        445845
+      ]
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 0.9987847722066099,
+    "precision": 0.9968710495880365,
+    "recall": 0.9969604318159403,
+    "f1_score": 0.9969157386985135,
+    "roc_auc": 0.9984991858218574,
+    "average_precision": 0.9951116470081245,
+    "confusion_matrix": [
+      [
+        454271,
+        349
+      ],
+      [
+        339,
+        111190
+      ]
+    ]
+  },
+  "data_info": {
+    "n_train_samples": 2264594,
+    "n_test_samples": 566149,
+    "n_features": 70,
+    "train_class_distribution": {
+      "0": 1818477,
+      "1": 446117
+    },
+    "test_class_distribution": {
+      "0": 454620,
+      "1": 111529
+    }
+  },
+  "model_file": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/models/decision_tree_model_20260131_051535.joblib",
+  "visualization_files": {
+    "png": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_051535.png",
+    "svg": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_051535.svg",
+    "pdf": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_051535.pdf"
+  }
+}

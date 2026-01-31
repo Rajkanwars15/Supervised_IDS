@@ -1,0 +1,110 @@
+{
+  "dataset": "CIC IDS 2017",
+  "timestamp": "20260131_064721",
+  "temporal_split": false,
+  "data_info": {
+    "n_train_samples": 2264594,
+    "n_test_samples": 566149,
+    "n_features": 78,
+    "train_class_distribution": {
+      "0": 1818477,
+      "1": 446117
+    },
+    "test_class_distribution": {
+      "0": 454620,
+      "1": 111529
+    }
+  },
+  "model_results": [
+    {
+      "model_name": "Decision Stump (max_depth=1)",
+      "train_accuracy": 0.8875131701311582,
+      "test_accuracy": 0.8874571888319153,
+      "test_precision": 0.9892356492376957,
+      "test_recall": 0.4334209039801307,
+      "test_f1": 0.6027532201952691,
+      "test_roc_auc": 0.7161319468649058,
+      "status": "success"
+    },
+    {
+      "model_name": "Shallow Tree (max_depth=3)",
+      "train_accuracy": 0.9356555744650035,
+      "test_accuracy": 0.9356370849370043,
+      "test_precision": 0.7755555881748525,
+      "test_recall": 0.9474755444772212,
+      "test_f1": 0.8529386837570274,
+      "test_roc_auc": 0.9660698587141936,
+      "status": "success"
+    },
+    {
+      "model_name": "Shallow Tree (max_depth=5)",
+      "train_accuracy": 0.9832296650083856,
+      "test_accuracy": 0.9834672497876001,
+      "test_precision": 0.9505560896446494,
+      "test_recall": 0.9663405930296156,
+      "test_f1": 0.9583833533413365,
+      "test_roc_auc": 0.9890070513099032,
+      "status": "success"
+    },
+    {
+      "model_name": "Logistic Regression",
+      "train_accuracy": 0.900633402720311,
+      "test_accuracy": 0.9004943928188516,
+      "test_precision": 0.8633000710881756,
+      "test_recall": 0.5879905674757238,
+      "test_f1": 0.699532244214389,
+      "test_roc_auc": 0.8320380833122814,
+      "status": "success"
+    },
+    {
+      "model_name": "Linear SVM",
+      "train_accuracy": 0.9048862621732637,
+      "test_accuracy": 0.9046099171772802,
+      "test_precision": 0.9157800393199954,
+      "test_recall": 0.5680137004725229,
+      "test_f1": 0.7011427464652334,
+      "test_roc_auc": 0.0,
+      "status": "success"
+    },
+    {
+      "model_name": "Random Forest (n_estimators=100)",
+      "train_accuracy": 0.9997553645377494,
+      "test_accuracy": 0.9988801534578353,
+      "test_precision": 0.9972379406515949,
+      "test_recall": 0.9970769934277184,
+      "test_f1": 0.9971574605451937,
+      "test_roc_auc": 0.9997894186955076,
+      "status": "success"
+    },
+    {
+      "model_name": "Random Forest (n_estimators=500)",
+      "train_accuracy": 0.9997558061180062,
+      "test_accuracy": 0.9988925176941053,
+      "test_precision": 0.9971846140052004,
+      "test_recall": 0.9971935550394965,
+      "test_f1": 0.9971890845023066,
+      "test_roc_auc": 0.9998098338107878,
+      "status": "success"
+    },
+    {
+      "model_name": "MLP (hidden_layers=100)",
+      "train_accuracy": 0.8224396955922342,
+      "test_accuracy": 0.8225785084845155,
+      "test_precision": 0.9988296723082463,
+      "test_recall": 0.09948085251369598,
+      "test_f1": 0.18094049919681662,
+      "test_roc_auc": 0.7294035303804416,
+      "status": "success"
+    },
+    {
+      "model_name": "MLP (hidden_layers=100,50)",
+      "train_accuracy": 0.8079355504783639,
+      "test_accuracy": 0.8080205034363745,
+      "test_precision": 0.9768300873069174,
+      "test_recall": 0.026082902204807717,
+      "test_f1": 0.050809120839773986,
+      "test_roc_auc": 0.718614419323208,
+      "status": "success"
+    }
+  ]
+}

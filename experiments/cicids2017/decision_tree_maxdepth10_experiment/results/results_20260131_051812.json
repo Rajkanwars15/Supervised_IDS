@@ -1,0 +1,86 @@
+{
+  "timestamp": "20260131_051812",
+  "dataset": "CIC IDS 2017",
+  "max_depth": 10,
+  "tree_properties": {
+    "max_depth": 10,
+    "n_nodes": 229,
+    "n_leaves": 115
+  },
+  "test_metrics": {
+    "accuracy": 0.9968418207927595,
+    "precision": 0.994975418339272,
+    "recall": 0.9889625119923966,
+    "f1_score": 0.9919598532268509,
+    "roc_auc": 0.9958098735107569,
+    "confusion_matrix": [
+      [
+        454063,
+        557
+      ],
+      [
+        1231,
+        110298
+      ]
+    ]
+  },
+  "train_metrics": {
+    "accuracy": 0.9967278902973337,
+    "precision": 0.9950216533256303,
+    "recall": 0.9883348986924955,
+    "f1_score": 0.9916670040349244,
+    "roc_auc": 0.9955369635052419,
+    "confusion_matrix": [
+      [
+        1816271,
+        2206
+      ],
+      [
+        5204,
+        440913
+      ]
+    ]
+  },
+  "top_10_features": [
+    {
+      "feature": "Bwd Packet Length Std",
+      "importance": 0.38311058772533135
+    },
+    {
+      "feature": "Average Packet Size",
+      "importance": 0.19271487811325408
+    },
+    {
+      "feature": "Bwd Header Length",
+      "importance": 0.1348077084536058
+    },
+    {
+      "feature": "Destination Port",
+      "importance": 0.10420859930745854
+    },
+    {
+      "feature": "Max Packet Length",
+      "importance": 0.09399478266716495
+    },
+    {
+      "feature": "Init_Win_bytes_forward",
+      "importance": 0.02533956231129152
+    },
+    {
+      "feature": "min_seg_size_forward",
+      "importance": 0.0189143561322205
+    },
+    {
+      "feature": "Fwd Packet Length Std",
+      "importance": 0.009745158572772625
+    },
+    {
+      "feature": "Fwd IAT Min",
+      "importance": 0.00507916735036902
+    },
+    {
+      "feature": "Init_Win_bytes_backward",
+      "importance": 0.004979474613451756
+    }
+  ]
+}

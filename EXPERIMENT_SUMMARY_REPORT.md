@@ -1,6 +1,6 @@
 # Decision Tree Experiments - Comprehensive Summary Report
 
-Generated: 2026-01-31 04:52:56
+Generated: 2026-01-31 06:49:59
 
 ================================================================================
 
@@ -72,27 +72,27 @@ Generated: 2026-01-31 04:52:56
 
 #### SensorNetGuard
 
-![SensorNetGuard Decision Tree](experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_044816.png)
+![SensorNetGuard Decision Tree](experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_051527.png)
 
 
 #### Farm-Flow
 
-![Farm-Flow Decision Tree](experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_044818.png)
+![Farm-Flow Decision Tree](experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_051530.png)
 
 
 #### CIC IDS 2017
 
-![CIC IDS 2017 Decision Tree](experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_044823.png)
+![CIC IDS 2017 Decision Tree](experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_051535.png)
 
 
 #### UNSW-NB15
 
-![UNSW-NB15 Decision Tree](experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_045029.png)
+![UNSW-NB15 Decision Tree](experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_051739.png)
 
 
 #### NSL-KDD
 
-![NSL-KDD Decision Tree](experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_045034.png)
+![NSL-KDD Decision Tree](experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_051746.png)
 
 
 ## 2. Decision Stump Experiments (1-Rule Models)
@@ -116,7 +116,7 @@ These experiments test model robustness by using only the top feature.
 
 **Noise Impact Analysis (Perturbation Study):**
 
-![SensorNetGuard Noise Impact](experiments/sensornetguard/decision_stump_experiment/figs/noise_impact_20260131_045038.png)
+![SensorNetGuard Noise Impact](experiments/sensornetguard/decision_stump_experiment/figs/noise_impact_20260131_051752.png)
 
 
 **Performance vs Noise Level:**
@@ -154,7 +154,7 @@ These experiments test model robustness by using only the top feature.
 
 **Noise Impact Analysis (Perturbation Study):**
 
-![Farm-Flow Noise Impact](experiments/farmflow/decision_stump_experiment/figs/noise_impact_20260131_045040.png)
+![Farm-Flow Noise Impact](experiments/farmflow/decision_stump_experiment/figs/noise_impact_20260131_051755.png)
 
 
 **Performance vs Noise Level:**
@@ -176,7 +176,12 @@ These experiments test model robustness by using only the top feature.
 - Mean Accuracy: 0.9613 (±0.0004)
 - Mean F1: 0.9594 (±0.0004)
 
-## 3. CIC IDS 2017 Depth-Limited Experiment
+## 3. Depth-Limited Experiments (max_depth=10)
+
+Comparison of unlimited depth vs max_depth=10 for datasets with trees > 10 depth.
+
+
+### CIC IDS 2017
 
 Comparison of unlimited depth vs max_depth=10:
 
@@ -189,12 +194,38 @@ Comparison of unlimited depth vs max_depth=10:
 | F1_score | 0.9969 | 0.9920 | +0.0050 |
 | Roc_auc | 0.9985 | 0.9958 | +0.0027 |
 
+### NSL-KDD
+
+Comparison of unlimited depth vs max_depth=10:
+
+
+| Metric | Unlimited Depth | max_depth=10 | Difference |
+|--------|-----------------|--------------|------------|
+| Accuracy | 0.7790 | 0.7875 | -0.0085 |
+| Precision | 0.9686 | 0.9705 | -0.0019 |
+| Recall | 0.6322 | 0.6463 | -0.0141 |
+| F1_score | 0.7651 | 0.7759 | -0.0108 |
+| Roc_auc | 0.8027 | 0.7469 | +0.0558 |
+
+### UNSW-NB15
+
+Comparison of unlimited depth vs max_depth=10:
+
+
+| Metric | Unlimited Depth | max_depth=10 | Difference |
+|--------|-----------------|--------------|------------|
+| Accuracy | 0.8626 | 0.8794 | -0.0168 |
+| Precision | 0.8230 | 0.8394 | -0.0164 |
+| Recall | 0.9561 | 0.9658 | -0.0097 |
+| F1_score | 0.8846 | 0.8982 | -0.0136 |
+| Roc_auc | 0.8546 | 0.9735 | -0.1190 |
+
 ## 4. Feature Ablation Experiments
 
 These experiments show how performance changes as features are removed, starting from lowest importance.
 
 
-### Cic Ids 2017
+### CIC IDS 2017
 
 - **Max Features Tested**: 78
 - **Min Features Tested**: 3
@@ -233,7 +264,7 @@ These experiments show how performance changes as features are removed, starting
 | 6 | 0.9979 | 0.9955 | 0.9937 | 0.9946 | 0.9994 |
 | 3 | 0.9689 | 0.9928 | 0.8483 | 0.9149 | 0.9952 |
 
-![Cic Ids 2017 Feature Ablation](experiments/shared/feature_ablation/feature_ablation_cic_ids_2017.png)
+![CIC IDS 2017 Feature Ablation](experiments/shared/feature_ablation/feature_ablation_cic_ids_2017.png)
 
 
 ### Farm-Flow
@@ -268,7 +299,7 @@ These experiments show how performance changes as features are removed, starting
 ![Farm-Flow Feature Ablation](experiments/shared/feature_ablation/feature_ablation_farm-flow.png)
 
 
-### Sensornetguard
+### SensorNetGuard
 
 - **Max Features Tested**: 17
 - **Min Features Tested**: 1
@@ -298,10 +329,10 @@ These experiments show how performance changes as features are removed, starting
 | 2 | 0.9970 | 0.9596 | 0.9794 | 0.9694 | 0.9886 |
 | 1 | 0.9835 | 0.8478 | 0.8041 | 0.8254 | 0.8984 |
 
-![Sensornetguard Feature Ablation](experiments/shared/feature_ablation/feature_ablation_sensornetguard.png)
+![SensorNetGuard Feature Ablation](experiments/shared/feature_ablation/feature_ablation_sensornetguard.png)
 
 
-### Unsw-Nb15
+### UNSW-NB15
 
 - **Max Features Tested**: 39
 - **Min Features Tested**: 1
@@ -334,10 +365,100 @@ These experiments show how performance changes as features are removed, starting
 | 3 | 0.8434 | 0.8018 | 0.9506 | 0.8699 | 0.9037 |
 | 1 | 0.7663 | 0.7024 | 0.9986 | 0.8247 | 0.7603 |
 
-![Unsw-Nb15 Feature Ablation](experiments/shared/feature_ablation/feature_ablation_unsw-nb15.png)
+![UNSW-NB15 Feature Ablation](experiments/shared/feature_ablation/feature_ablation_unsw-nb15.png)
 
 
-## 5. Top 10 Most Important Features (by Dataset)
+## 5. Comprehensive Model Comparison
+
+Comparison of baseline models (decision stumps, shallow trees) against ensemble methods (Random Forest, XGBoost) and neural networks (MLP), plus linear models (Logistic Regression, Linear SVM).
+
+
+### CIC IDS 2017
+
+| Model | Test Accuracy | Test Precision | Test Recall | Test F1 | Test ROC-AUC |
+|-------|---------------|-----------------|-------------|---------|--------------|
+| Random Forest (n_estimators=500) | 0.9989 | 0.9972 | 0.9972 | 0.9972 | 0.9998 |
+| Random Forest (n_estimators=100) | 0.9989 | 0.9972 | 0.9971 | 0.9972 | 0.9998 |
+| Shallow Tree (max_depth=5) | 0.9835 | 0.9506 | 0.9663 | 0.9584 | 0.9890 |
+| Shallow Tree (max_depth=3) | 0.9356 | 0.7756 | 0.9475 | 0.8529 | 0.9661 |
+| Linear SVM | 0.9046 | 0.9158 | 0.5680 | 0.7011 | 0.0000 |
+| Logistic Regression | 0.9005 | 0.8633 | 0.5880 | 0.6995 | 0.8320 |
+| Decision Stump (max_depth=1) | 0.8875 | 0.9892 | 0.4334 | 0.6028 | 0.7161 |
+| MLP (hidden_layers=100) | 0.8226 | 0.9988 | 0.0995 | 0.1809 | 0.7294 |
+| MLP (hidden_layers=100,50) | 0.8080 | 0.9768 | 0.0261 | 0.0508 | 0.7186 |
+
+![CIC IDS 2017 Model Comparison](experiments/shared/model_comparison/model_comparison_cic_ids_2017.png)
+
+
+### Farm-Flow
+
+| Model | Test Accuracy | Test Precision | Test Recall | Test F1 | Test ROC-AUC |
+|-------|---------------|-----------------|-------------|---------|--------------|
+| Shallow Tree (max_depth=5) | 0.9994 | 0.9989 | 1.0000 | 0.9994 | 0.9995 |
+| MLP (hidden_layers=100) | 0.9994 | 0.9989 | 1.0000 | 0.9994 | 0.9998 |
+| Shallow Tree (max_depth=3) | 0.9992 | 0.9989 | 0.9994 | 0.9992 | 0.9995 |
+| MLP (hidden_layers=100,50) | 0.9992 | 0.9989 | 0.9994 | 0.9992 | 0.9998 |
+| Random Forest (n_estimators=100) | 0.9989 | 0.9977 | 1.0000 | 0.9989 | 1.0000 |
+| Random Forest (n_estimators=500) | 0.9989 | 0.9977 | 1.0000 | 0.9989 | 1.0000 |
+| Linear SVM | 0.9577 | 0.9810 | 0.9334 | 0.9566 | 0.0000 |
+| Logistic Regression | 0.9410 | 0.9791 | 0.9012 | 0.9385 | 0.9838 |
+| Decision Stump (max_depth=1) | 0.9001 | 0.9937 | 0.8052 | 0.8896 | 0.9001 |
+
+![Farm-Flow Model Comparison](experiments/shared/model_comparison/model_comparison_farm-flow.png)
+
+
+### NSL-KDD
+
+| Model | Test Accuracy | Test Precision | Test Recall | Test F1 | Test ROC-AUC |
+|-------|---------------|-----------------|-------------|---------|--------------|
+| Decision Stump (max_depth=1) | 0.7999 | 0.9522 | 0.6827 | 0.7952 | 0.8187 |
+| MLP (hidden_layers=100) | 0.7995 | 0.9617 | 0.6747 | 0.7930 | 0.8713 |
+| Shallow Tree (max_depth=5) | 0.7944 | 0.9630 | 0.6644 | 0.7863 | 0.8149 |
+| Shallow Tree (max_depth=3) | 0.7869 | 0.9621 | 0.6514 | 0.7768 | 0.8415 |
+| Random Forest (n_estimators=500) | 0.7670 | 0.9681 | 0.6108 | 0.7491 | 0.9615 |
+| Random Forest (n_estimators=100) | 0.7662 | 0.9684 | 0.6092 | 0.7479 | 0.9545 |
+| MLP (hidden_layers=100,50) | 0.7282 | 0.9210 | 0.5716 | 0.7054 | 0.8247 |
+| Logistic Regression | 0.7020 | 0.8965 | 0.5387 | 0.6730 | 0.8529 |
+| Linear SVM | 0.6793 | 0.8950 | 0.4947 | 0.6372 | 0.0000 |
+
+![NSL-KDD Model Comparison](experiments/shared/model_comparison/model_comparison_nsl-kdd.png)
+
+
+### SensorNetGuard
+
+| Model | Test Accuracy | Test Precision | Test Recall | Test F1 | Test ROC-AUC |
+|-------|---------------|-----------------|-------------|---------|--------------|
+| Shallow Tree (max_depth=5) | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Random Forest (n_estimators=100) | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Random Forest (n_estimators=500) | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Logistic Regression | 0.9995 | 1.0000 | 0.9897 | 0.9948 | 1.0000 |
+| Linear SVM | 0.9995 | 1.0000 | 0.9897 | 0.9948 | 0.0000 |
+| MLP (hidden_layers=100) | 0.9995 | 1.0000 | 0.9897 | 0.9948 | 1.0000 |
+| MLP (hidden_layers=100,50) | 0.9995 | 1.0000 | 0.9897 | 0.9948 | 1.0000 |
+| Shallow Tree (max_depth=3) | 0.9990 | 1.0000 | 0.9794 | 0.9896 | 0.9794 |
+| Decision Stump (max_depth=1) | 0.9900 | 0.9753 | 0.8144 | 0.8876 | 0.9067 |
+
+![SensorNetGuard Model Comparison](experiments/shared/model_comparison/model_comparison_sensornetguard.png)
+
+
+### UNSW-NB15
+
+| Model | Test Accuracy | Test Precision | Test Recall | Test F1 | Test ROC-AUC |
+|-------|---------------|-----------------|-------------|---------|--------------|
+| Random Forest (n_estimators=100) | 0.8714 | 0.8179 | 0.9858 | 0.8941 | 0.9772 |
+| Random Forest (n_estimators=500) | 0.8707 | 0.8169 | 0.9861 | 0.8936 | 0.9784 |
+| Shallow Tree (max_depth=5) | 0.8119 | 0.7474 | 0.9945 | 0.8534 | 0.9575 |
+| Shallow Tree (max_depth=3) | 0.7670 | 0.7027 | 1.0000 | 0.8254 | 0.9379 |
+| Decision Stump (max_depth=1) | 0.7663 | 0.7024 | 0.9987 | 0.8248 | 0.7402 |
+| MLP (hidden_layers=100) | 0.7488 | 0.7236 | 0.8799 | 0.7941 | 0.7343 |
+| Linear SVM | 0.7065 | 0.6592 | 0.9666 | 0.7839 | 0.0000 |
+| Logistic Regression | 0.7053 | 0.6607 | 0.9550 | 0.7811 | 0.8168 |
+| MLP (hidden_layers=100,50) | 0.6149 | 0.5885 | 0.9989 | 0.7407 | 0.5813 |
+
+![UNSW-NB15 Model Comparison](experiments/shared/model_comparison/model_comparison_unsw-nb15.png)
+
+
+## 6. Top 10 Most Important Features (by Dataset)
 
 ### SensorNetGuard
 
@@ -404,7 +525,7 @@ These experiments show how performance changes as features are removed, starting
 9. **23**: 0.009484
 10. **33**: 0.008925
 
-## 6. Confusion Matrices (Test Set)
+## 7. Confusion Matrices (Test Set)
 
 ### SensorNetGuard
 

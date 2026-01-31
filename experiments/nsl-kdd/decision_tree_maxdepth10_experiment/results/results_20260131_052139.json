@@ -1,0 +1,86 @@
+{
+  "timestamp": "20260131_052139",
+  "dataset": "NSL-KDD",
+  "max_depth": 10,
+  "tree_properties": {
+    "max_depth": 10,
+    "n_nodes": 295,
+    "n_leaves": 148
+  },
+  "test_metrics": {
+    "accuracy": 0.7874822569198012,
+    "precision": 0.9705125204774163,
+    "recall": 0.6463025013636717,
+    "f1_score": 0.775901585668179,
+    "roc_auc": 0.7469302690344264,
+    "confusion_matrix": [
+      [
+        9459,
+        252
+      ],
+      [
+        4539,
+        8294
+      ]
+    ]
+  },
+  "train_metrics": {
+    "accuracy": 0.9969517277511848,
+    "precision": 0.9982037771999452,
+    "recall": 0.9952413440218318,
+    "f1_score": 0.9967203593939498,
+    "roc_auc": 0.9993778622441931,
+    "confusion_matrix": [
+      [
+        67238,
+        105
+      ],
+      [
+        279,
+        58351
+      ]
+    ]
+  },
+  "top_10_features": [
+    {
+      "feature": "4",
+      "importance": 0.7572938503124107
+    },
+    {
+      "feature": "32",
+      "importance": 0.05156771593750754
+    },
+    {
+      "feature": "22",
+      "importance": 0.0486460680985067
+    },
+    {
+      "feature": "5",
+      "importance": 0.03386868061505749
+    },
+    {
+      "feature": "40",
+      "importance": 0.025724753768763396
+    },
+    {
+      "feature": "9",
+      "importance": 0.020472194742201515
+    },
+    {
+      "feature": "35",
+      "importance": 0.014309701370995725
+    },
+    {
+      "feature": "11",
+      "importance": 0.010014791881896945
+    },
+    {
+      "feature": "23",
+      "importance": 0.009393802772326751
+    },
+    {
+      "feature": "33",
+      "importance": 0.008702023344519888
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "dataset": "SensorNetGuard",
+  "timestamp": "20260131_052153",
+  "temporal_split": false,
+  "data_info": {
+    "n_train_samples": 8000,
+    "n_test_samples": 2000,
+    "n_features": 17,
+    "train_class_distribution": {
+      "0": 7610,
+      "1": 390
+    },
+    "test_class_distribution": {
+      "0": 1903,
+      "1": 97
+    }
+  },
+  "model_results": [
+    {
+      "model_name": "Decision Stump (max_depth=1)",
+      "train_accuracy": 0.992625,
+      "test_accuracy": 0.99,
+      "test_precision": 0.9753086419753086,
+      "test_recall": 0.8144329896907216,
+      "test_f1": 0.8876404494382022,
+      "test_roc_auc": 0.9066910087707418,
+      "status": "success"
+    },
+    {
+      "model_name": "Shallow Tree (max_depth=3)",
+      "train_accuracy": 0.999375,
+      "test_accuracy": 0.999,
+      "test_precision": 1.0,
+      "test_recall": 0.979381443298969,
+      "test_f1": 0.9895833333333334,
+      "test_roc_auc": 0.9793976954456067,
+      "status": "success"
+    },
+    {
+      "model_name": "Shallow Tree (max_depth=5)",
+      "train_accuracy": 0.99975,
+      "test_accuracy": 1.0,
+      "test_precision": 1.0,
+      "test_recall": 1.0,
+      "test_f1": 1.0,
+      "test_roc_auc": 1.0,
+      "status": "success"
+    },
+    {
+      "model_name": "Logistic Regression",
+      "train_accuracy": 1.0,
+      "test_accuracy": 0.9995,
+      "test_precision": 1.0,
+      "test_recall": 0.9896907216494846,
+      "test_f1": 0.9948186528497409,
+      "test_roc_auc": 1.0,
+      "status": "success"
+    },
+    {
+      "model_name": "Linear SVM",
+      "train_accuracy": 1.0,
+      "test_accuracy": 0.9995,
+      "test_precision": 1.0,
+      "test_recall": 0.9896907216494846,
+      "test_f1": 0.9948186528497409,
+      "test_roc_auc": 0.0,
+      "status": "success"
+    },
+    {
+      "model_name": "Random Forest (n_estimators=100)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "test_precision": 1.0,
+      "test_recall": 1.0,
+      "test_f1": 1.0,
+      "test_roc_auc": 1.0,
+      "status": "success"
+    },
+    {
+      "model_name": "Random Forest (n_estimators=500)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "test_precision": 1.0,
+      "test_recall": 1.0,
+      "test_f1": 1.0,
+      "test_roc_auc": 1.0,
+      "status": "success"
+    },
+    {
+      "model_name": "MLP (hidden_layers=100)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 0.9995,
+      "test_precision": 1.0,
+      "test_recall": 0.9896907216494846,
+      "test_f1": 0.9948186528497409,
+      "test_roc_auc": 1.0,
+      "status": "success"
+    },
+    {
+      "model_name": "MLP (hidden_layers=100,50)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 0.9995,
+      "test_precision": 1.0,
+      "test_recall": 0.9896907216494846,
+      "test_f1": 0.9948186528497409,
+      "test_roc_auc": 1.0,
+      "status": "success"
+    }
+  ]
+}
