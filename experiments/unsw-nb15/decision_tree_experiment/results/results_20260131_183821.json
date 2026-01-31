@@ -1,0 +1,236 @@
+{
+  "experiment_timestamp": "20260131_183821",
+  "dataset": "UNSW-NB15 Binary Classification",
+  "tree_parameters": {
+    "criterion": "gini",
+    "splitter": "best",
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "min_weight_fraction_leaf": 0.0,
+    "max_features": null,
+    "random_state": 42,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "class_weight": null,
+    "ccp_alpha": 0.0
+  },
+  "tree_properties": {
+    "max_depth": 45,
+    "n_nodes": 11367,
+    "n_leaves": 5684
+  },
+  "feature_importance": [
+    {
+      "feature": "sttl",
+      "importance": 0.6752905612302742
+    },
+    {
+      "feature": "ct_srv_dst",
+      "importance": 0.06254965787922606
+    },
+    {
+      "feature": "sbytes",
+      "importance": 0.04573112818119155
+    },
+    {
+      "feature": "smean",
+      "importance": 0.031848338351545255
+    },
+    {
+      "feature": "ct_srv_src",
+      "importance": 0.012004005769523759
+    },
+    {
+      "feature": "sload",
+      "importance": 0.011505801424862279
+    },
+    {
+      "feature": "sloss",
+      "importance": 0.011186577210311282
+    },
+    {
+      "feature": "tcprtt",
+      "importance": 0.011010557134060012
+    },
+    {
+      "feature": "sinpkt",
+      "importance": 0.010227750647812632
+    },
+    {
+      "feature": "ct_dst_src_ltm",
+      "importance": 0.010166277086323994
+    },
+    {
+      "feature": "stcpb",
+      "importance": 0.009505897726941324
+    },
+    {
+      "feature": "dtcpb",
+      "importance": 0.009356047102710437
+    },
+    {
+      "feature": "synack",
+      "importance": 0.008544607390174175
+    },
+    {
+      "feature": "djit",
+      "importance": 0.007899157027728058
+    },
+    {
+      "feature": "ct_state_ttl",
+      "importance": 0.0076608943295657424
+    },
+    {
+      "feature": "ackdat",
+      "importance": 0.0074126135214449265
+    },
+    {
+      "feature": "sjit",
+      "importance": 0.007093520003395005
+    },
+    {
+      "feature": "dmean",
+      "importance": 0.007063478902136419
+    },
+    {
+      "feature": "dinpkt",
+      "importance": 0.0070619496683199685
+    },
+    {
+      "feature": "ct_src_ltm",
+      "importance": 0.006954435298413995
+    },
+    {
+      "feature": "rate",
+      "importance": 0.0058077412644041305
+    },
+    {
+      "feature": "dload",
+      "importance": 0.005803145720051519
+    },
+    {
+      "feature": "dur",
+      "importance": 0.0057211755615946235
+    },
+    {
+      "feature": "ct_dst_ltm",
+      "importance": 0.005583542514624286
+    },
+    {
+      "feature": "dbytes",
+      "importance": 0.004398554896071067
+    },
+    {
+      "feature": "ct_src_dport_ltm",
+      "importance": 0.003860309491155174
+    },
+    {
+      "feature": "ct_flw_http_mthd",
+      "importance": 0.002397385990334559
+    },
+    {
+      "feature": "ct_dst_sport_ltm",
+      "importance": 0.0019014470307464225
+    },
+    {
+      "feature": "dpkts",
+      "importance": 0.0015002596077885449
+    },
+    {
+      "feature": "dloss",
+      "importance": 0.001135215156867438
+    },
+    {
+      "feature": "response_body_len",
+      "importance": 0.0007174639908200942
+    },
+    {
+      "feature": "spkts",
+      "importance": 0.000505151048471756
+    },
+    {
+      "feature": "trans_depth",
+      "importance": 0.0004697179096414474
+    },
+    {
+      "feature": "ct_ftp_cmd",
+      "importance": 8.730201773469925e-05
+    },
+    {
+      "feature": "is_ftp_login",
+      "importance": 3.833191373299325e-05
+    },
+    {
+      "feature": "dwin",
+      "importance": 0.0
+    },
+    {
+      "feature": "swin",
+      "importance": 0.0
+    },
+    {
+      "feature": "dttl",
+      "importance": 0.0
+    },
+    {
+      "feature": "is_sm_ips_ports",
+      "importance": 0.0
+    }
+  ],
+  "training_metrics": {
+    "accuracy": 0.9981635783986632,
+    "precision": 0.9988850232636124,
+    "recall": 0.9984163028632239,
+    "f1_score": 0.9986506080645026,
+    "roc_auc": 0.9999907108920776,
+    "average_precision": 0.9999948765830969,
+    "confusion_matrix": [
+      [
+        55867,
+        133
+      ],
+      [
+        189,
+        119152
+      ]
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 0.8626293543215274,
+    "precision": 0.8230222931145798,
+    "recall": 0.9561016500485309,
+    "f1_score": 0.8845847704961528,
+    "roc_auc": 0.8545636558865404,
+    "average_precision": 0.8139439841387706,
+    "confusion_matrix": [
+      [
+        27680,
+        9320
+      ],
+      [
+        1990,
+        43342
+      ]
+    ]
+  },
+  "data_info": {
+    "n_train_samples": 175341,
+    "n_test_samples": 82332,
+    "n_features": 39,
+    "train_class_distribution": {
+      "1": 119341,
+      "0": 56000
+    },
+    "test_class_distribution": {
+      "1": 45332,
+      "0": 37000
+    }
+  },
+  "model_file": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/models/decision_tree_model_20260131_183821.joblib",
+  "visualization_files": {
+    "png": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_183821.png",
+    "svg": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_183821.svg",
+    "pdf": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_183821.pdf"
+  }
+}

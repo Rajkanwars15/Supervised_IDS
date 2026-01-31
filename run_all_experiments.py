@@ -108,7 +108,11 @@ def check_preprocessing_needed():
     ciciov_silver = base_path / "data" / "cic-iov-2024-silver" / "CIC-IOV-2024_Train_Binary.csv"
     ciciov_needs_preprocessing = not ciciov_silver.exists()
     
-    return farmflow_needs_preprocessing, cicids_needs_preprocessing, unsw_needs_preprocessing, nslkdd_needs_preprocessing, ciciov_needs_preprocessing
+    # Check Kyoto
+    kyoto_silver = base_path / "data" / "kyoto-silver" / "Kyoto_Train_Binary.csv"
+    kyoto_needs_preprocessing = not kyoto_silver.exists()
+    
+    return farmflow_needs_preprocessing, cicids_needs_preprocessing, unsw_needs_preprocessing, nslkdd_needs_preprocessing, ciciov_needs_preprocessing, kyoto_needs_preprocessing
 
 def main():
     """Main function to run all experiments"""
@@ -130,7 +134,7 @@ def main():
     
     # Check preprocessing needs
     print_header("Checking Preprocessing Requirements")
-    farmflow_needs, cicids_needs, unsw_needs, nslkdd_needs, ciciov_needs = check_preprocessing_needed()
+    farmflow_needs, cicids_needs, unsw_needs, nslkdd_needs, ciciov_needs, kyoto_needs = check_preprocessing_needed()
     
     if farmflow_needs:
         print_warning("Farm-Flow preprocessing needed")
@@ -157,8 +161,13 @@ def main():
     else:
         print_success("CIC IOV 2024 data already preprocessed")
     
+    if kyoto_needs:
+        print_warning("Kyoto preprocessing needed")
+    else:
+        print_success("Kyoto data already preprocessed")
+    
     # Run preprocessing if needed
-    if farmflow_needs or cicids_needs or unsw_needs or nslkdd_needs or ciciov_needs:
+    if farmflow_needs or cicids_needs or unsw_needs or nslkdd_needs or ciciov_needs or kyoto_needs:
         print_header("Preprocessing Datasets")
         
         if farmflow_needs:
@@ -195,6 +204,13 @@ def main():
             results['preprocessing']['cic-iov-2024'] = success
             if not success:
                 print_warning("CIC IOV 2024 preprocessing failed. Experiment may fail.")
+        
+        if kyoto_needs:
+            preprocess_kyoto = base_path / "experiments" / "kyoto" / "scripts" / "preprocess_kyoto.py"
+            success = run_script(preprocess_kyoto, "Kyoto Preprocessing")
+            results['preprocessing']['kyoto'] = success
+            if not success:
+                print_warning("Kyoto preprocessing failed. Experiment may fail.")
     else:
         print_info("All datasets already preprocessed. Skipping preprocessing step.")
         results['preprocessing']['farmflow'] = True
@@ -202,6 +218,7 @@ def main():
         results['preprocessing']['unsw-nb15'] = True
         results['preprocessing']['nsl-kdd'] = True
         results['preprocessing']['cic-iov-2024'] = True
+        results['preprocessing']['kyoto'] = True
     
     # Run experiments
     print_header("Running Decision Tree Experiments")
@@ -238,6 +255,11 @@ def main():
             'description': 'CIC IOV 2024 Decision Tree Experiment'
         },
         {
+            'name': 'Kyoto Decision Tree',
+            'script': base_path / "experiments" / "kyoto" / "scripts" / "decision_tree_experiment.py",
+            'description': 'Kyoto Decision Tree Experiment'
+        },
+        {
             'name': 'SensorNetGuard Decision Stump',
             'script': base_path / "experiments" / "sensornetguard" / "scripts" / "decision_stump_experiment.py",
             'description': 'SensorNetGuard Decision Stump Experiment'
@@ -261,6 +283,11 @@ def main():
             'name': 'CIC IOV 2024 Decision Stump',
             'script': base_path / "experiments" / "cic-iov-2024" / "scripts" / "decision_stump_experiment.py",
             'description': 'CIC IOV 2024 Decision Stump Experiment'
+        },
+        {
+            'name': 'Kyoto Decision Stump',
+            'script': base_path / "experiments" / "kyoto" / "scripts" / "decision_stump_experiment.py",
+            'description': 'Kyoto Decision Stump Experiment'
         },
         {
             'name': 'CIC IDS 2017 max_depth=10',

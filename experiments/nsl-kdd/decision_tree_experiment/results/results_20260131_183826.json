@@ -1,0 +1,228 @@
+{
+  "experiment_timestamp": "20260131_183826",
+  "dataset": "NSL-KDD Binary Classification",
+  "tree_parameters": {
+    "criterion": "gini",
+    "splitter": "best",
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "min_weight_fraction_leaf": 0.0,
+    "max_features": null,
+    "random_state": 42,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "class_weight": null,
+    "ccp_alpha": 0.0
+  },
+  "tree_properties": {
+    "max_depth": 26,
+    "n_nodes": 723,
+    "n_leaves": 362
+  },
+  "feature_importance": [
+    {
+      "feature": "4",
+      "importance": 0.7534169399101494
+    },
+    {
+      "feature": "32",
+      "importance": 0.05220696064959147
+    },
+    {
+      "feature": "22",
+      "importance": 0.04818389176135999
+    },
+    {
+      "feature": "5",
+      "importance": 0.03361857692151806
+    },
+    {
+      "feature": "40",
+      "importance": 0.025501873092321773
+    },
+    {
+      "feature": "9",
+      "importance": 0.020301841000957888
+    },
+    {
+      "feature": "35",
+      "importance": 0.014645200580138509
+    },
+    {
+      "feature": "11",
+      "importance": 0.01011222169228489
+    },
+    {
+      "feature": "23",
+      "importance": 0.009483950603320128
+    },
+    {
+      "feature": "33",
+      "importance": 0.008924941985162785
+    },
+    {
+      "feature": "0",
+      "importance": 0.004970234715241313
+    },
+    {
+      "feature": "7",
+      "importance": 0.0035221753913419343
+    },
+    {
+      "feature": "39",
+      "importance": 0.0033277088426783247
+    },
+    {
+      "feature": "34",
+      "importance": 0.0029035792834958764
+    },
+    {
+      "feature": "31",
+      "importance": 0.002070389728703557
+    },
+    {
+      "feature": "36",
+      "importance": 0.001476325679722965
+    },
+    {
+      "feature": "37",
+      "importance": 0.0014109846777252113
+    },
+    {
+      "feature": "29",
+      "importance": 0.000902603693434102
+    },
+    {
+      "feature": "15",
+      "importance": 0.00075672791288207
+    },
+    {
+      "feature": "24",
+      "importance": 0.0005091532117483215
+    },
+    {
+      "feature": "38",
+      "importance": 0.0004412518212518835
+    },
+    {
+      "feature": "25",
+      "importance": 0.00029649408256786505
+    },
+    {
+      "feature": "30",
+      "importance": 0.00021355701952125233
+    },
+    {
+      "feature": "28",
+      "importance": 0.00020261091489160192
+    },
+    {
+      "feature": "12",
+      "importance": 0.00012055344153553845
+    },
+    {
+      "feature": "17",
+      "importance": 0.00010187636128545198
+    },
+    {
+      "feature": "18",
+      "importance": 9.470129542310129e-05
+    },
+    {
+      "feature": "21",
+      "importance": 7.154750042729121e-05
+    },
+    {
+      "feature": "14",
+      "importance": 4.396519077371993e-05
+    },
+    {
+      "feature": "10",
+      "importance": 3.190471891511428e-05
+    },
+    {
+      "feature": "13",
+      "importance": 3.181471134649525e-05
+    },
+    {
+      "feature": "8",
+      "importance": 3.18065265356159e-05
+    },
+    {
+      "feature": "6",
+      "importance": 2.925103418412816e-05
+    },
+    {
+      "feature": "26",
+      "importance": 2.1273479406638663e-05
+    },
+    {
+      "feature": "16",
+      "importance": 1.6324035289235142e-05
+    },
+    {
+      "feature": "27",
+      "importance": 4.786532866493695e-06
+    },
+    {
+      "feature": "20",
+      "importance": 0.0
+    }
+  ],
+  "training_metrics": {
+    "accuracy": 0.9999285561191684,
+    "precision": 1.0,
+    "recall": 0.9998464949684462,
+    "f1_score": 0.9999232415928222,
+    "roc_auc": 0.9999999896158368,
+    "average_precision": 0.9999999784753013,
+    "confusion_matrix": [
+      [
+        67343,
+        0
+      ],
+      [
+        9,
+        58621
+      ]
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 0.7789655784244145,
+    "precision": 0.9686007640878701,
+    "recall": 0.6321982389152965,
+    "f1_score": 0.7650525720213117,
+    "roc_auc": 0.8027283915426214,
+    "average_precision": 0.8219026084824155,
+    "confusion_matrix": [
+      [
+        9448,
+        263
+      ],
+      [
+        4720,
+        8113
+      ]
+    ]
+  },
+  "data_info": {
+    "n_train_samples": 125973,
+    "n_test_samples": 22544,
+    "n_features": 37,
+    "train_class_distribution": {
+      "0": 67343,
+      "1": 58630
+    },
+    "test_class_distribution": {
+      "1": 12833,
+      "0": 9711
+    }
+  },
+  "model_file": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/models/decision_tree_model_20260131_183826.joblib",
+  "visualization_files": {
+    "png": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_183826.png",
+    "svg": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_183826.svg",
+    "pdf": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_183826.pdf"
+  }
+}

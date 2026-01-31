@@ -1,6 +1,6 @@
 {
   "dataset": "UNSW-NB15",
-  "timestamp": "20260131_140554",
+  "timestamp": "20260131_193941",
   "temporal_split": false,
   "data_info": {
     "n_train_samples": 175341,
@@ -73,7 +73,7 @@
       "test_precision": 0.8179372197309417,
       "test_recall": 0.9857936998147004,
       "test_f1": 0.8940550381625937,
-      "test_roc_auc": 0.9771852530638818,
+      "test_roc_auc": 0.9771850598944483,
       "status": "success"
     },
     {
@@ -83,7 +83,7 @@
       "test_precision": 0.8169441347928583,
       "test_recall": 0.9861466513720992,
       "test_f1": 0.8936063886140345,
-      "test_roc_auc": 0.9783582261560952,
+      "test_roc_auc": 0.9783582219826816,
       "status": "success"
     },
     {

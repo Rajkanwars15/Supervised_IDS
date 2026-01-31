@@ -273,6 +273,12 @@ if __name__ == "__main__":
             'train': base_path / "data" / "cic-iov-2024-silver" / "CIC-IOV-2024_Train_Binary.csv",
             'test': base_path / "data" / "cic-iov-2024-silver" / "CIC-IOV-2024_Test_Binary.csv",
             'target_col': 'is_attack'
+        },
+        {
+            'name': 'Kyoto',
+            'train': base_path / "data" / "kyoto-silver" / "Kyoto_Train_Binary.csv",
+            'test': base_path / "data" / "kyoto-silver" / "Kyoto_Test_Binary.csv",
+            'target_col': 'is_attack'
         }
     ]
     

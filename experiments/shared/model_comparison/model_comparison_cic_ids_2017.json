@@ -1,6 +1,6 @@
 {
   "dataset": "CIC IDS 2017",
-  "timestamp": "20260131_140444",
+  "timestamp": "20260131_193836",
   "temporal_split": false,
   "data_info": {
     "n_train_samples": 2264594,
@@ -73,7 +73,7 @@
       "test_precision": 0.9972379406515949,
       "test_recall": 0.9970769934277184,
       "test_f1": 0.9971574605451937,
-      "test_roc_auc": 0.9997894186560624,
+      "test_roc_auc": 0.9997894186363397,
       "status": "success"
     },
     {

@@ -1,6 +1,6 @@
 # Decision Tree Experiments - Comprehensive Summary Report
 
-Generated: 2026-01-31 06:49:59
+Generated: 2026-01-31 19:46:38
 
 ================================================================================
 
@@ -48,6 +48,14 @@ Generated: 2026-01-31 06:49:59
 - **Training class distribution**: {'0': 67343, '1': 58630}
 - **Test class distribution**: {'1': 12833, '0': 9711}
 
+#### CIC IOV 2024 Binary Classification
+
+- **Training samples**: 1,126,575
+- **Test samples**: 281,644
+- **Features**: 64
+- **Training class distribution**: {'0': 978989, '1': 147586}
+- **Test class distribution**: {'0': 244748, '1': 36896}
+
 ### Tree Properties
 
 | Dataset | Max Depth | Nodes | Leaves |
@@ -57,6 +65,7 @@ Generated: 2026-01-31 06:49:59
 | CIC IDS 2017 | 43 | 6,371 | 3,186 |
 | UNSW-NB15 | 45 | 11,367 | 5,684 |
 | NSL-KDD | 26 | 723 | 362 |
+| CIC IOV 2024 | 16 | 73 | 37 |
 
 ### Test Set Performance Metrics
 
@@ -67,32 +76,43 @@ Generated: 2026-01-31 06:49:59
 | CIC IDS 2017 | 0.9988 | 0.9969 | 0.9970 | 0.9969 | 0.9985 | 0.9951 |
 | UNSW-NB15 | 0.8626 | 0.8230 | 0.9561 | 0.8846 | 0.8546 | 0.8139 |
 | NSL-KDD | 0.7790 | 0.9686 | 0.6322 | 0.7651 | 0.8027 | 0.8219 |
+| CIC IOV 2024 | 1.0000 | 1.0000 | 0.9999 | 0.9999 | 1.0000 | 1.0000 |
 
 ### Decision Tree Visualizations
 
 #### SensorNetGuard
 
-![SensorNetGuard Decision Tree](experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_051527.png)
+![SensorNetGuard Decision Tree](experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_183611.png)
 
 
 #### Farm-Flow
 
-![Farm-Flow Decision Tree](experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_051530.png)
+![Farm-Flow Decision Tree](experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_183614.png)
 
 
 #### CIC IDS 2017
 
-![CIC IDS 2017 Decision Tree](experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_051535.png)
+![CIC IDS 2017 Decision Tree](experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_183619.png)
 
 
 #### UNSW-NB15
 
-![UNSW-NB15 Decision Tree](experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_051739.png)
+![UNSW-NB15 Decision Tree](experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_183821.png)
 
 
 #### NSL-KDD
 
-![NSL-KDD Decision Tree](experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_051746.png)
+![NSL-KDD Decision Tree](experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_183826.png)
+
+
+#### CIC IOV 2024
+
+![CIC IOV 2024 Decision Tree](experiments/cic-iov-2024/decision_tree_experiment/visualizations/tree_visualization_20260131_183830.png)
+
+
+#### Kyoto
+
+![Kyoto Decision Tree](experiments/kyoto/decision_tree_experiment/visualizations/tree_visualization_20260131_183842.png)
 
 
 ## 2. Decision Stump Experiments (1-Rule Models)
@@ -116,7 +136,7 @@ These experiments test model robustness by using only the top feature.
 
 **Noise Impact Analysis (Perturbation Study):**
 
-![SensorNetGuard Noise Impact](experiments/sensornetguard/decision_stump_experiment/figs/noise_impact_20260131_051752.png)
+![SensorNetGuard Noise Impact](experiments/sensornetguard/decision_stump_experiment/figs/noise_impact_20260131_183847.png)
 
 
 **Performance vs Noise Level:**
@@ -154,7 +174,7 @@ These experiments test model robustness by using only the top feature.
 
 **Noise Impact Analysis (Perturbation Study):**
 
-![Farm-Flow Noise Impact](experiments/farmflow/decision_stump_experiment/figs/noise_impact_20260131_051755.png)
+![Farm-Flow Noise Impact](experiments/farmflow/decision_stump_experiment/figs/noise_impact_20260131_183849.png)
 
 
 **Performance vs Noise Level:**
@@ -193,6 +213,19 @@ Comparison of unlimited depth vs max_depth=10:
 | Recall | 0.9970 | 0.9890 | +0.0080 |
 | F1_score | 0.9969 | 0.9920 | +0.0050 |
 | Roc_auc | 0.9985 | 0.9958 | +0.0027 |
+
+### CIC IOV 2024
+
+Comparison of unlimited depth vs max_depth=10:
+
+
+| Metric | Unlimited Depth | max_depth=10 | Difference |
+|--------|-----------------|--------------|------------|
+| Accuracy | 1.0000 | 1.0000 | +0.0000 |
+| Precision | 1.0000 | 1.0000 | +0.0000 |
+| Recall | 0.9999 | 0.9999 | +0.0000 |
+| F1_score | 0.9999 | 0.9999 | +0.0000 |
+| Roc_auc | 1.0000 | 1.0000 | +0.0000 |
 
 ### NSL-KDD
 
@@ -390,6 +423,23 @@ Comparison of baseline models (decision stumps, shallow trees) against ensemble 
 ![CIC IDS 2017 Model Comparison](experiments/shared/model_comparison/model_comparison_cic_ids_2017.png)
 
 
+### CIC IOV 2024
+
+| Model | Test Accuracy | Test Precision | Test Recall | Test F1 | Test ROC-AUC |
+|-------|---------------|-----------------|-------------|---------|--------------|
+| Logistic Regression | 1.0000 | 1.0000 | 0.9999 | 0.9999 | 1.0000 |
+| Linear SVM | 1.0000 | 1.0000 | 0.9999 | 0.9999 | 0.0000 |
+| Random Forest (n_estimators=100) | 1.0000 | 1.0000 | 0.9999 | 0.9999 | 1.0000 |
+| Random Forest (n_estimators=500) | 1.0000 | 1.0000 | 0.9999 | 0.9999 | 1.0000 |
+| MLP (hidden_layers=100) | 1.0000 | 1.0000 | 0.9999 | 0.9999 | 1.0000 |
+| MLP (hidden_layers=100,50) | 1.0000 | 1.0000 | 0.9999 | 0.9999 | 1.0000 |
+| Shallow Tree (max_depth=5) | 0.9975 | 0.9817 | 0.9999 | 0.9907 | 0.9996 |
+| Shallow Tree (max_depth=3) | 0.9744 | 0.9220 | 0.8786 | 0.8998 | 0.9814 |
+| Decision Stump (max_depth=1) | 0.8690 | 0.0000 | 0.0000 | 0.0000 | 0.7529 |
+
+![CIC IOV 2024 Model Comparison](experiments/shared/model_comparison/model_comparison_cic_iov_2024.png)
+
+
 ### Farm-Flow
 
 | Model | Test Accuracy | Test Precision | Test Recall | Test F1 | Test ROC-AUC |
@@ -405,6 +455,21 @@ Comparison of baseline models (decision stumps, shallow trees) against ensemble 
 | Decision Stump (max_depth=1) | 0.9001 | 0.9937 | 0.8052 | 0.8896 | 0.9001 |
 
 ![Farm-Flow Model Comparison](experiments/shared/model_comparison/model_comparison_farm-flow.png)
+
+
+### Kyoto
+
+| Model | Test Accuracy | Test Precision | Test Recall | Test F1 | Test ROC-AUC |
+|-------|---------------|-----------------|-------------|---------|--------------|
+| Decision Stump (max_depth=1) | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 |
+| Shallow Tree (max_depth=3) | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 |
+| Shallow Tree (max_depth=5) | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 |
+| Random Forest (n_estimators=100) | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 |
+| Random Forest (n_estimators=500) | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 |
+| MLP (hidden_layers=100) | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 |
+| MLP (hidden_layers=100,50) | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 |
+
+![Kyoto Model Comparison](experiments/shared/model_comparison/model_comparison_kyoto.png)
 
 
 ### NSL-KDD
@@ -525,6 +590,19 @@ Comparison of baseline models (decision stumps, shallow trees) against ensemble 
 9. **23**: 0.009484
 10. **33**: 0.008925
 
+### CIC IOV 2024
+
+1. **DATA_310**: 0.444259
+2. **DATA_316**: 0.145283
+3. **DATA_710**: 0.126105
+4. **DATA_116**: 0.063092
+5. **DATA_016**: 0.055330
+6. **DATA_713**: 0.047556
+7. **DATA_415**: 0.046577
+8. **DATA_613**: 0.040625
+9. **DATA_615**: 0.008791
+10. **DATA_411**: 0.008017
+
 ## 7. Confusion Matrices (Test Set)
 
 ### SensorNetGuard
@@ -570,4 +648,13 @@ Actual Benign   27680    9320
               Benign  Attack
 Actual Benign    9448     263
        Attack    4720    8113
+```
+
+### CIC IOV 2024
+
+```
+                Predicted
+              Benign  Attack
+Actual Benign   244748       0
+       Attack       5   36891
 ```

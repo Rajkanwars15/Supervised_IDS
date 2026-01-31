@@ -1,0 +1,98 @@
+{
+  "dataset": "Kyoto",
+  "timestamp": "20260131_194638",
+  "temporal_split": false,
+  "data_info": {
+    "n_train_samples": 3310319,
+    "n_test_samples": 827580,
+    "n_features": 17,
+    "train_class_distribution": {
+      "1": 3310319
+    },
+    "test_class_distribution": {
+      "1": 827580
+    }
+  },
+  "model_results": [
+    {
+      "model_name": "Decision Stump (max_depth=1)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "test_precision": 1.0,
+      "test_recall": 1.0,
+      "test_f1": 1.0,
+      "test_roc_auc": 0.0,
+      "status": "success"
+    },
+    {
+      "model_name": "Shallow Tree (max_depth=3)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "test_precision": 1.0,
+      "test_recall": 1.0,
+      "test_f1": 1.0,
+      "test_roc_auc": 0.0,
+      "status": "success"
+    },
+    {
+      "model_name": "Shallow Tree (max_depth=5)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "test_precision": 1.0,
+      "test_recall": 1.0,
+      "test_f1": 1.0,
+      "test_roc_auc": 0.0,
+      "status": "success"
+    },
+    {
+      "model_name": "Logistic Regression",
+      "status": "error",
+      "error": "This solver needs samples of at least 2 classes in the data, but the data contains only one class: np.int64(1)"
+    },
+    {
+      "model_name": "Linear SVM",
+      "status": "error",
+      "error": "This solver needs samples of at least 2 classes in the data, but the data contains only one class: np.int64(1)"
+    },
+    {
+      "model_name": "Random Forest (n_estimators=100)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "test_precision": 1.0,
+      "test_recall": 1.0,
+      "test_f1": 1.0,
+      "test_roc_auc": 0.0,
+      "status": "success"
+    },
+    {
+      "model_name": "Random Forest (n_estimators=500)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "test_precision": 1.0,
+      "test_recall": 1.0,
+      "test_f1": 1.0,
+      "test_roc_auc": 0.0,
+      "status": "success"
+    },
+    {
+      "model_name": "MLP (hidden_layers=100)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "test_precision": 1.0,
+      "test_recall": 1.0,
+      "test_f1": 1.0,
+      "test_roc_auc": 0.0,
+      "status": "success"
+    },
+    {
+      "model_name": "MLP (hidden_layers=100,50)",
+      "train_accuracy": 1.0,
+      "test_accuracy": 1.0,
+      "test_precision": 1.0,
+      "test_recall": 1.0,
+      "test_f1": 1.0,
+      "test_roc_auc": 0.0,
+      "status": "success"
+    }
+  ]
+}

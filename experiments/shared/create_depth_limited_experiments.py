@@ -240,6 +240,13 @@ print("="*80)
             'test_file': 'CIC-IOV-2024_Test_Binary.csv',
             'target_col': 'is_attack',
             'needs_split': False
+        },
+        'Kyoto': {
+            'data_path': 'kyoto-silver',
+            'train_file': 'Kyoto_Train_Binary.csv',
+            'test_file': 'Kyoto_Test_Binary.csv',
+            'target_col': 'is_attack',
+            'needs_split': False
         }
     }
     
@@ -297,7 +304,8 @@ if __name__ == "__main__":
         ('CIC IDS 2017', base_path / "experiments" / "cicids2017"),
         ('UNSW-NB15', base_path / "experiments" / "unsw-nb15"),
         ('NSL-KDD', base_path / "experiments" / "nsl-kdd"),
-        ('CIC IOV 2024', base_path / "experiments" / "cic-iov-2024")
+        ('CIC IOV 2024', base_path / "experiments" / "cic-iov-2024"),
+        ('Kyoto', base_path / "experiments" / "kyoto")
     ]
     
     print("="*80)

@@ -1,0 +1,336 @@
+{
+  "experiment_timestamp": "20260131_161518",
+  "dataset": "CIC IOV 2024 Binary Classification",
+  "tree_parameters": {
+    "criterion": "gini",
+    "splitter": "best",
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "min_weight_fraction_leaf": 0.0,
+    "max_features": null,
+    "random_state": 42,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "class_weight": null,
+    "ccp_alpha": 0.0
+  },
+  "tree_properties": {
+    "max_depth": 16,
+    "n_nodes": 73,
+    "n_leaves": 37
+  },
+  "feature_importance": [
+    {
+      "feature": "DATA_310",
+      "importance": 0.4442594952307182
+    },
+    {
+      "feature": "DATA_316",
+      "importance": 0.14528277181057467
+    },
+    {
+      "feature": "DATA_710",
+      "importance": 0.12610524874669599
+    },
+    {
+      "feature": "DATA_116",
+      "importance": 0.0630920846137628
+    },
+    {
+      "feature": "DATA_016",
+      "importance": 0.05533037825899086
+    },
+    {
+      "feature": "DATA_713",
+      "importance": 0.04755583667143009
+    },
+    {
+      "feature": "DATA_415",
+      "importance": 0.046577021257249385
+    },
+    {
+      "feature": "DATA_613",
+      "importance": 0.04062486048555879
+    },
+    {
+      "feature": "DATA_615",
+      "importance": 0.008790518745981737
+    },
+    {
+      "feature": "DATA_411",
+      "importance": 0.008016602404048395
+    },
+    {
+      "feature": "DATA_015",
+      "importance": 0.005038627614017141
+    },
+    {
+      "feature": "DATA_610",
+      "importance": 0.0021911958891806813
+    },
+    {
+      "feature": "DATA_59",
+      "importance": 0.0016892413909295927
+    },
+    {
+      "feature": "DATA_39",
+      "importance": 0.0015113619873298287
+    },
+    {
+      "feature": "DATA_010",
+      "importance": 0.0013103525725479308
+    },
+    {
+      "feature": "DATA_611",
+      "importance": 0.0011128768398791183
+    },
+    {
+      "feature": "DATA_612",
+      "importance": 0.0005810252575660509
+    },
+    {
+      "feature": "DATA_711",
+      "importance": 0.0005349954269326298
+    },
+    {
+      "feature": "DATA_49",
+      "importance": 0.00034349370340372735
+    },
+    {
+      "feature": "DATA_210",
+      "importance": 5.195466358082413e-05
+    },
+    {
+      "feature": "DATA_111",
+      "importance": 2.8161000432916795e-08
+    },
+    {
+      "feature": "DATA_216",
+      "importance": 1.0873957203971454e-08
+    },
+    {
+      "feature": "DATA_011",
+      "importance": 6.763544640411539e-09
+    },
+    {
+      "feature": "DATA_215",
+      "importance": 3.920651685945202e-09
+    },
+    {
+      "feature": "DATA_214",
+      "importance": 3.2679593030313553e-09
+    },
+    {
+      "feature": "DATA_012",
+      "importance": 1.5551274684039235e-09
+    },
+    {
+      "feature": "DATA_211",
+      "importance": 1.0179590515045222e-09
+    },
+    {
+      "feature": "DATA_213",
+      "importance": 8.65594938203003e-10
+    },
+    {
+      "feature": "DATA_515",
+      "importance": 3.826742030823005e-12
+    },
+    {
+      "feature": "DATA_516",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_512",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_513",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_514",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_614",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_715",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_714",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_511",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_712",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_79",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_616",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_69",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_09",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_510",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_416",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_013",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_014",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_19",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_110",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_112",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_113",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_114",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_115",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_29",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_212",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_311",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_312",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_313",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_314",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_315",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_410",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_412",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_413",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_414",
+      "importance": 0.0
+    },
+    {
+      "feature": "DATA_716",
+      "importance": 0.0
+    }
+  ],
+  "training_metrics": {
+    "accuracy": 0.999988460599605,
+    "precision": 1.0,
+    "recall": 0.9999119157643679,
+    "f1_score": 0.9999559559423904,
+    "roc_auc": 0.9999991657546379,
+    "average_precision": 0.9999901677357156,
+    "confusion_matrix": [
+      [
+        978989,
+        0
+      ],
+      [
+        13,
+        147573
+      ]
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 0.9999822470920737,
+    "precision": 1.0,
+    "recall": 0.9998644839549002,
+    "f1_score": 0.9999322373859894,
+    "roc_auc": 0.9999986766660084,
+    "average_precision": 0.99998445708092,
+    "confusion_matrix": [
+      [
+        244748,
+        0
+      ],
+      [
+        5,
+        36891
+      ]
+    ]
+  },
+  "data_info": {
+    "n_train_samples": 1126575,
+    "n_test_samples": 281644,
+    "n_features": 64,
+    "train_class_distribution": {
+      "0": 978989,
+      "1": 147586
+    },
+    "test_class_distribution": {
+      "0": 244748,
+      "1": 36896
+    }
+  },
+  "model_file": "/Users/raj/Supervised_IDS/experiments/cic-iov-2024/decision_tree_experiment/models/decision_tree_model_20260131_161518.joblib",
+  "visualization_files": {
+    "png": "/Users/raj/Supervised_IDS/experiments/cic-iov-2024/decision_tree_experiment/visualizations/tree_visualization_20260131_161518.png",
+    "svg": "/Users/raj/Supervised_IDS/experiments/cic-iov-2024/decision_tree_experiment/visualizations/tree_visualization_20260131_161518.svg",
+    "pdf": "/Users/raj/Supervised_IDS/experiments/cic-iov-2024/decision_tree_experiment/visualizations/tree_visualization_20260131_161518.pdf"
+  }
+}

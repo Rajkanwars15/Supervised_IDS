@@ -1,0 +1,113 @@
+{
+  "timestamp": "20260131_161549",
+  "dataset": "CIC IOV 2024",
+  "top_feature": "DATA_310",
+  "top_feature_importance": 0.4442594952307183,
+  "stump_threshold": 0.5,
+  "stump_performance": {
+    "train_accuracy": 0.8689958502540888,
+    "test_accuracy": 0.8689977418301118,
+    "test_precision": 0.0,
+    "test_recall": 0.0,
+    "test_f1": 0.0,
+    "test_roc_auc": 0.6020708337811924
+  },
+  "noise_experiment": [
+    {
+      "noise_level": 0.0,
+      "accuracy": 0.8689977418301118,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "noise_level": 0.01,
+      "accuracy": 0.8689977418301118,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "noise_level": 0.05,
+      "accuracy": 0.8689977418301118,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "noise_level": 0.1,
+      "accuracy": 0.8689977418301118,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "noise_level": 0.2,
+      "accuracy": 0.8689977418301118,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "noise_level": 0.5,
+      "accuracy": 0.8689977418301118,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "noise_level": 1.0,
+      "accuracy": 0.8689977418301118,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "noise_level": 2.0,
+      "accuracy": 0.8689977418301118,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "noise_level": 5.0,
+      "accuracy": 0.8689977418301118,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  ],
+  "cross_validation": {
+    "fold_scores": [
+      {
+        "fold": 1,
+        "accuracy": 0.8680025741739342,
+        "f1": 0.0
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.8691875818298826,
+        "f1": 0.0
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.8695737079200231,
+        "f1": 0.0
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.8691431995206711,
+        "f1": 0.0
+      },
+      {
+        "fold": 5,
+        "accuracy": 0.8690721878259325,
+        "f1": 0.0
+      }
+    ],
+    "mean_accuracy": 0.8689958502540888,
+    "std_accuracy": 0.0005262731385658946,
+    "mean_f1": 0.0,
+    "std_f1": 0.0
+  }
+}

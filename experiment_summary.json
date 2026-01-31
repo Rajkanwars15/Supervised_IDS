@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-01-31T06:49:59.623337",
+  "generated_at": "2026-01-31T19:46:38.516736",
   "results": {
     "decision_trees": {
       "SensorNetGuard": {
-        "experiment_timestamp": "20260131_051527",
+        "experiment_timestamp": "20260131_183611",
         "tree_parameters": {
           "criterion": "gini",
           "splitter": "best",
@@ -142,15 +142,15 @@
             "1": 97
           }
         },
-        "model_file": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/models/decision_tree_model_20260131_051527.joblib",
+        "model_file": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/models/decision_tree_model_20260131_183611.joblib",
         "visualization_files": {
-          "png": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_051527.png",
-          "svg": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_051527.svg",
-          "pdf": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_051527.pdf"
+          "png": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_183611.png",
+          "svg": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_183611.svg",
+          "pdf": "/Users/raj/Supervised_IDS/experiments/sensornetguard/decision_tree_experiment/visualizations/tree_visualization_20260131_183611.pdf"
         }
       },
       "Farm-Flow": {
-        "experiment_timestamp": "20260131_051530",
+        "experiment_timestamp": "20260131_183614",
         "dataset": "Farm-Flow Binary Classification",
         "tree_parameters": {
           "criterion": "gini",
@@ -326,15 +326,15 @@
             "1": 1771
           }
         },
-        "model_file": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/models/decision_tree_model_20260131_051530.joblib",
+        "model_file": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/models/decision_tree_model_20260131_183614.joblib",
         "visualization_files": {
-          "png": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_051530.png",
-          "svg": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_051530.svg",
-          "pdf": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_051530.pdf"
+          "png": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_183614.png",
+          "svg": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_183614.svg",
+          "pdf": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_183614.pdf"
         }
       },
       "CIC IDS 2017": {
-        "experiment_timestamp": "20260131_051535",
+        "experiment_timestamp": "20260131_183619",
         "dataset": "CIC IDS 2017 Binary Classification",
         "tree_parameters": {
           "criterion": "gini",
@@ -686,15 +686,15 @@
             "1": 111529
           }
         },
-        "model_file": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/models/decision_tree_model_20260131_051535.joblib",
+        "model_file": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/models/decision_tree_model_20260131_183619.joblib",
         "visualization_files": {
-          "png": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_051535.png",
-          "svg": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_051535.svg",
-          "pdf": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_051535.pdf"
+          "png": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_183619.png",
+          "svg": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_183619.svg",
+          "pdf": "/Users/raj/Supervised_IDS/experiments/cicids2017/decision_tree_experiment/visualizations/tree_visualization_20260131_183619.pdf"
         }
       },
       "UNSW-NB15": {
-        "experiment_timestamp": "20260131_051739",
+        "experiment_timestamp": "20260131_183821",
         "dataset": "UNSW-NB15 Binary Classification",
         "tree_parameters": {
           "criterion": "gini",
@@ -922,15 +922,15 @@
             "0": 37000
           }
         },
-        "model_file": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/models/decision_tree_model_20260131_051739.joblib",
+        "model_file": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/models/decision_tree_model_20260131_183821.joblib",
         "visualization_files": {
-          "png": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_051739.png",
-          "svg": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_051739.svg",
-          "pdf": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_051739.pdf"
+          "png": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_183821.png",
+          "svg": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_183821.svg",
+          "pdf": "/Users/raj/Supervised_IDS/experiments/unsw-nb15/decision_tree_experiment/visualizations/tree_visualization_20260131_183821.pdf"
         }
       },
       "NSL-KDD": {
-        "experiment_timestamp": "20260131_051746",
+        "experiment_timestamp": "20260131_183826",
         "dataset": "NSL-KDD Binary Classification",
         "tree_parameters": {
           "criterion": "gini",
@@ -1150,17 +1150,353 @@
             "0": 9711
           }
         },
-        "model_file": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/models/decision_tree_model_20260131_051746.joblib",
+        "model_file": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/models/decision_tree_model_20260131_183826.joblib",
         "visualization_files": {
-          "png": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_051746.png",
-          "svg": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_051746.svg",
-          "pdf": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_051746.pdf"
+          "png": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_183826.png",
+          "svg": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_183826.svg",
+          "pdf": "/Users/raj/Supervised_IDS/experiments/nsl-kdd/decision_tree_experiment/visualizations/tree_visualization_20260131_183826.pdf"
+        }
+      },
+      "CIC IOV 2024": {
+        "experiment_timestamp": "20260131_183830",
+        "dataset": "CIC IOV 2024 Binary Classification",
+        "tree_parameters": {
+          "criterion": "gini",
+          "splitter": "best",
+          "max_depth": null,
+          "min_samples_split": 2,
+          "min_samples_leaf": 1,
+          "min_weight_fraction_leaf": 0.0,
+          "max_features": null,
+          "random_state": 42,
+          "max_leaf_nodes": null,
+          "min_impurity_decrease": 0.0,
+          "class_weight": null,
+          "ccp_alpha": 0.0
+        },
+        "tree_properties": {
+          "max_depth": 16,
+          "n_nodes": 73,
+          "n_leaves": 37
+        },
+        "feature_importance": [
+          {
+            "feature": "DATA_310",
+            "importance": 0.4442594952307182
+          },
+          {
+            "feature": "DATA_316",
+            "importance": 0.14528277181057467
+          },
+          {
+            "feature": "DATA_710",
+            "importance": 0.12610524874669599
+          },
+          {
+            "feature": "DATA_116",
+            "importance": 0.0630920846137628
+          },
+          {
+            "feature": "DATA_016",
+            "importance": 0.05533037825899086
+          },
+          {
+            "feature": "DATA_713",
+            "importance": 0.04755583667143009
+          },
+          {
+            "feature": "DATA_415",
+            "importance": 0.046577021257249385
+          },
+          {
+            "feature": "DATA_613",
+            "importance": 0.04062486048555879
+          },
+          {
+            "feature": "DATA_615",
+            "importance": 0.008790518745981737
+          },
+          {
+            "feature": "DATA_411",
+            "importance": 0.008016602404048395
+          },
+          {
+            "feature": "DATA_015",
+            "importance": 0.005038627614017141
+          },
+          {
+            "feature": "DATA_610",
+            "importance": 0.0021911958891806813
+          },
+          {
+            "feature": "DATA_59",
+            "importance": 0.0016892413909295927
+          },
+          {
+            "feature": "DATA_39",
+            "importance": 0.0015113619873298287
+          },
+          {
+            "feature": "DATA_010",
+            "importance": 0.0013103525725479308
+          },
+          {
+            "feature": "DATA_611",
+            "importance": 0.0011128768398791183
+          },
+          {
+            "feature": "DATA_612",
+            "importance": 0.0005810252575660509
+          },
+          {
+            "feature": "DATA_711",
+            "importance": 0.0005349954269326298
+          },
+          {
+            "feature": "DATA_49",
+            "importance": 0.00034349370340372735
+          },
+          {
+            "feature": "DATA_210",
+            "importance": 5.195466358082413e-05
+          },
+          {
+            "feature": "DATA_111",
+            "importance": 2.8161000432916795e-08
+          },
+          {
+            "feature": "DATA_216",
+            "importance": 1.0873957203971454e-08
+          },
+          {
+            "feature": "DATA_011",
+            "importance": 6.763544640411539e-09
+          },
+          {
+            "feature": "DATA_215",
+            "importance": 3.920651685945202e-09
+          },
+          {
+            "feature": "DATA_214",
+            "importance": 3.2679593030313553e-09
+          },
+          {
+            "feature": "DATA_012",
+            "importance": 1.5551274684039235e-09
+          },
+          {
+            "feature": "DATA_211",
+            "importance": 1.0179590515045222e-09
+          },
+          {
+            "feature": "DATA_213",
+            "importance": 8.65594938203003e-10
+          },
+          {
+            "feature": "DATA_515",
+            "importance": 3.826742030823005e-12
+          },
+          {
+            "feature": "DATA_516",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_512",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_513",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_514",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_614",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_715",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_714",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_511",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_712",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_79",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_616",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_69",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_09",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_510",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_416",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_013",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_014",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_19",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_110",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_112",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_113",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_114",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_115",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_29",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_212",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_311",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_312",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_313",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_314",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_315",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_410",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_412",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_413",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_414",
+            "importance": 0.0
+          },
+          {
+            "feature": "DATA_716",
+            "importance": 0.0
+          }
+        ],
+        "training_metrics": {
+          "accuracy": 0.999988460599605,
+          "precision": 1.0,
+          "recall": 0.9999119157643679,
+          "f1_score": 0.9999559559423904,
+          "roc_auc": 0.9999991657546379,
+          "average_precision": 0.9999901677357156,
+          "confusion_matrix": [
+            [
+              978989,
+              0
+            ],
+            [
+              13,
+              147573
+            ]
+          ]
+        },
+        "test_metrics": {
+          "accuracy": 0.9999822470920737,
+          "precision": 1.0,
+          "recall": 0.9998644839549002,
+          "f1_score": 0.9999322373859894,
+          "roc_auc": 0.9999986766660084,
+          "average_precision": 0.99998445708092,
+          "confusion_matrix": [
+            [
+              244748,
+              0
+            ],
+            [
+              5,
+              36891
+            ]
+          ]
+        },
+        "data_info": {
+          "n_train_samples": 1126575,
+          "n_test_samples": 281644,
+          "n_features": 64,
+          "train_class_distribution": {
+            "0": 978989,
+            "1": 147586
+          },
+          "test_class_distribution": {
+            "0": 244748,
+            "1": 36896
+          }
+        },
+        "model_file": "/Users/raj/Supervised_IDS/experiments/cic-iov-2024/decision_tree_experiment/models/decision_tree_model_20260131_183830.joblib",
+        "visualization_files": {
+          "png": "/Users/raj/Supervised_IDS/experiments/cic-iov-2024/decision_tree_experiment/visualizations/tree_visualization_20260131_183830.png",
+          "svg": "/Users/raj/Supervised_IDS/experiments/cic-iov-2024/decision_tree_experiment/visualizations/tree_visualization_20260131_183830.svg",
+          "pdf": "/Users/raj/Supervised_IDS/experiments/cic-iov-2024/decision_tree_experiment/visualizations/tree_visualization_20260131_183830.pdf"
         }
       }
     },
     "decision_stumps": {
       "SensorNetGuard": {
-        "timestamp": "20260131_051752",
+        "timestamp": "20260131_183847",
         "dataset": "SensorNetGuard",
         "top_feature": "Error_Rate",
         "top_feature_importance": 0.8425790559691897,
@@ -1273,7 +1609,7 @@
         }
       },
       "Farm-Flow": {
-        "timestamp": "20260131_051755",
+        "timestamp": "20260131_183849",
         "dataset": "Farm-Flow",
         "top_feature": "orig_pkts",
         "top_feature_importance": 0.8546162476238548,
@@ -1386,7 +1722,7 @@
         }
       },
       "UNSW-NB15": {
-        "timestamp": "20260131_051802",
+        "timestamp": "20260131_183854",
         "dataset": "UNSW-NB15",
         "top_feature": "sttl",
         "top_feature_importance": 0.6752905612302742,
@@ -1499,7 +1835,7 @@
         }
       },
       "NSL-KDD": {
-        "timestamp": "20260131_051808",
+        "timestamp": "20260131_183858",
         "dataset": "NSL-KDD",
         "top_feature": "4",
         "top_feature_importance": 0.753348074826561,
@@ -1610,11 +1946,124 @@
           "mean_f1": 0.9160898695751472,
           "std_f1": 0.0017390084304334068
         }
+      },
+      "CIC IOV 2024": {
+        "timestamp": "20260131_183900",
+        "dataset": "CIC IOV 2024",
+        "top_feature": "DATA_310",
+        "top_feature_importance": 0.4442594952307183,
+        "stump_threshold": 0.5,
+        "stump_performance": {
+          "train_accuracy": 0.8689958502540888,
+          "test_accuracy": 0.8689977418301118,
+          "test_precision": 0.0,
+          "test_recall": 0.0,
+          "test_f1": 0.0,
+          "test_roc_auc": 0.6020708337811924
+        },
+        "noise_experiment": [
+          {
+            "noise_level": 0.0,
+            "accuracy": 0.8689977418301118,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "noise_level": 0.01,
+            "accuracy": 0.8689977418301118,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "noise_level": 0.05,
+            "accuracy": 0.8689977418301118,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "noise_level": 0.1,
+            "accuracy": 0.8689977418301118,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "noise_level": 0.2,
+            "accuracy": 0.8689977418301118,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "noise_level": 0.5,
+            "accuracy": 0.8689977418301118,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "noise_level": 1.0,
+            "accuracy": 0.8689977418301118,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "noise_level": 2.0,
+            "accuracy": 0.8689977418301118,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "noise_level": 5.0,
+            "accuracy": 0.8689977418301118,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        ],
+        "cross_validation": {
+          "fold_scores": [
+            {
+              "fold": 1,
+              "accuracy": 0.8680025741739342,
+              "f1": 0.0
+            },
+            {
+              "fold": 2,
+              "accuracy": 0.8691875818298826,
+              "f1": 0.0
+            },
+            {
+              "fold": 3,
+              "accuracy": 0.8695737079200231,
+              "f1": 0.0
+            },
+            {
+              "fold": 4,
+              "accuracy": 0.8691431995206711,
+              "f1": 0.0
+            },
+            {
+              "fold": 5,
+              "accuracy": 0.8690721878259325,
+              "f1": 0.0
+            }
+          ],
+          "mean_accuracy": 0.8689958502540888,
+          "std_accuracy": 0.0005262731385658946,
+          "mean_f1": 0.0,
+          "std_f1": 0.0
+        }
       }
     },
     "maxdepth10": {
       "CIC IDS 2017": {
-        "timestamp": "20260131_051812",
+        "timestamp": "20260131_183918",
         "dataset": "CIC IDS 2017",
         "max_depth": 10,
         "tree_properties": {
@@ -1868,6 +2317,92 @@
           {
             "feature": "33",
             "importance": 0.008702023344519888
+          }
+        ]
+      },
+      "CIC IOV 2024": {
+        "timestamp": "20260131_125236",
+        "dataset": "CIC IOV 2024",
+        "max_depth": 10,
+        "tree_properties": {
+          "max_depth": 10,
+          "n_nodes": 61,
+          "n_leaves": 31
+        },
+        "test_metrics": {
+          "accuracy": 0.9999822470920737,
+          "precision": 1.0,
+          "recall": 0.9998644839549002,
+          "f1_score": 0.9999322373859894,
+          "roc_auc": 0.9999969685131364,
+          "confusion_matrix": [
+            [
+              244748,
+              0
+            ],
+            [
+              5,
+              36891
+            ]
+          ]
+        },
+        "train_metrics": {
+          "accuracy": 0.999988460599605,
+          "precision": 1.0,
+          "recall": 0.9999119157643679,
+          "f1_score": 0.9999559559423904,
+          "roc_auc": 0.9999980573563835,
+          "confusion_matrix": [
+            [
+              978989,
+              0
+            ],
+            [
+              13,
+              147573
+            ]
+          ]
+        },
+        "top_10_features": [
+          {
+            "feature": "DATA_310",
+            "importance": 0.4442595132264195
+          },
+          {
+            "feature": "DATA_316",
+            "importance": 0.1452827776955707
+          },
+          {
+            "feature": "DATA_710",
+            "importance": 0.12610525385486454
+          },
+          {
+            "feature": "DATA_116",
+            "importance": 0.06798591276795676
+          },
+          {
+            "feature": "DATA_016",
+            "importance": 0.05533038050026869
+          },
+          {
+            "feature": "DATA_713",
+            "importance": 0.04755583859778313
+          },
+          {
+            "feature": "DATA_415",
+            "importance": 0.046577023143953365
+          },
+          {
+            "feature": "DATA_79",
+            "importance": 0.027877017564005766
+          },
+          {
+            "feature": "DATA_613",
+            "importance": 0.012747844567151735
+          },
+          {
+            "feature": "DATA_414",
+            "importance": 0.0087905191020609
           }
         ]
       }
@@ -5496,7 +6031,7 @@
     "model_comparison": {
       "NSL-KDD": {
         "dataset": "NSL-KDD",
-        "timestamp": "20260131_064959",
+        "timestamp": "20260131_194008",
         "temporal_split": false,
         "data_info": {
           "n_train_samples": 125973,
@@ -5604,9 +6139,119 @@
           }
         ]
       },
+      "CIC IOV 2024": {
+        "dataset": "CIC IOV 2024",
+        "timestamp": "20260131_194341",
+        "temporal_split": false,
+        "data_info": {
+          "n_train_samples": 1126575,
+          "n_test_samples": 281644,
+          "n_features": 136,
+          "train_class_distribution": {
+            "0": 978989,
+            "1": 147586
+          },
+          "test_class_distribution": {
+            "0": 244748,
+            "1": 36896
+          }
+        },
+        "model_results": [
+          {
+            "model_name": "Decision Stump (max_depth=1)",
+            "train_accuracy": 0.8689958502540888,
+            "test_accuracy": 0.8689977418301118,
+            "test_precision": 0.0,
+            "test_recall": 0.0,
+            "test_f1": 0.0,
+            "test_roc_auc": 0.7528674023078924,
+            "status": "success"
+          },
+          {
+            "model_name": "Shallow Tree (max_depth=3)",
+            "train_accuracy": 0.9743195082440139,
+            "test_accuracy": 0.9743541492096406,
+            "test_precision": 0.9220069971840601,
+            "test_recall": 0.8785505203816132,
+            "test_f1": 0.8997543474942057,
+            "test_roc_auc": 0.9813633596578712,
+            "status": "success"
+          },
+          {
+            "model_name": "Shallow Tree (max_depth=5)",
+            "train_accuracy": 0.9977009963828418,
+            "test_accuracy": 0.9975429975429976,
+            "test_precision": 0.9817180265048698,
+            "test_recall": 0.9998644839549002,
+            "test_f1": 0.9907081666084808,
+            "test_roc_auc": 0.9995881198807373,
+            "status": "success"
+          },
+          {
+            "model_name": "Logistic Regression",
+            "train_accuracy": 0.9999875729534208,
+            "test_accuracy": 0.9999822470920737,
+            "test_precision": 1.0,
+            "test_recall": 0.9998644839549002,
+            "test_f1": 0.9999322373859894,
+            "test_roc_auc": 0.9999877843537557,
+            "status": "success"
+          },
+          {
+            "model_name": "Linear SVM",
+            "train_accuracy": 0.999988460599605,
+            "test_accuracy": 0.9999822470920737,
+            "test_precision": 1.0,
+            "test_recall": 0.9998644839549002,
+            "test_f1": 0.9999322373859894,
+            "test_roc_auc": 0.0,
+            "status": "success"
+          },
+          {
+            "model_name": "Random Forest (n_estimators=100)",
+            "train_accuracy": 0.999988460599605,
+            "test_accuracy": 0.9999822470920737,
+            "test_precision": 1.0,
+            "test_recall": 0.9998644839549002,
+            "test_f1": 0.9999322373859894,
+            "test_roc_auc": 0.9999986738975272,
+            "status": "success"
+          },
+          {
+            "model_name": "Random Forest (n_estimators=500)",
+            "train_accuracy": 0.999988460599605,
+            "test_accuracy": 0.9999822470920737,
+            "test_precision": 1.0,
+            "test_recall": 0.9998644839549002,
+            "test_f1": 0.9999322373859894,
+            "test_roc_auc": 0.9999986700216537,
+            "status": "success"
+          },
+          {
+            "model_name": "MLP (hidden_layers=100)",
+            "train_accuracy": 0.999988460599605,
+            "test_accuracy": 0.9999822470920737,
+            "test_precision": 1.0,
+            "test_recall": 0.9998644839549002,
+            "test_f1": 0.9999322373859894,
+            "test_roc_auc": 0.9999986744512235,
+            "status": "success"
+          },
+          {
+            "model_name": "MLP (hidden_layers=100,50)",
+            "train_accuracy": 0.999988460599605,
+            "test_accuracy": 0.9999822470920737,
+            "test_precision": 1.0,
+            "test_recall": 0.9998644839549002,
+            "test_f1": 0.9999322373859894,
+            "test_roc_auc": 0.9999986766660083,
+            "status": "success"
+          }
+        ]
+      },
       "SensorNetGuard": {
         "dataset": "SensorNetGuard",
-        "timestamp": "20260131_052153",
+        "timestamp": "20260131_184138",
         "temporal_split": false,
         "data_info": {
           "n_train_samples": 8000,
@@ -5716,7 +6361,7 @@
       },
       "Farm-Flow": {
         "dataset": "Farm-Flow",
-        "timestamp": "20260131_052433",
+        "timestamp": "20260131_184252",
         "temporal_split": false,
         "data_info": {
           "n_train_samples": 561081,
@@ -5826,7 +6471,7 @@
       },
       "CIC IDS 2017": {
         "dataset": "CIC IDS 2017",
-        "timestamp": "20260131_064721",
+        "timestamp": "20260131_193836",
         "temporal_split": false,
         "data_info": {
           "n_train_samples": 2264594,
@@ -5899,7 +6544,7 @@
             "test_precision": 0.9972379406515949,
             "test_recall": 0.9970769934277184,
             "test_f1": 0.9971574605451937,
-            "test_roc_auc": 0.9997894186955076,
+            "test_roc_auc": 0.9997894186363397,
             "status": "success"
           },
           {
@@ -5934,9 +6579,107 @@
           }
         ]
       },
+      "Kyoto": {
+        "dataset": "Kyoto",
+        "timestamp": "20260131_194638",
+        "temporal_split": false,
+        "data_info": {
+          "n_train_samples": 3310319,
+          "n_test_samples": 827580,
+          "n_features": 17,
+          "train_class_distribution": {
+            "1": 3310319
+          },
+          "test_class_distribution": {
+            "1": 827580
+          }
+        },
+        "model_results": [
+          {
+            "model_name": "Decision Stump (max_depth=1)",
+            "train_accuracy": 1.0,
+            "test_accuracy": 1.0,
+            "test_precision": 1.0,
+            "test_recall": 1.0,
+            "test_f1": 1.0,
+            "test_roc_auc": 0.0,
+            "status": "success"
+          },
+          {
+            "model_name": "Shallow Tree (max_depth=3)",
+            "train_accuracy": 1.0,
+            "test_accuracy": 1.0,
+            "test_precision": 1.0,
+            "test_recall": 1.0,
+            "test_f1": 1.0,
+            "test_roc_auc": 0.0,
+            "status": "success"
+          },
+          {
+            "model_name": "Shallow Tree (max_depth=5)",
+            "train_accuracy": 1.0,
+            "test_accuracy": 1.0,
+            "test_precision": 1.0,
+            "test_recall": 1.0,
+            "test_f1": 1.0,
+            "test_roc_auc": 0.0,
+            "status": "success"
+          },
+          {
+            "model_name": "Logistic Regression",
+            "status": "error",
+            "error": "This solver needs samples of at least 2 classes in the data, but the data contains only one class: np.int64(1)"
+          },
+          {
+            "model_name": "Linear SVM",
+            "status": "error",
+            "error": "This solver needs samples of at least 2 classes in the data, but the data contains only one class: np.int64(1)"
+          },
+          {
+            "model_name": "Random Forest (n_estimators=100)",
+            "train_accuracy": 1.0,
+            "test_accuracy": 1.0,
+            "test_precision": 1.0,
+            "test_recall": 1.0,
+            "test_f1": 1.0,
+            "test_roc_auc": 0.0,
+            "status": "success"
+          },
+          {
+            "model_name": "Random Forest (n_estimators=500)",
+            "train_accuracy": 1.0,
+            "test_accuracy": 1.0,
+            "test_precision": 1.0,
+            "test_recall": 1.0,
+            "test_f1": 1.0,
+            "test_roc_auc": 0.0,
+            "status": "success"
+          },
+          {
+            "model_name": "MLP (hidden_layers=100)",
+            "train_accuracy": 1.0,
+            "test_accuracy": 1.0,
+            "test_precision": 1.0,
+            "test_recall": 1.0,
+            "test_f1": 1.0,
+            "test_roc_auc": 0.0,
+            "status": "success"
+          },
+          {
+            "model_name": "MLP (hidden_layers=100,50)",
+            "train_accuracy": 1.0,
+            "test_accuracy": 1.0,
+            "test_precision": 1.0,
+            "test_recall": 1.0,
+            "test_f1": 1.0,
+            "test_roc_auc": 0.0,
+            "status": "success"
+          }
+        ]
+      },
       "UNSW-NB15": {
         "dataset": "UNSW-NB15",
-        "timestamp": "20260131_064904",
+        "timestamp": "20260131_193941",
         "temporal_split": false,
         "data_info": {
           "n_train_samples": 175341,
@@ -6009,7 +6752,7 @@
             "test_precision": 0.8179372197309417,
             "test_recall": 0.9857936998147004,
             "test_f1": 0.8940550381625937,
-            "test_roc_auc": 0.9771850721165884,
+            "test_roc_auc": 0.9771850598944483,
             "status": "success"
           },
           {
@@ -6019,7 +6762,7 @@
             "test_precision": 0.8169441347928583,
             "test_recall": 0.9861466513720992,
             "test_f1": 0.8936063886140345,
-            "test_roc_auc": 0.9783582228769845,
+            "test_roc_auc": 0.9783582219826816,
             "status": "success"
           },
           {
