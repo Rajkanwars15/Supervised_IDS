@@ -104,7 +104,11 @@ def check_preprocessing_needed():
     nslkdd_silver = base_path / "data" / "nsl-kdd-silver" / "NSL-KDD_Train_Binary.csv"
     nslkdd_needs_preprocessing = not nslkdd_silver.exists()
     
-    return farmflow_needs_preprocessing, cicids_needs_preprocessing, unsw_needs_preprocessing, nslkdd_needs_preprocessing
+    # Check CIC IOV 2024
+    ciciov_silver = base_path / "data" / "cic-iov-2024-silver" / "CIC-IOV-2024_Train_Binary.csv"
+    ciciov_needs_preprocessing = not ciciov_silver.exists()
+    
+    return farmflow_needs_preprocessing, cicids_needs_preprocessing, unsw_needs_preprocessing, nslkdd_needs_preprocessing, ciciov_needs_preprocessing
 
 def main():
     """Main function to run all experiments"""
@@ -126,7 +130,7 @@ def main():
     
     # Check preprocessing needs
     print_header("Checking Preprocessing Requirements")
-    farmflow_needs, cicids_needs, unsw_needs, nslkdd_needs = check_preprocessing_needed()
+    farmflow_needs, cicids_needs, unsw_needs, nslkdd_needs, ciciov_needs = check_preprocessing_needed()
     
     if farmflow_needs:
         print_warning("Farm-Flow preprocessing needed")
@@ -148,8 +152,13 @@ def main():
     else:
         print_success("NSL-KDD data already preprocessed")
     
+    if ciciov_needs:
+        print_warning("CIC IOV 2024 preprocessing needed")
+    else:
+        print_success("CIC IOV 2024 data already preprocessed")
+    
     # Run preprocessing if needed
-    if farmflow_needs or cicids_needs or unsw_needs or nslkdd_needs:
+    if farmflow_needs or cicids_needs or unsw_needs or nslkdd_needs or ciciov_needs:
         print_header("Preprocessing Datasets")
         
         if farmflow_needs:
@@ -179,12 +188,20 @@ def main():
             results['preprocessing']['nsl-kdd'] = success
             if not success:
                 print_warning("NSL-KDD preprocessing failed. Experiment may fail.")
+        
+        if ciciov_needs:
+            preprocess_ciciov = base_path / "experiments" / "cic-iov-2024" / "scripts" / "preprocess_cic_iov_2024.py"
+            success = run_script(preprocess_ciciov, "CIC IOV 2024 Preprocessing")
+            results['preprocessing']['cic-iov-2024'] = success
+            if not success:
+                print_warning("CIC IOV 2024 preprocessing failed. Experiment may fail.")
     else:
         print_info("All datasets already preprocessed. Skipping preprocessing step.")
         results['preprocessing']['farmflow'] = True
         results['preprocessing']['cicids2017'] = True
         results['preprocessing']['unsw-nb15'] = True
         results['preprocessing']['nsl-kdd'] = True
+        results['preprocessing']['cic-iov-2024'] = True
     
     # Run experiments
     print_header("Running Decision Tree Experiments")
@@ -216,6 +233,11 @@ def main():
             'description': 'NSL-KDD Decision Tree Experiment'
         },
         {
+            'name': 'CIC IOV 2024 Decision Tree',
+            'script': base_path / "experiments" / "cic-iov-2024" / "scripts" / "decision_tree_experiment.py",
+            'description': 'CIC IOV 2024 Decision Tree Experiment'
+        },
+        {
             'name': 'SensorNetGuard Decision Stump',
             'script': base_path / "experiments" / "sensornetguard" / "scripts" / "decision_stump_experiment.py",
             'description': 'SensorNetGuard Decision Stump Experiment'
@@ -234,6 +256,11 @@ def main():
             'name': 'NSL-KDD Decision Stump',
             'script': base_path / "experiments" / "nsl-kdd" / "scripts" / "decision_stump_experiment.py",
             'description': 'NSL-KDD Decision Stump Experiment'
+        },
+        {
+            'name': 'CIC IOV 2024 Decision Stump',
+            'script': base_path / "experiments" / "cic-iov-2024" / "scripts" / "decision_stump_experiment.py",
+            'description': 'CIC IOV 2024 Decision Stump Experiment'
         },
         {
             'name': 'CIC IDS 2017 max_depth=10',

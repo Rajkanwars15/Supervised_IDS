@@ -1,0 +1,86 @@
+{
+  "timestamp": "20260131_125236",
+  "dataset": "CIC IOV 2024",
+  "max_depth": 10,
+  "tree_properties": {
+    "max_depth": 10,
+    "n_nodes": 61,
+    "n_leaves": 31
+  },
+  "test_metrics": {
+    "accuracy": 0.9999822470920737,
+    "precision": 1.0,
+    "recall": 0.9998644839549002,
+    "f1_score": 0.9999322373859894,
+    "roc_auc": 0.9999969685131364,
+    "confusion_matrix": [
+      [
+        244748,
+        0
+      ],
+      [
+        5,
+        36891
+      ]
+    ]
+  },
+  "train_metrics": {
+    "accuracy": 0.999988460599605,
+    "precision": 1.0,
+    "recall": 0.9999119157643679,
+    "f1_score": 0.9999559559423904,
+    "roc_auc": 0.9999980573563835,
+    "confusion_matrix": [
+      [
+        978989,
+        0
+      ],
+      [
+        13,
+        147573
+      ]
+    ]
+  },
+  "top_10_features": [
+    {
+      "feature": "DATA_310",
+      "importance": 0.4442595132264195
+    },
+    {
+      "feature": "DATA_316",
+      "importance": 0.1452827776955707
+    },
+    {
+      "feature": "DATA_710",
+      "importance": 0.12610525385486454
+    },
+    {
+      "feature": "DATA_116",
+      "importance": 0.06798591276795676
+    },
+    {
+      "feature": "DATA_016",
+      "importance": 0.05533038050026869
+    },
+    {
+      "feature": "DATA_713",
+      "importance": 0.04755583859778313
+    },
+    {
+      "feature": "DATA_415",
+      "importance": 0.046577023143953365
+    },
+    {
+      "feature": "DATA_79",
+      "importance": 0.027877017564005766
+    },
+    {
+      "feature": "DATA_613",
+      "importance": 0.012747844567151735
+    },
+    {
+      "feature": "DATA_414",
+      "importance": 0.0087905191020609
+    }
+  ]
+}

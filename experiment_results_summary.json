@@ -1,10 +1,11 @@
 {
-  "start_time": "2026-01-31T05:15:26.146691",
+  "start_time": "2026-01-31T12:44:31.333835",
   "preprocessing": {
     "farmflow": true,
     "cicids2017": true,
     "unsw-nb15": true,
-    "nsl-kdd": true
+    "nsl-kdd": true,
+    "cic-iov-2024": true
   },
   "experiments": {
     "SensorNetGuard Decision Tree": true,
@@ -12,21 +13,23 @@
     "CIC IDS 2017 Decision Tree": true,
     "UNSW-NB15 Decision Tree": true,
     "NSL-KDD Decision Tree": true,
+    "CIC IOV 2024 Decision Tree": true,
     "SensorNetGuard Decision Stump": true,
     "Farm-Flow Decision Stump": true,
     "UNSW-NB15 Decision Stump": true,
     "NSL-KDD Decision Stump": true,
+    "CIC IOV 2024 Decision Stump": true,
     "CIC IDS 2017 max_depth=10": true,
     "Feature Ablation": true,
     "Create Depth-Limited Experiments": true,
     "Model Comparison": true
   },
   "summary": {
-    "total_experiments": 13,
-    "successful": 13,
+    "total_experiments": 15,
+    "successful": 15,
     "failed": 0,
-    "duration_seconds": 5673.412179,
-    "duration_formatted": "1:34:33.412179",
-    "end_time": "2026-01-31T06:49:59.558870"
+    "duration_seconds": 5141.288676,
+    "duration_formatted": "1:25:41.288676",
+    "end_time": "2026-01-31T14:10:12.622511"
   }
 }

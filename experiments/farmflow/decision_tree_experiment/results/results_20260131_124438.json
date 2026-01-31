@@ -1,0 +1,184 @@
+{
+  "experiment_timestamp": "20260131_124438",
+  "dataset": "Farm-Flow Binary Classification",
+  "tree_parameters": {
+    "criterion": "gini",
+    "splitter": "best",
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "min_weight_fraction_leaf": 0.0,
+    "max_features": null,
+    "random_state": 42,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "class_weight": null,
+    "ccp_alpha": 0.0
+  },
+  "tree_properties": {
+    "max_depth": 9,
+    "n_nodes": 41,
+    "n_leaves": 21
+  },
+  "feature_importance": [
+    {
+      "feature": "orig_pkts",
+      "importance": 0.8546162476238548
+    },
+    {
+      "feature": "traffic",
+      "importance": 0.13551731430023625
+    },
+    {
+      "feature": "bwd_pkts_payload.tot",
+      "importance": 0.0038075724625182025
+    },
+    {
+      "feature": "orig_ip_bytes",
+      "importance": 0.002890579112111863
+    },
+    {
+      "feature": "bwd_pkts_payload.avg",
+      "importance": 0.0010909292910642062
+    },
+    {
+      "feature": "fwd_pkts_per_sec",
+      "importance": 0.0008680568786745194
+    },
+    {
+      "feature": "data_pkts_difference",
+      "importance": 0.0007366787284258872
+    },
+    {
+      "feature": "resp_ip_bytes",
+      "importance": 0.00045525851905983244
+    },
+    {
+      "feature": "fwd_iat.avg",
+      "importance": 1.736308405434837e-05
+    },
+    {
+      "feature": "pkts_difference",
+      "importance": 0.0
+    },
+    {
+      "feature": "flow_iat.avg",
+      "importance": 0.0
+    },
+    {
+      "feature": "flow_iat.tot",
+      "importance": 0.0
+    },
+    {
+      "feature": "bwd_iat.avg",
+      "importance": 0.0
+    },
+    {
+      "feature": "bwd_iat.tot",
+      "importance": 0.0
+    },
+    {
+      "feature": "fwd_iat.tot",
+      "importance": 0.0
+    },
+    {
+      "feature": "missed_bytes",
+      "importance": 0.0
+    },
+    {
+      "feature": "bwd_header_size_max",
+      "importance": 0.0
+    },
+    {
+      "feature": "bwd_header_size_tot",
+      "importance": 0.0
+    },
+    {
+      "feature": "fwd_header_size_max",
+      "importance": 0.0
+    },
+    {
+      "feature": "fwd_header_size_min",
+      "importance": 0.0
+    },
+    {
+      "feature": "fwd_header_size_tot",
+      "importance": 0.0
+    },
+    {
+      "feature": "down_up_ratio",
+      "importance": 0.0
+    },
+    {
+      "feature": "flow_pkts_per_sec",
+      "importance": 0.0
+    },
+    {
+      "feature": "bwd_pkts_per_sec",
+      "importance": 0.0
+    },
+    {
+      "feature": "resp_pkts",
+      "importance": 0.0
+    },
+    {
+      "feature": "bwd_header_size_min",
+      "importance": 0.0
+    }
+  ],
+  "training_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0,
+    "average_precision": 1.0,
+    "confusion_matrix": [
+      [
+        284880,
+        0
+      ],
+      [
+        0,
+        276201
+      ]
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0,
+    "average_precision": 1.0,
+    "confusion_matrix": [
+      [
+        1774,
+        0
+      ],
+      [
+        0,
+        1771
+      ]
+    ]
+  },
+  "data_info": {
+    "n_train_samples": 561081,
+    "n_test_samples": 3545,
+    "n_features": 26,
+    "train_class_distribution": {
+      "0": 284880,
+      "1": 276201
+    },
+    "test_class_distribution": {
+      "0": 1774,
+      "1": 1771
+    }
+  },
+  "model_file": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/models/decision_tree_model_20260131_124438.joblib",
+  "visualization_files": {
+    "png": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_124438.png",
+    "svg": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_124438.svg",
+    "pdf": "/Users/raj/Supervised_IDS/experiments/farmflow/decision_tree_experiment/visualizations/tree_visualization_20260131_124438.pdf"
+  }
+}

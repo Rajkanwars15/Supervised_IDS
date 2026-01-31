@@ -271,6 +271,13 @@ if __name__ == "__main__":
             'train': base_path / "data" / "nsl-kdd-silver" / "NSL-KDD_Train_Binary.csv",
             'test': base_path / "data" / "nsl-kdd-silver" / "NSL-KDD_Test_Binary.csv",
             'target_col': 'is_attack'
+        },
+        {
+            'name': 'CIC IOV 2024',
+            'model_dir': base_path / "experiments" / "cic-iov-2024" / "decision_tree_experiment" / "models",
+            'train': base_path / "data" / "cic-iov-2024-silver" / "CIC-IOV-2024_Train_Binary.csv",
+            'test': base_path / "data" / "cic-iov-2024-silver" / "CIC-IOV-2024_Test_Binary.csv",
+            'target_col': 'is_attack'
         }
     ]
     

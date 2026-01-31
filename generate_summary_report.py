@@ -91,6 +91,11 @@ def generate_markdown_report(results_data, base_path):
             'path': 'experiments/nsl-kdd',
             'name': 'NSL-KDD Binary Classification',
             'exp_dir': 'decision_tree_experiment'
+        },
+        'CIC IOV 2024': {
+            'path': 'experiments/cic-iov-2024',
+            'name': 'CIC IOV 2024 Binary Classification',
+            'exp_dir': 'decision_tree_experiment'
         }
     }
     
@@ -268,13 +273,15 @@ def generate_markdown_report(results_data, base_path):
             for json_file in sorted(ablation_jsons):
                 dataset_name_raw = json_file.stem.replace('feature_ablation_', '')
                 # Handle special cases for dataset name formatting
-                dataset_name_map = {
-                    'nsl-kdd': 'NSL-KDD',
-                    'cic_ids_2017': 'CIC IDS 2017',
-                    'unsw-nb15': 'UNSW-NB15',
-                    'farm-flow': 'Farm-Flow',
-                    'sensornetguard': 'SensorNetGuard'
-                }
+                    dataset_name_map = {
+                        'nsl-kdd': 'NSL-KDD',
+                        'cic_ids_2017': 'CIC IDS 2017',
+                        'unsw-nb15': 'UNSW-NB15',
+                        'farm-flow': 'Farm-Flow',
+                        'sensornetguard': 'SensorNetGuard',
+                        'cic_iov_2024': 'CIC IOV 2024',
+                        'cic-iov-2024': 'CIC IOV 2024'
+                    }
                 dataset_name = dataset_name_map.get(dataset_name_raw, dataset_name_raw.replace('_', ' ').title())
                 report.append(f"### {dataset_name}\n")
                 
@@ -440,7 +447,8 @@ def main():
         'Farm-Flow': base_path / "experiments" / "farmflow" / "decision_tree_experiment",
         'CIC IDS 2017': base_path / "experiments" / "cicids2017" / "decision_tree_experiment",
         'UNSW-NB15': base_path / "experiments" / "unsw-nb15" / "decision_tree_experiment",
-        'NSL-KDD': base_path / "experiments" / "nsl-kdd" / "decision_tree_experiment"
+        'NSL-KDD': base_path / "experiments" / "nsl-kdd" / "decision_tree_experiment",
+        'CIC IOV 2024': base_path / "experiments" / "cic-iov-2024" / "decision_tree_experiment"
     }
     
     for name, exp_dir in main_experiments.items():
@@ -457,7 +465,8 @@ def main():
         'SensorNetGuard': base_path / "experiments" / "sensornetguard" / "decision_stump_experiment",
         'Farm-Flow': base_path / "experiments" / "farmflow" / "decision_stump_experiment",
         'UNSW-NB15': base_path / "experiments" / "unsw-nb15" / "decision_stump_experiment",
-        'NSL-KDD': base_path / "experiments" / "nsl-kdd" / "decision_stump_experiment"
+        'NSL-KDD': base_path / "experiments" / "nsl-kdd" / "decision_stump_experiment",
+        'CIC IOV 2024': base_path / "experiments" / "cic-iov-2024" / "decision_stump_experiment"
     }
     
     for name, exp_dir in stump_experiments.items():
@@ -475,7 +484,8 @@ def main():
         'Farm-Flow': base_path / "experiments" / "farmflow" / "decision_tree_maxdepth10_experiment",
         'CIC IDS 2017': base_path / "experiments" / "cicids2017" / "decision_tree_maxdepth10_experiment",
         'UNSW-NB15': base_path / "experiments" / "unsw-nb15" / "decision_tree_maxdepth10_experiment",
-        'NSL-KDD': base_path / "experiments" / "nsl-kdd" / "decision_tree_maxdepth10_experiment"
+        'NSL-KDD': base_path / "experiments" / "nsl-kdd" / "decision_tree_maxdepth10_experiment",
+        'CIC IOV 2024': base_path / "experiments" / "cic-iov-2024" / "decision_tree_maxdepth10_experiment"
     }
     
     for name, exp_dir in maxdepth_experiments.items():

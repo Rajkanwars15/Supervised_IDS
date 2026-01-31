@@ -233,6 +233,13 @@ print("="*80)
             'test_file': 'NSL-KDD_Test_Binary.csv',
             'target_col': 'is_attack',
             'needs_split': False
+        },
+        'CIC IOV 2024': {
+            'data_path': 'cic-iov-2024-silver',
+            'train_file': 'CIC-IOV-2024_Train_Binary.csv',
+            'test_file': 'CIC-IOV-2024_Test_Binary.csv',
+            'target_col': 'is_attack',
+            'needs_split': False
         }
     }
     
@@ -289,7 +296,8 @@ if __name__ == "__main__":
         ('Farm-Flow', base_path / "experiments" / "farmflow"),
         ('CIC IDS 2017', base_path / "experiments" / "cicids2017"),
         ('UNSW-NB15', base_path / "experiments" / "unsw-nb15"),
-        ('NSL-KDD', base_path / "experiments" / "nsl-kdd")
+        ('NSL-KDD', base_path / "experiments" / "nsl-kdd"),
+        ('CIC IOV 2024', base_path / "experiments" / "cic-iov-2024")
     ]
     
     print("="*80)
