@@ -56,13 +56,6 @@ def derive_ids2017(d):
                   iat_mean=d["Flow IAT Mean"] / 1e6, log_duration=np.log1p(dur))
 
 
-def derive_kyoto(d):
-    # indices: 0 duration, 2 src_bytes, 3 dst_bytes, 6 serror_rate (14-16 are IDS/malware flags: excluded)
-    return _frame(d.index, byte_rate=_div(d["2"] + d["3"], d["0"]),
-                  fwd_bwd_byte_ratio=_div(d["2"], d["3"]), error_rate=d["6"],
-                  log_duration=np.log1p(d["0"]))
-
-
 def derive_iov(d):
     # 8 CAN frames x 17 bit-columns (DATA_<frame><bit>): per-row bit statistics, no flow semantics.
     bits = d[[c for c in d.columns if c.startswith("DATA_")]].to_numpy(float).reshape(len(d), 8, 17)
@@ -72,4 +65,4 @@ def derive_iov(d):
 
 
 REGISTRY = {"sensornetguard": derive_sensornetguard, "unsw-nb15": derive_unsw, "nsl-kdd": derive_nsl,
-            "cicids2017": derive_ids2017, "kyoto": derive_kyoto, "cic-iov-2024": derive_iov}
+            "cicids2017": derive_ids2017, "cic-iov-2024": derive_iov}

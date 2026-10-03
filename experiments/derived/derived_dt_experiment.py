@@ -11,8 +11,7 @@ from derive_features import REGISTRY
 
 DATA = Path(__file__).parents[2] / "data"
 SILVER = {"unsw-nb15": "unsw-nb15-silver/UNSW-NB15", "nsl-kdd": "nsl-kdd-silver/NSL-KDD",
-          "cicids2017": "cic-ids2017-silver/CIC-IDS2017", "kyoto": "kyoto-silver/Kyoto",
-          "cic-iov-2024": "cic-iov-2024-silver/CIC-IOV-2024"}
+          "cicids2017": "cic-ids2017-silver/CIC-IDS2017", "cic-iov-2024": "cic-iov-2024-silver/CIC-IOV-2024"}
 DEPTHS = [3, 5, 7, 10, None]
 
 
@@ -63,4 +62,4 @@ def main(names):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:] or ["sensornetguard", "unsw-nb15", "nsl-kdd", "cicids2017", "kyoto", "cic-iov-2024"])
+    main(sys.argv[1:] or ["sensornetguard", "unsw-nb15", "nsl-kdd", "cicids2017", "cic-iov-2024"])
