@@ -11,11 +11,12 @@ import numpy as np, pandas as pd
 DATA = Path(__file__).parents[2] / "data"
 
 
-def _out(X, y, group=None, time=None, family=None, note=""):
+def _out(X, y, group=None, time=None, family=None, note="", extra=None):
     X = X.replace([np.inf, -np.inf], np.nan).astype("float32").reset_index(drop=True)
     n = len(X)
     mk = lambda v: None if v is None else pd.Series(np.asarray(v)).reset_index(drop=True)
-    d = dict(X=X, y=pd.Series(np.asarray(y)).astype(int).reset_index(drop=True), group=mk(group), time=mk(time), family=mk(family), note=note)
+    d = dict(X=X, y=pd.Series(np.asarray(y)).astype(int).reset_index(drop=True), group=mk(group), time=mk(time), family=mk(family), note=note,
+             extra={k: mk(v) for k, v in (extra or {}).items()})
     for k in ("group", "time", "family"):
         assert d[k] is None or len(d[k]) == n
     assert len(d["y"]) == n
@@ -48,7 +49,8 @@ def cicids2017():
     X = X.apply(pd.to_numeric, errors="coerce")
     y = (lab.str.upper() != "BENIGN").astype(int)
     fam = np.where(y == 1, lab, "benign")
-    return _out(X, y, group=grp, time=ts.astype("int64"), family=fam,
+    extra = dict(dst=d["Destination IP"], flow=d["Flow ID"], ts=ts, sport=d["Source Port"], dport=d["Destination Port"])
+    return _out(X, y, group=grp, time=ts.astype("int64"), family=fam, extra=extra,
                 note="Destination Port kept as feature (as in silver); duplicates NOT removed; row count differs from silver if silver dropped NaN/inf rows")
 
 

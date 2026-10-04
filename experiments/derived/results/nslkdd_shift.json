@@ -1,0 +1,186 @@
+{
+  "n_train": 125973,
+  "n_test": 22544,
+  "n_test21": 11850,
+  "class_prior": {
+    "train": 0.4654171925730117,
+    "benchmark_test": 0.5692423704755145,
+    "test21": 0.8183966244725739,
+    "pooled": 0.4811772389692762,
+    "random_test": 0.4811809857258282
+  },
+  "families": {
+    "n_train_families": 22,
+    "n_test_families": 37,
+    "novel_test_families": [
+      "apache2",
+      "httptunnel",
+      "mailbomb",
+      "mscan",
+      "named",
+      "processtable",
+      "ps",
+      "saint",
+      "sendmail",
+      "snmpgetattack",
+      "snmpguess",
+      "sqlattack",
+      "udpstorm",
+      "worm",
+      "xlock",
+      "xsnoop",
+      "xterm"
+    ],
+    "n_novel_test_attack_rows": 3750,
+    "share_of_test_attack_rows_novel": 0.2922153822177199,
+    "share_of_all_test_rows_novel": 0.16634137686302342,
+    "train_family_share": {
+      "neptune": 0.703,
+      "satan": 0.062,
+      "ipsweep": 0.0614,
+      "portsweep": 0.05,
+      "smurf": 0.0451,
+      "nmap": 0.0255,
+      "back": 0.0163,
+      "teardrop": 0.0152
+    },
+    "test_family_share": {
+      "neptune": 0.3629,
+      "guess_passwd": 0.0959,
+      "mscan": 0.0776,
+      "warezmaster": 0.0736,
+      "apache2": 0.0574,
+      "satan": 0.0573,
+      "processtable": 0.0534,
+      "smurf": 0.0518
+    }
+  },
+  "feature_ks_top10": {
+    "39": 0.22603042832969988,
+    "37": 0.2025093725092566,
+    "38": 0.19682403209612254,
+    "24": 0.18539155056641654,
+    "25": 0.18138125394033622,
+    "40": 0.16797777505151856,
+    "26": 0.1302797748373502,
+    "5": 0.12408202697822579,
+    "27": 0.12364940409600422,
+    "32": 0.11066638760115532
+  },
+  "adversarial_auc": {
+    "train_vs_benchmark_test": 0.8972029270292055,
+    "random_train_vs_random_test": 0.4961693189087336,
+    "train_vs_benchmark_test_benign_only": 0.7954670458253537,
+    "train_vs_benchmark_test_attack_only": 0.9713418518389697
+  },
+  "models": {
+    "DT": {
+      "random_split": {
+        "f1": 0.9927997203774904,
+        "mcc": 0.9861122744386442
+      },
+      "benchmark_full": {
+        "f1": 0.7756170531039641,
+        "mcc": 0.6319860035164725
+      },
+      "benchmark_seen_families_only": {
+        "f1": 0.8542356258428344,
+        "mcc": 0.7601195398917436
+      },
+      "benchmark_seen_families_reweighted_to_random_mix": {
+        "f1": 0.9602174351504178,
+        "mcc": 0.9242232537710413
+      },
+      "recall_seen_family_attacks": 0.7671474182538809,
+      "recall_novel_family_attacks": 0.35413333333333336,
+      "benign_fpr": 0.027082689733292142,
+      "family_recall": {
+        "apache2": 0.6078697421981004,
+        "back": 0.3871866295264624,
+        "buffer_overflow": 0.25,
+        "guess_passwd": 0.021121039805036556,
+        "httptunnel": 0.06015037593984962,
+        "ipsweep": 0.9929078014184397,
+        "mailbomb": 0.0,
+        "mscan": 0.3453815261044177,
+        "neptune": 0.9926991625509985,
+        "nmap": 1.0,
+        "pod": 0.926829268292683,
+        "portsweep": 0.9936305732484076,
+        "processtable": 0.28175182481751826,
+        "saint": 0.9843260188087775,
+        "satan": 0.9972789115646259,
+        "smurf": 0.9398496240601504,
+        "snmpgetattack": 0.0,
+        "snmpguess": 0.0,
+        "warezmaster": 0.4088983050847458
+      },
+      "benchmark_test21": {
+        "f1": 0.6833013435700576,
+        "mcc": 0.3224040889338774
+      },
+      "f1_on_exact_seen_rows": {
+        "f1": 0.9759036144578314,
+        "mcc": 0.7041590602446838
+      },
+      "n_exact_seen": 1536
+    },
+    "LGBM": {
+      "random_split": {
+        "f1": 0.9954814529405583,
+        "mcc": 0.9913042479845071
+      },
+      "benchmark_full": {
+        "f1": 0.7643642887493508,
+        "mcc": 0.6201438992010193
+      },
+      "benchmark_seen_families_only": {
+        "f1": 0.8563728792797207,
+        "mcc": 0.7635217113665859
+      },
+      "benchmark_seen_families_reweighted_to_random_mix": {
+        "f1": 0.9656199994503248,
+        "mcc": 0.9341721686434662
+      },
+      "recall_seen_family_attacks": 0.7696796212705054,
+      "recall_novel_family_attacks": 0.2944,
+      "benign_fpr": 0.0260529296673875,
+      "family_recall": {
+        "apache2": 0.6132971506105834,
+        "back": 0.9972144846796658,
+        "buffer_overflow": 0.25,
+        "guess_passwd": 0.0,
+        "httptunnel": 0.0,
+        "ipsweep": 1.0,
+        "mailbomb": 0.0,
+        "mscan": 0.27710843373493976,
+        "neptune": 0.9926991625509985,
+        "nmap": 1.0,
+        "pod": 0.926829268292683,
+        "portsweep": 1.0,
+        "processtable": 0.18686131386861313,
+        "saint": 0.7398119122257053,
+        "satan": 0.998639455782313,
+        "smurf": 0.9233082706766917,
+        "snmpgetattack": 0.0,
+        "snmpguess": 0.0,
+        "warezmaster": 0.23940677966101695
+      },
+      "benchmark_test21": {
+        "f1": 0.6654594232059021,
+        "mcc": 0.3067205822046378
+      },
+      "f1_on_exact_seen_rows": {
+        "f1": 0.975177304964539,
+        "mcc": 0.6975106190544237
+      },
+      "n_exact_seen": 1536
+    }
+  },
+  "partition_check": {
+    "n_test": 22544,
+    "benign": 9711,
+    "seen_family_attacks": 9083,
+    "novel_family_attacks": 3750
+  }
+}

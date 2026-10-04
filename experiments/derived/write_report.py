@@ -24,17 +24,22 @@ w("Every number below is generated from `experiments/derived/results/*.json` by 
   "`raw_loaders.py`, `split_ladder.py`, `compression_table.py`, `baselines.py`.\n")
 
 w("## Summary\n")
-w("- **RQ1 (compression).** Dataset-specific derived rate/ratio features cut inputs by 56-97% and keep 96-100% of the raw-feature F1 at unlimited depth "
-  "(random splits, paired, 5 resplits): SensorNetGuard 99.4%, Farm-Flow 99.9%, UNSW-NB15 98.9%, NSL-KDD 97.9%, CIC-IoV 99.1%, CIC-IDS2017 96.2%. "
-  "The compression is of the *input*, not of the *model*: derived trees are often as large or larger (e.g. CIC-IDS2017 4,491 vs 1,437 nodes).")
-w("- **RQ2 (generalisation).** Compact representations do not transfer across datasets: the dominant feature differs per dataset, signs of the same feature flip, "
-  "a tree identifies the source dataset of a benign row 92.5% of the time from the six shared features, and leave-one-dataset-out F1 is 0.02-0.90 (mostly < 0.4).")
-w("- **RQ3 (protocol).** The evaluation protocol changes conclusions more than the model does. Examples: CIC-IDS2017 F1 0.997 (random) → 0.849 (time) → 0.061 "
-  "(group by source IP, degenerate test) and 0.43 macro-recall on held-out attack families; CIC-IoV 1.000 → 0.927 (time) and 0.33 macro-recall on held-out families; "
-  "NSL-KDD 0.993 (random) vs 0.78 (benchmark) with 0.38 macro-recall on held-out families.")
-w("- **Leakage.** UNSW-NB15 is ~40% duplicate rows: its random-split F1 of 0.951 is 0.869 on test rows unseen in training, so much of the random-vs-benchmark gap is duplicate leakage. "
-  "CIC-IoV-2024's bit features are 99.7% duplicates (99.8% of test rows have an exact copy in train), i.e. near-perfect scores reflect lookup. Duplicates do **not** explain NSL-KDD's gap (a family/distribution shift) or CIC-IDS2017.")
-w("- **Classifier-independence.** RF, XGBoost and LightGBM show the same pattern as the decision tree on raw vs derived features (Section 4); ensembles add about 1 F1 point or less over the decision tree.")
+w("**Scope.** Six datasets (SensorNetGuard, NSL-KDD, UNSW-NB15, Farm-Flow, CIC-IoV-2024, CIC-IDS2017; Kyoto removed), decision trees with RF/XGBoost/LightGBM as baselines, raw vs hand-derived rate/ratio features, "
+  "evaluated under random, duplicate-aware, temporal, group, attack-family and cross-dataset protocols. Fixed metric set: F1, MCC, PR-AUC, benign FPR, family macro-recall.\n")
+w("- **RQ1 - input compression holds under IID-like protocols but weakens under shift, and it is not model compression.** Derived features cut inputs by 56-97% and retain 95-100% of raw F1 on random splits and, except for CIC-IoV, on vector-disjoint splits (Sections 3, 13). "
+  "Under harder protocols retention drops: CIC-IoV vector-disjoint 75% (tree) / 90% (LightGBM); CIC-IDS2017 time split 94% (tree) / 78% (LightGBM) in Section 13 but a paired ΔF1 of −0.20 [−0.20, −0.20] in Section 16, because the IDS2017 time-split F1 depends strongly on the training subsample (raw tree F1 0.849 with the full train set, 0.754 with a 600k cap, 0.867 with a 300k cap) - treat IDS2017 time-split retention as unresolved - and 5-minute time-block groups 88-91%. "
+  "Fitted trees are not smaller: at unlimited depth derived/raw node ratios are 0.58 (NSL-KDD), 0.89 (IoV), 1.30 (UNSW), 1.57 (SensorNetGuard), 2.31 (Farm-Flow), 3.2 (CIC-IDS2017); inference latency is 0.02-0.08 µs/row either way (Section 14).")
+w("- **RQ2 - no cross-dataset generalisation.** On harmonised features, within-dataset MCC is 0.59-0.97 while off-diagonal transfer has median MCC 0.00 (Section 15). Against a 20-permutation null, only 1 of 20 off-diagonal cells beats chance "
+  "(SensorNetGuard→NSL-KDD, two features whose semantics differ) and one is significantly worse than chance (UNSW→Farm-Flow). A tree identifies the source dataset of a benign row 92.5% of the time (Section 5).")
+w("- **RQ3 - evaluation protocol dominates.** CIC-IDS2017 F1 0.997 (random) → 0.849 (time) → 0.936/0.821 (5/15-minute time-block groups; source-IP groups are degenerate) with family macro-recall 0.43; "
+  "CIC-IoV 1.000 (random) → 0.927 (time) → 0.63 (tree) / 0.90 (LightGBM) on a 313k-row vector-disjoint test set, macro-recall 0.33; NSL-KDD 0.993 (random) vs 0.78 (benchmark), macro-recall 0.38 (Sections 9-12, 17).")
+w("- **Leakage and chance checks.** Farm-Flow's shuffled-label F1 (~0.98) is the 97.9% attack prior: over 30 permutations MCC is −0.0001 ± 0.005 and AUC 0.500, before or after feature derivation; removing the ports and the five most important features leaves real-label MCC at 0.950 → 0.949 and shuffled-label MCC at 0 (Section 8). "
+  "A label-shuffled run with the balanced sampler drops Farm-Flow's F1 from 0.987 to 0.684 while MCC stays ≈ 0, confirming a test-prior effect, not leakage (Section 18). "
+  "Exact-duplicate contamination is large for CIC-IoV (99.7% duplicate rows) and moderate for UNSW-NB15 (21% in the raw files; random-split F1 0.972 vs 0.860 on unseen rows).")
+w("- **NSL-KDD.** The 0.993 → 0.776 gap is mostly family-mix and novel-family shift, not duplication: 29% of benchmark-test attack rows come from 17 families absent in training; dropping them gives F1 0.854, matching the random split's family mix gives 0.960; adversarial-validation AUC is 0.90 (0.50 for a random split) (Section 12).")
+w("- **Class-balancing in training (secondary experiment).** `ImbalancedDatasetSampler` and class-weighted loss rarely change IID conclusions (ΔF1 on the IID split between −0.022 and 0.000); on SensorNetGuard (4.9% attack) and UNSW-NB15 the sampler raises benign false alarms (FPR +0.0021 and +0.0024 for the tree) and lowers F1. "
+  "Compression retention is stable across strategies on most datasets but not under shift (CIC-IDS2017 time split 77% / 80% / 95% for standard / sampler / weighted) (Section 18).")
+w("- **Classifier-independence.** RF, XGBoost and LightGBM follow the same raw-vs-derived pattern and add about 1 F1 point or less over the decision tree on IID splits (Section 4), but model class matters a lot on novel vectors (IoV: 0.63 vs 0.90).")
 w("- Kyoto was removed: its silver train/test sets are 100% attack (label mapping appears inverted) and columns 14-16 look like IDS-detection flags (leakage).\n")
 
 w("## 0. What \"official\" split means here (correction)\n")
@@ -151,6 +156,11 @@ for n, v in d1.items():
     for r, dd in zip(v["raw"], v["derived"]):
         w(f"| {n} | {v['n_raw']} → {v['n_derived']} | {r['depth']} | {r['f1']:.4f} | {dd['f1']:.4f} | {r['top']} | {dd['top']} |")
 
+import report_stage4 as r4
+r4.build(w, R, ORDER)
+r4.build2(w, R, ORDER, ladder)
+r4.build3(w, R, ORDER)
+
 w("\n## Limitations\n")
 for s in ["Farm-Flow raw monthly CSVs are 97.9% attack vs ~50/50 in the silver split; absolute numbers differ between the two. The `traffic` column (attack-type label) was excluded from features.",
           "Derived feature sets are hand-built and dataset-specific; the flow-dataset sets use two overlapping derivations, so 'derived' is not minimal.",
@@ -158,6 +168,11 @@ for s in ["Farm-Flow raw monthly CSVs are 97.9% attack vs ~50/50 in the silver s
           "Silver preprocessing dropped CAN-ID bits (IoV), IPs/ports/timestamps (IDS2017, UNSW), so identifier-leakage tests are limited to group/time/family splits.",
           "Time splits are single deterministic runs (no interval); Farm-Flow and IoV time proxies are row order, not timestamps.",
           "CIC-IDS2017 group split is degenerate (see Section 2). Hyper-parameters for RF/XGBoost/LightGBM were fixed, not tuned. SensorNetGuard appears synthetic.",
-          "Latency was measured on a shared laptop CPU, single process; differences below ~0.1 ms/1k rows are not resolvable."]:
+          "Latency was measured on a laptop CPU, single process, with the other experiment process paused (SIGSTOP); values are ~0.02-0.08 µs/row, and lower derived latency on IoV/Farm-Flow/IDS2017 mostly reflects narrower input arrays, not smaller trees.",
+          "The earlier Farm-Flow raw feature set (Sections 1, 3, 4, 6) included the numeric port columns `id.orig_p`/`id.resp_p` (87 features); Section 8 shows removing them and the top-5 features does not change results, while the provenance loaders (Sections 2, 9, 13) exclude them (85 features).",
+          "`ImbalancedDatasetSampler` is a PyTorch sampler; it is applied here to the training indices of tree/boosting models (draws with replacement), so it duplicates minority rows rather than changing a mini-batch stream. Train rows were capped at 300k for the balance ablation.",
+          "Transfer-matrix cells use only the features computable in both datasets (2-10 features); SensorNetGuard is a partial node whose rates/error rate are node-health quantities, so cells involving it are descriptive. Single-split bootstrap CIs reflect test-set sampling only.",
+          "CIC-IDS2017 time-split results are unstable across training-subsample caps (full / 600k / 300k train rows give raw-tree F1 0.849 / 0.754 / 0.867 in Sections 2, 13, 16); the single deterministic time split has no interval that captures this, so its retention and paired differences should be read as indicative only."]:
     w(f"- {s}")
+r4.inventory(w, R)
 (Path(__file__).parent / "RESULTS.md").write_text("\n".join(L) + "\n")

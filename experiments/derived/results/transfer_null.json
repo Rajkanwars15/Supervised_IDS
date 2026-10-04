@@ -1,0 +1,227 @@
+{
+  "unsw-nb15->unsw-nb15": {
+    "n_features": 9,
+    "real_mcc": 0.6528592648588628,
+    "null_mcc_mean": -0.0018266182838849534,
+    "null_mcc_sd": 0.012419263809996526,
+    "null_f1_mean": 0.7092935328222063,
+    "z": 52.715353595740304,
+    "p_one_sided": 0.0
+  },
+  "unsw-nb15->nsl-kdd": {
+    "n_features": 6,
+    "real_mcc": -0.043897545236967074,
+    "null_mcc_mean": 0.02745787708942533,
+    "null_mcc_sd": 0.2250005700310016,
+    "null_f1_mean": 0.6762616883242435,
+    "z": -0.31713440688866135,
+    "p_one_sided": 0.6
+  },
+  "unsw-nb15->cicids2017": {
+    "n_features": 9,
+    "real_mcc": -0.2653888348971327,
+    "null_mcc_mean": -0.127739110673145,
+    "null_mcc_sd": 0.18476640973519048,
+    "null_f1_mean": 0.2920075836628312,
+    "z": -0.7449932291333096,
+    "p_one_sided": 0.8
+  },
+  "unsw-nb15->farm-flow": {
+    "n_features": 9,
+    "real_mcc": -0.2172515332958885,
+    "null_mcc_mean": -0.012663603325170242,
+    "null_mcc_sd": 0.018600314176433767,
+    "null_f1_mean": 0.9780414137071723,
+    "z": -10.9991652845266,
+    "p_one_sided": 1.0
+  },
+  "unsw-nb15->sensornetguard": {
+    "n_features": 2,
+    "real_mcc": 0.0,
+    "null_mcc_mean": -0.03504755503228028,
+    "null_mcc_sd": 0.09285573382435881,
+    "null_f1_mean": 0.08234180686528705,
+    "z": 0.37744093540388635,
+    "p_one_sided": 0.75
+  },
+  "nsl-kdd->unsw-nb15": {
+    "n_features": 6,
+    "real_mcc": -0.24576966511112253,
+    "null_mcc_mean": 0.010358440792682522,
+    "null_mcc_sd": 0.2644978197492271,
+    "null_f1_mean": 0.29074314218383746,
+    "z": -0.9683562085564354,
+    "p_one_sided": 0.85
+  },
+  "nsl-kdd->nsl-kdd": {
+    "n_features": 7,
+    "real_mcc": 0.590122882849797,
+    "null_mcc_mean": 0.024065903295707756,
+    "null_mcc_sd": 0.09332232496808014,
+    "null_f1_mean": 0.0847705027161161,
+    "z": 6.065611628811248,
+    "p_one_sided": 0.0
+  },
+  "nsl-kdd->cicids2017": {
+    "n_features": 7,
+    "real_mcc": -0.06386082083526338,
+    "null_mcc_mean": 0.029218575501254652,
+    "null_mcc_sd": 0.2671178852827972,
+    "null_f1_mean": 0.20652154633910827,
+    "z": -0.3484581207955247,
+    "p_one_sided": 0.4
+  },
+  "nsl-kdd->farm-flow": {
+    "n_features": 7,
+    "real_mcc": 0.030017532664682586,
+    "null_mcc_mean": -0.02211395263008531,
+    "null_mcc_sd": 0.08331278354397852,
+    "null_f1_mean": 0.145895094720373,
+    "z": 0.6257321274981663,
+    "p_one_sided": 0.15
+  },
+  "nsl-kdd->sensornetguard": {
+    "n_features": 2,
+    "real_mcc": 0.10794196083488351,
+    "null_mcc_mean": 0.02015982915230841,
+    "null_mcc_sd": 0.19350050715334355,
+    "null_f1_mean": 0.05637196600572605,
+    "z": 0.45365323829880355,
+    "p_one_sided": 0.1
+  },
+  "cicids2017->unsw-nb15": {
+    "n_features": 9,
+    "real_mcc": -0.006135096177352098,
+    "null_mcc_mean": 0.018204758041732286,
+    "null_mcc_sd": 0.13062305009432487,
+    "null_f1_mean": 0.06146021038504303,
+    "z": -0.1863365937444288,
+    "p_one_sided": 0.5
+  },
+  "cicids2017->nsl-kdd": {
+    "n_features": 7,
+    "real_mcc": 0.5179135372428537,
+    "null_mcc_mean": 0.03287994645638438,
+    "null_mcc_sd": 0.3446232470081814,
+    "null_f1_mean": 0.21974646358388158,
+    "z": 1.4074314341741274,
+    "p_one_sided": 0.15
+  },
+  "cicids2017->cicids2017": {
+    "n_features": 10,
+    "real_mcc": 0.9321022905327069,
+    "null_mcc_mean": -0.0024510968114772377,
+    "null_mcc_sd": 0.01684069025179997,
+    "null_f1_mean": 0.004288371464399391,
+    "z": 55.49376975473419,
+    "p_one_sided": 0.0
+  },
+  "cicids2017->farm-flow": {
+    "n_features": 10,
+    "real_mcc": 0.008481065192470492,
+    "null_mcc_mean": 0.00773581451556476,
+    "null_mcc_sd": 0.020357691044519795,
+    "null_f1_mean": 0.03508015828870611,
+    "z": 0.03660781938757002,
+    "p_one_sided": 0.3
+  },
+  "cicids2017->sensornetguard": {
+    "n_features": 3,
+    "real_mcc": 0.0,
+    "null_mcc_mean": 0.06465423320325725,
+    "null_mcc_sd": 0.11431054493219427,
+    "null_f1_mean": 0.05740867640518761,
+    "z": -0.5656016532998621,
+    "p_one_sided": 0.85
+  },
+  "farm-flow->unsw-nb15": {
+    "n_features": 9,
+    "real_mcc": 0.18749375563996598,
+    "null_mcc_mean": 0.009424193130056662,
+    "null_mcc_sd": 0.12538760590958375,
+    "null_f1_mean": 0.6907759294560585,
+    "z": 1.420152823065417,
+    "p_one_sided": 0.1
+  },
+  "farm-flow->nsl-kdd": {
+    "n_features": 7,
+    "real_mcc": 0.06424013069092567,
+    "null_mcc_mean": 0.013486263121093578,
+    "null_mcc_sd": 0.16478909747317522,
+    "null_f1_mean": 0.7232283900624641,
+    "z": 0.3079928729999503,
+    "p_one_sided": 0.2
+  },
+  "farm-flow->cicids2017": {
+    "n_features": 10,
+    "real_mcc": 0.07178446779083623,
+    "null_mcc_mean": -0.09879827078601758,
+    "null_mcc_sd": 0.19957914910857638,
+    "null_f1_mean": 0.3025556770841377,
+    "z": 0.8547122248930535,
+    "p_one_sided": 0.1
+  },
+  "farm-flow->farm-flow": {
+    "n_features": 10,
+    "real_mcc": 0.940862518482167,
+    "null_mcc_mean": 0.005539262033745481,
+    "null_mcc_sd": 0.011242374029521458,
+    "null_f1_mean": 0.9892404463834173,
+    "z": 83.19624075772138,
+    "p_one_sided": 0.0
+  },
+  "farm-flow->sensornetguard": {
+    "n_features": 3,
+    "real_mcc": 0.0,
+    "null_mcc_mean": 0.0006900120389539499,
+    "null_mcc_sd": 0.0022070410679328532,
+    "null_f1_mean": 0.09252194788303907,
+    "z": -0.3126412321816128,
+    "p_one_sided": 1.0
+  },
+  "sensornetguard->unsw-nb15": {
+    "n_features": 2,
+    "real_mcc": -0.1323785553836314,
+    "null_mcc_mean": 0.004606794630433097,
+    "null_mcc_sd": 0.11206253174781802,
+    "null_f1_mean": 0.22744145070622687,
+    "z": -1.2224009923524841,
+    "p_one_sided": 0.9
+  },
+  "sensornetguard->nsl-kdd": {
+    "n_features": 2,
+    "real_mcc": 0.6117473880128517,
+    "null_mcc_mean": -0.03406546604054612,
+    "null_mcc_sd": 0.31056903342970443,
+    "null_f1_mean": 0.16413252633946765,
+    "z": 2.0794502495033007,
+    "p_one_sided": 0.0
+  },
+  "sensornetguard->cicids2017": {
+    "n_features": 3,
+    "real_mcc": -0.06897346477374489,
+    "null_mcc_mean": 0.0007621680951354692,
+    "null_mcc_sd": 0.1111706572042985,
+    "null_f1_mean": 0.19011584212004157,
+    "z": -0.6272845247350393,
+    "p_one_sided": 0.7
+  },
+  "sensornetguard->farm-flow": {
+    "n_features": 3,
+    "real_mcc": -0.04130470350283975,
+    "null_mcc_mean": -0.023492944267363168,
+    "null_mcc_sd": 0.13242324942466005,
+    "null_f1_mean": 0.3159791430397412,
+    "z": -0.13450628430327316,
+    "p_one_sided": 0.55
+  },
+  "sensornetguard->sensornetguard": {
+    "n_features": 3,
+    "real_mcc": 0.9744862851256052,
+    "null_mcc_mean": 0.030214859286442696,
+    "null_mcc_sd": 0.050614033007728654,
+    "null_f1_mean": 0.02914240027537724,
+    "z": 18.65631663248361,
+    "p_one_sided": 0.0
+  }
+}
