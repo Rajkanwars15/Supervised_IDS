@@ -1,0 +1,98 @@
+[
+  {
+    "dataset": "cic-iov-2024",
+    "split": "own80/20",
+    "n_train": 1126575,
+    "n_test": 281644,
+    "n_features": 136,
+    "attack_train": 0.1310041497459113,
+    "attack_test": 0.13100225816988822,
+    "dup_train_pct": 99.72891285533586,
+    "dup_test_pct": 99.63251480592521,
+    "unique_train": 3054,
+    "test_in_train_pct": 99.80436295465196,
+    "test_in_train_attack_pct": 100.0,
+    "test_in_train_benign_pct": 99.77487047902332,
+    "conflicting_hash_pct": 0.03274394237066143,
+    "conflicting_rows_train_pct": 1.6472050240774028,
+    "f1_full": 0.9999322373859894,
+    "f1_seen_in_train": 0.9999322373859894,
+    "f1_unseen": null,
+    "n_unseen": 551,
+    "f1_dedup_train_full": 0.9999322373859894,
+    "f1_dedup_train_unseen": null,
+    "top_features": {
+      "DATA_310": 0.4443,
+      "DATA_316": 0.1453,
+      "DATA_710": 0.1261,
+      "DATA_116": 0.0631,
+      "DATA_016": 0.0553
+    },
+    "drop_top": {
+      "1": {
+        "dropped": [
+          "DATA_310"
+        ],
+        "f1": 0.9999322373859894
+      },
+      "3": {
+        "dropped": [
+          "DATA_310",
+          "DATA_316",
+          "DATA_710"
+        ],
+        "f1": 0.9999322373859894
+      }
+    },
+    "f1_label_shuffled": 0.0,
+    "seconds": 36
+  },
+  {
+    "dataset": "cic-iov-2024",
+    "split": "random",
+    "n_train": 1126575,
+    "n_test": 281644,
+    "n_features": 136,
+    "attack_train": 0.1310041497459113,
+    "attack_test": 0.13100225816988822,
+    "dup_train_pct": 99.72962297228325,
+    "dup_test_pct": 99.63144963144963,
+    "unique_train": 3046,
+    "test_in_train_pct": 99.80116743122524,
+    "test_in_train_attack_pct": 100.0,
+    "test_in_train_benign_pct": 99.77119322731953,
+    "conflicting_hash_pct": 0.032829940906106365,
+    "conflicting_rows_train_pct": 1.6598983645119056,
+    "f1_full": 0.9999457906434651,
+    "f1_seen_in_train": 0.9999457906434651,
+    "f1_unseen": null,
+    "n_unseen": 560,
+    "f1_dedup_train_full": 0.9999457906434651,
+    "f1_dedup_train_unseen": null,
+    "top_features": {
+      "DATA_310": 0.4444,
+      "DATA_316": 0.1453,
+      "DATA_710": 0.1263,
+      "DATA_116": 0.063,
+      "DATA_016": 0.0553
+    },
+    "drop_top": {
+      "1": {
+        "dropped": [
+          "DATA_310"
+        ],
+        "f1": 0.9999457906434651
+      },
+      "3": {
+        "dropped": [
+          "DATA_310",
+          "DATA_316",
+          "DATA_710"
+        ],
+        "f1": 0.9999457906434651
+      }
+    },
+    "f1_label_shuffled": 0.0,
+    "seconds": 58
+  }
+]

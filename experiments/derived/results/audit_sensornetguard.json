@@ -1,0 +1,50 @@
+[
+  {
+    "dataset": "sensornetguard",
+    "split": "random",
+    "n_train": 8000,
+    "n_test": 2000,
+    "n_features": 17,
+    "attack_train": 0.04875,
+    "attack_test": 0.0485,
+    "dup_train_pct": 0.0,
+    "dup_test_pct": 0.0,
+    "unique_train": 8000,
+    "test_in_train_pct": 0.0,
+    "test_in_train_attack_pct": 0.0,
+    "test_in_train_benign_pct": 0.0,
+    "conflicting_hash_pct": 0.0,
+    "conflicting_rows_train_pct": 0.0,
+    "f1_full": 0.9897959183673469,
+    "f1_seen_in_train": null,
+    "f1_unseen": 0.9897959183673469,
+    "n_unseen": 2000,
+    "f1_dedup_train_full": 0.9897959183673469,
+    "f1_dedup_train_unseen": 0.9897959183673469,
+    "top_features": {
+      "Error_Rate": 0.8324,
+      "Energy_Consumption_Rate": 0.109,
+      "Data_Throughput": 0.0338,
+      "Route_Reply_Frequency": 0.0081,
+      "Packet_Drop_Rate": 0.0054
+    },
+    "drop_top": {
+      "1": {
+        "dropped": [
+          "Error_Rate"
+        ],
+        "f1": 0.9789473684210527
+      },
+      "3": {
+        "dropped": [
+          "Error_Rate",
+          "Energy_Consumption_Rate",
+          "Data_Throughput"
+        ],
+        "f1": 0.9206349206349206
+      }
+    },
+    "f1_label_shuffled": 0.047619047619047616,
+    "seconds": 1
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "dataset": "nsl-kdd",
+    "split": "benchmark",
+    "n_train": 125973,
+    "n_test": 22544,
+    "n_features": 38,
+    "attack_train": 0.4654171925730117,
+    "attack_test": 0.5692423704755145,
+    "dup_train_pct": 5.059020583775888,
+    "dup_test_pct": 1.619056068133428,
+    "unique_train": 119600,
+    "test_in_train_pct": 6.813342796309439,
+    "test_in_train_attack_pct": 10.971713551001324,
+    "test_in_train_benign_pct": 1.3180928843579445,
+    "conflicting_hash_pct": 0.007525083612040134,
+    "conflicting_rows_train_pct": 0.01508259706445032,
+    "f1_full": 0.7754395809951365,
+    "f1_seen_in_train": 0.9744499645138396,
+    "f1_unseen": 0.745233222018744,
+    "n_unseen": 21008,
+    "f1_dedup_train_full": 0.7635814414499458,
+    "f1_dedup_train_unseen": 0.7311628919860628,
+    "top_features": {
+      "4": 0.7533,
+      "32": 0.0522,
+      "22": 0.0481,
+      "5": 0.0336,
+      "40": 0.0257
+    },
+    "drop_top": {
+      "1": {
+        "dropped": [
+          "4"
+        ],
+        "f1": 0.7556167767064076
+      },
+      "3": {
+        "dropped": [
+          "4",
+          "32",
+          "22"
+        ],
+        "f1": 0.7297297297297297
+      }
+    },
+    "f1_label_shuffled": 0.5053781799556086,
+    "seconds": 4
+  },
+  {
+    "dataset": "nsl-kdd",
+    "split": "random",
+    "n_train": 118813,
+    "n_test": 29704,
+    "n_features": 38,
+    "attack_train": 0.4811763022564871,
+    "attack_test": 0.4811809857258282,
+    "dup_train_pct": 4.728438807201233,
+    "dup_test_pct": 1.6597091300834903,
+    "unique_train": 113195,
+    "test_in_train_pct": 7.928225154861298,
+    "test_in_train_attack_pct": 16.09878961729518,
+    "test_in_train_benign_pct": 0.35039906560249173,
+    "conflicting_hash_pct": 0.07155793100401961,
+    "conflicting_rows_train_pct": 0.14813193842424652,
+    "f1_full": 0.9924796250306062,
+    "f1_seen_in_train": 0.9923863389166848,
+    "f1_unseen": 0.9924974991663887,
+    "n_unseen": 27349,
+    "f1_dedup_train_full": 0.9924838314979899,
+    "f1_dedup_train_unseen": 0.9924605323447327,
+    "top_features": {
+      "4": 0.6988,
+      "5": 0.0462,
+      "23": 0.0439,
+      "9": 0.0424,
+      "32": 0.0369
+    },
+    "drop_top": {
+      "1": {
+        "dropped": [
+          "4"
+        ],
+        "f1": 0.9899639822358989
+      },
+      "3": {
+        "dropped": [
+          "4",
+          "5",
+          "23"
+        ],
+        "f1": 0.9843547653214798
+      }
+    },
+    "f1_label_shuffled": 0.4666432337434095,
+    "seconds": 3
+  }
+]

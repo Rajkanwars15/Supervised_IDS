@@ -1,0 +1,98 @@
+[
+  {
+    "dataset": "cicids2017",
+    "split": "own80/20",
+    "n_train": 2264594,
+    "n_test": 566149,
+    "n_features": 78,
+    "attack_train": 0.19699645940950122,
+    "attack_test": 0.19699584385029384,
+    "dup_train_pct": 10.264886332826105,
+    "dup_test_pct": 6.355394074704715,
+    "unique_train": 2032136,
+    "test_in_train_pct": 13.660538126888857,
+    "test_in_train_attack_pct": 28.529799424364967,
+    "test_in_train_benign_pct": 10.012757907703136,
+    "conflicting_hash_pct": 0.025834885066747502,
+    "conflicting_rows_train_pct": 0.2396456053491266,
+    "f1_full": 0.9968934493470865,
+    "f1_seen_in_train": 0.9964487743557511,
+    "f1_unseen": 0.9970709433820255,
+    "n_unseen": 488810,
+    "f1_dedup_train_full": 0.9967231927130261,
+    "f1_dedup_train_unseen": 0.9969522137213094,
+    "top_features": {
+      "Bwd Packet Length Std": 0.376,
+      "Average Packet Size": 0.1902,
+      "Bwd Header Length": 0.1323,
+      "Destination Port": 0.105,
+      "Max Packet Length": 0.0924
+    },
+    "drop_top": {
+      "1": {
+        "dropped": [
+          "Bwd Packet Length Std"
+        ],
+        "f1": 0.9968306339180447
+      },
+      "3": {
+        "dropped": [
+          "Bwd Packet Length Std",
+          "Average Packet Size",
+          "Bwd Header Length"
+        ],
+        "f1": 0.9969470234599505
+      }
+    },
+    "f1_label_shuffled": 0.16930837044442426,
+    "seconds": 1224
+  },
+  {
+    "dataset": "cicids2017",
+    "split": "random",
+    "n_train": 2264594,
+    "n_test": 566149,
+    "n_features": 78,
+    "attack_train": 0.19699645940950122,
+    "attack_test": 0.19699584385029384,
+    "dup_train_pct": 10.945626456662872,
+    "dup_test_pct": 6.782666753805093,
+    "unique_train": 2016720,
+    "test_in_train_pct": 14.431889838187473,
+    "test_in_train_attack_pct": 28.55669825785222,
+    "test_in_train_benign_pct": 10.966741454401479,
+    "conflicting_hash_pct": 0.027272006029592608,
+    "conflicting_rows_train_pct": 0.23244784716377415,
+    "f1_full": 0.997009035671846,
+    "f1_seen_in_train": 0.9962309190275771,
+    "f1_unseen": 0.9973200107952727,
+    "n_unseen": 484443,
+    "f1_dedup_train_full": 0.9970451478098672,
+    "f1_dedup_train_unseen": 0.9973830368069284,
+    "top_features": {
+      "Bwd Packet Length Std": 0.3759,
+      "Average Packet Size": 0.1901,
+      "Bwd Header Length": 0.1325,
+      "Destination Port": 0.1026,
+      "Max Packet Length": 0.0925
+    },
+    "drop_top": {
+      "1": {
+        "dropped": [
+          "Bwd Packet Length Std"
+        ],
+        "f1": 0.9969774429346607
+      },
+      "3": {
+        "dropped": [
+          "Bwd Packet Length Std",
+          "Average Packet Size",
+          "Bwd Header Length"
+        ],
+        "f1": 0.9969733249034827
+      }
+    },
+    "f1_label_shuffled": 0.17001350251637806,
+    "seconds": 1040
+  }
+]
